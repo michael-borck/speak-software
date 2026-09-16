@@ -2,4 +2,137 @@
 
 > "Best" is not objective. That is precisely why they need you.
 
-**Lab companion:** Lab 8. Critique as a deliverable: the reader reviews two plausible implementations and writes CRITIQUE.md with arguable opinions — not verdicts, positions. Taste is presented as the durable human contribution the mini CEO cannot delegate.
+**Lab companion:** [Lab 8, The Taste Test](https://michael-borck.github.io/programming-labs/lab-08-taste-test/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+Ask the agent for the same feature twice and you will get two working implementations. Both pass the checks. Both satisfy the spec. Neither is wrong. And choosing between them is the first task in this book that the agent cannot do for you — not because it lacks ability, but because "better" here is not a fact. It is a position.
+
+This is **taste**: the judgement that one good option fits your situation better than another good option. The agent can generate options endlessly and enumerate trade-offs fluently. It cannot know that your client phones support at 11 p.m., that your successor will be a temp, or that you would rather debug a boring file than a clever one. Those preferences — held and defended — are the deliverable.
+
+So this chapter promotes critique from a reaction ("I like this one") to an artefact: **CRITIQUE.md**, a filed document of positions with reasons. The rule that makes it honest: every entry must be *arguable*. A statement is arguable if a reasonable person could disagree — "I chose the version with the explicit loop because a temp will maintain this and explicit beats clever" is arguable. "The first one is better" is not.
+
+## Understanding Through the Menu
+
+Two excellent restaurants offer you the same ingredient. One serves it in a thirty-second dish that celebrates the produce raw. One braises it for six hours. Asking which restaurant is "best" is a category error — they have made different arguments about what the ingredient is for.
+
+The agent's two implementations are the two restaurants. Your job is not to score them like a test. Your job is to work out what each one is *arguing* — optimising for speed? for clarity? for the smallest change? — and then decide which argument your situation is actually making. A feature needed for tomorrow's demo and a feature that will run for five years deserve different winners.
+
+## Discovering Taste with Your AI Partner
+
+### Exploration 1: Generate the Dilemma
+
+Ask the agent for two deliberately different solutions to the same small problem:
+
+```text
+Write a function that reports the largest number in a list, in two
+versions: one optimised for a beginner to read, one optimised for
+the shortest possible code. Do not tell me which is better. Show
+both, complete.
+```
+
+### Exploration 2: Build the Vocabulary
+
+The difference between "I prefer this" and a critique is vocabulary. Ask for the axes:
+
+```text
+Compare the two versions across these dimensions, one sentence each:
+how obvious it is to a non-programmer reading it; what it does with
+an empty list; what it does with a non-number smuggled into the list;
+and what it costs to add a second rule (ignore negatives) later.
+```
+
+Now you have something arguable. Dimensions — obviousness, edge behaviour, cost of change — are how taste gets taught, defended, and handed to the next person.
+
+### Exploration 3: Take a Position
+
+Write CRITIQUE.md. Positions, with reasons:
+
+```markdown
+# Critique: largest-number function
+
+## Position
+Keep the explicit-loop version.
+
+## Why
+The maintainer of this project is a temp who has never programmed.
+The explicit version reads like a sentence; the short version needs
+one concept (the max-with-key idiom) that they would have to trust
+without understanding.
+
+## What I gave up
+The short version is genuinely shorter and standard. If the project
+ever has a professional maintainer, revisiting this is fair.
+
+## What would change my mind
+A second or third rule being added to the function — the explicit
+version grows faster than the idiomatic one.
+```
+
+Notice the shape: a decision, a reason that names a *person and a situation*, an admission of cost, and the condition under which you would reverse it. That is not a review. That is a **decision record** — the same genre as DECISIONS.md, which is exactly where the taste habit is heading.
+
+## From Concept to Code
+
+The file goes into the repository beside the others:
+
+```bash
+git add CRITIQUE.md
+git commit -m "Critique: keep explicit version; revisit if maintenance changes"
+```
+
+And the habit generalises. From now on, every fork the agent offers you gets the same four questions:
+
+1. What is each version optimising for?
+2. Who will maintain it, and what do they already know?
+3. What does each do when the input is strange?
+4. What does it cost to change later?
+
+Four answers, one position, one reason. That is a taste test.
+
+::: {.callout-warning title="Do not ask the agent to have your taste"}
+You can ask the agent to enumerate dimensions, play advocate, or pressure-test your position — all good uses. Do not ask it "which is better?" and accept the answer. Its preference is the average of the internet's; your situation is the specific thing that makes this decision yours. Delegate the menu. Keep the choosing.
+:::
+
+## Business Connection
+
+Taste is the part of the work that does not commoditise — the recurring argument of this series, arriving here in its most concrete form. Two businesses with the same AI can produce equally working software; they cannot produce equally *chosen* software. The choice records who you are: the firm that prefers boring and maintainable, the studio that ships fast and rewrites, the consultancy that documents everything.
+
+That is also the client-facing answer to "how is this different from my nephew with ChatGPT?" The nephew generates. You generate, then take responsibility for a position, in writing, with reasons that survive your absence. The difference is not the code. It is the CRITIQUE.md.
+
+## Practice Exercises
+
+**Exercise 10.1 (Level 1).** Generate the two largest-number implementations. Write the four-question comparison from memory first, then with the agent.
+
+**Exercise 10.2 (Level 2).** Ask the agent to defend the version you rejected. Write down whether it changed your mind — and if so, which argument did it.
+
+**Exercise 10.3 (Level 3).** Take any real thing you built earlier in this book. Write a CRITIQUE.md of your own decision to build it the way you did: position, named situation, admitted cost, reversal condition.
+
+**Exercise 10.4 (Level 4).** Have the agent produce three implementations instead of two. Does a third option change your position? If not, what does that tell you about the strength of your criteria?
+
+**Exercise 10.5 (Level 5).** Write your taste charter: the five standing preferences that will guide your choices in every project — named, with one-line reasons. File it; expect to edit it, not obey it.
+
+## Chapter Summary
+
+- Same request, two good answers: choosing between them is judgement, not lookup
+- Taste needs vocabulary: dimensions like obviousness, edge behaviour, cost of change
+- CRITIQUE.md makes taste a deliverable — arguable positions, not verdicts
+- Delegate the menu; keep the choosing
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Generated a real dilemma and compared on named dimensions
+- [ ] Wrote a position a reasonable person could disagree with
+- [ ] Admitted what your choice gave up
+- [ ] Filed the critique in the repository
+
+## Your Learning Journal
+
+1. Which dimension of the comparison mattered most to you — and does that say something about your situation or your habits?
+2. What would change your mind? Write the condition down while you still mean it.
+3. Where else do you say "better" without naming the dimension?
+
+## Next Steps
+
+Taste judges what exists. The next chapter tackles what barely exists: the last 20% of polish, where the agent's output is *technically complete* and somehow not finished — and where directing the difference is a skill of its own.
