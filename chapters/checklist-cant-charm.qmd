@@ -2,4 +2,136 @@
 
 > Re-reading is not checking. A checklist that cannot run is a wish.
 
-**Lab companion:** Lab 4. Acceptance checks become executable: a list a script can verify, so charm cannot talk its way past done. You will commission your first check script from the agent — and learn what to ask for so the checks fail loudly rather than pass politely.
+**Lab companion:** [Lab 4, The Checklist It Can't Charm](https://michael-borck.github.io/programming-labs/lab-04-checklist-it-cant-charm/) — one running check; Chapter 9 assembles the full gate around it.
+
+## The Concept First
+
+Last chapter's spec defined done. This chapter makes done *checkable* — and the difference is the difference between a promise and a mechanism.
+
+Here is the mechanism's advantage. When the agent tells you "done!", you have three options: believe it (vibes), re-read the code yourself (a part-time job), or **run the definition of done** (seconds, and it works even when you are tired, busy, or charmed). Chapter 3's acceptance checklist was a list of sentences. This chapter promotes those sentences into checks — small, runnable, each answering one question about the product with PASS or FAIL.
+
+You do not write the checks. You commission them, from the agent, from your spec — and then you do the one thing this book exists to teach: verify that the checks themselves are honest.
+
+## Understanding Through the Smoke Alarm
+
+Nobody "reads" a smoke alarm. It is a checklist that runs itself, every second, and its entire value is that it fails loudly at 3 a.m. without asking permission. A smoke alarm that required you to remember to look at it would be decoration.
+
+Most people's AI projects have decoration where alarms should be: hopeful notes in a document ("we should validate inputs"), the agent's assurance ("I've handled errors"), a manual test done once, days ago. The slop comes in through exactly that gap.
+
+## Discovering Checks with Your AI Partner
+
+### Exploration 1: From Spec to Checks
+
+Your spec's "Done means" section converts almost mechanically:
+
+```text
+Here is my SPEC.md. Convert every item in "Done means" into a
+checklist entry. Each entry must:
+- be a single run of something (open this page, run this command,
+  enter this input, compare to this expected output)
+- state the expected result exactly
+- be checkable by someone who has never seen our conversation
+
+Output the checklist only. Do not fix or change the product.
+```
+
+### Exploration 2: Promote the Checks to Code
+
+The most important checks should run without a human reading. For the tip calculator's arithmetic, that means tests — commissioned, again, from the spec:
+
+```text
+Write test_checks.py using plain asserts. Each test corresponds to
+one "Done means" item or one example from the spec. Include the
+rounding-residue rule and the invalid-input rule. Print one clear
+line per check: the rule tested and PASS/FAIL. No frameworks.
+```
+
+### Exploration 3: The Charm Test
+
+Now the meta-check, and it is the one that makes this chapter different from a testing tutorial:
+
+```text
+Look at the checks you just wrote. Which of them would still pass
+if the product were replaced with a hardcoded fake that prints the
+expected answers? Rewrite any check that a fake could defeat so it
+tests the real behaviour instead.
+```
+
+::: {.callout-important title="The fake-detecting question"}
+A check that a hardcoded fake could pass is checking nothing. "Does the page show 24.00?" can be defeated by printing 24.00. "Does the page show the correct split for a 60 bill, 3 people, 10% tip — and for a 61.15 bill, 4 people, 15% tip?" cannot be faked without doing the actual maths. When you commission checks, always ask the fake-detecting question.
+:::
+
+## From Concept to Code
+
+The checks file, the kind of thing the agent produces from that prompt:
+
+```python
+# check_tips.py - runs the spec's rules and reports PASS/FAIL per rule.
+from tip_calculator import split_bill
+
+def check(name, condition):
+    print(("PASS " if condition else "FAIL "), name)
+    return condition
+
+results = [
+    check("60 / 3 people / 10% splits to 22.00 each",
+          split_bill(60, 3, 10) == [22.00, 22.00, 22.00]),
+    check("Rounding residue goes to the first person",
+          split_bill(61.15, 4, 15)[0] > split_bill(61.15, 4, 15)[1]),
+    check("Zero bill rejected with a clear message",
+          split_bill(0, 2, 10) == "Error: bill must be > 0"),
+    check("Party size above 20 rejected",
+          split_bill(60, 21, 10) == "Error: party size is 1 to 20"),
+]
+
+print("PASSED" if all(results) else "SOME CHECKS FAILED",
+      f"({sum(results)}/{len(results)})")
+```
+
+::: {.callout-warning title="Checks need care too"}
+The agent's checks can be wrong in the agent's favour — too few cases, a fake-defeatable comparison, an expected value copied from the program's output instead of the spec. Audit the checks against the spec exactly as fiercely as you audit the product. Chapter 9 turns this suspicion into a policy.
+:::
+
+## Business Connection
+
+A client who can run your acceptance checklist owns the verification themselves — your honesty stops being the requirement. That is why businesses pay premiums for suppliers who arrive with runable evidence: it converts trust from a feeling into a procedure. Internally, the same list settles the argument about whether the work is finished before the argument starts.
+
+This is also the seed of the entire quality industry: lint rules, test suites, coverage floors — Chapter 9's full gate is this chapter's checklist with a career. Start the habit small and the scale arrives free.
+
+## Practice Exercises
+
+**Exercise 5.1 (Level 1).** Convert your Chapter 3 acceptance checklist into checks; run them; record the score honestly.
+
+**Exercise 5.2 (Level 2).** Run the charm test on your own checks. How many could a hardcoded fake defeat? Rewrite them.
+
+**Exercise 5.3 (Level 3).** Commission the same checks from a *fresh* agent, using only the spec. Diff the two checklists — the differences are spec gaps.
+
+**Exercise 5.4 (Level 4).** Write one check that the current agent genuinely cannot satisfy, and specify what the product must do to pass it.
+
+**Exercise 5.5 (Level 5).** Design the acceptance checklist for this book's next chapter, before reading it. After reading, grade your design.
+
+## Chapter Summary
+
+- Spec defines done; checks make done enforceable
+- Runnable beats readable: a check works on your worst day
+- The fake-detecting question separates real checks from decoration
+- Commission the checks from the spec — then audit the checker
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Have a checks file in the repository, committed
+- [ ] Ran the fake-detecting question on at least one check
+- [ ] Fixed a product defect the checks exposed
+- [ ] Never marked a check PASS without running it
+
+## Your Learning Journal
+
+1. What did your first honest run of the checks reveal?
+2. Which was harder to write — the product or the check? What does that tell you?
+3. What in your non-work life deserves a runnable checklist?
+
+## Next Steps
+
+The checks verify the present. The next chapter protects the past: version control as the department's flight recorder — small commits, fearless branches, and the ability to undo anything.
