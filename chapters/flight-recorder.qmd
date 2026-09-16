@@ -1,5 +1,141 @@
-# The Flight Recorder {#sec-flight-recorder}
+# The Flight Recorder {#sec-the-flight-recorder}
 
 > One wrong move ruins nothing, if everything is recorded.
 
-**Lab companion:** Lab 5. Version control as the department's flight recorder: small commits, fearless branches, revert as a first-class move. The agent drives git; you own the discipline — commit size, message honesty, branch naming — because the trail is the only thing an audit can read later.
+**Lab companion:** [Lab 5, The Flight Recorder](https://michael-borck.github.io/programming-labs/lab-05-flight-recorder/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+Aeroplanes carry a flight recorder not because pilots crash often, but because when something goes wrong, the recording is the difference between a mystery and a lesson. Version control is your department's flight recorder. It records every state the software has ever been in, exactly who put it there, and exactly how to get back.
+
+Here is what that buys a manager who never reads code: **fearlessness**. The single biggest behavioural difference between people who ship software and people who tinker is not knowledge — it is whether making a change feels dangerous. With a flight recorder, no change is dangerous. Every experiment is undoable in one command. The agent can be told "try the ambitious version" without risking the working version, because the working version is recorded, permanently.
+
+## Understanding Through the Undo Keys
+
+Everything you already use has this feature. Email has "undo send". Documents have version history. Photos have a recently-deleted album. The undo is not a luxury; it is what makes you *use* the tool boldly.
+
+The department's version control has three moves that matter, and you already understand all of them from everyday software:
+
+1. **Commit** — save a named snapshot ("works with receipt printing", "the version I showed the client")
+2. **Branch** — try an idea on a parallel copy while the main version stays safe
+3. **Revert** — return to any recorded snapshot, exactly
+
+Everything else — merges, rebases, cherry-picks — is plumbing for teams. A department of one needs the three moves and the discipline behind them.
+
+## Discovering the Recorder with Your AI Partner
+
+### Exploration 1: The Fearless Ask
+
+In a repository with one committed working version, make the ambitious request:
+
+```text
+The current page works. On a new branch named "bold-redesign",
+rebuild the layout with a completely different structure. Do not
+touch the main version. When you finish, show me both.
+```
+
+Then look at both. Keep the redesign, or switch back with one command:
+
+```bash
+git switch main        # back to the recorded working version
+```
+
+Nothing was lost by trying. That sentence is the chapter.
+
+### Exploration 2: Small Commits, Loud Messages
+
+The flight recorder only helps if it records often, with honest labels. Compare two histories from the same project:
+
+```text
+History A:
+  a1b2c3d update
+  e4f5a6b update
+  b7c8d9e final version
+
+History B:
+  f1e2d3c Add menu section with three items
+  a9b8c7d Fix price alignment in menu
+  6f5e4d3 Add address block to footer
+```
+
+Ask your agent which history it would rather investigate a complaint from — then ask it to explain what makes History B usable. The answer will be: each commit is one idea, and each message says what happened. That is a management standard, not a technical one, which is why you are allowed to have an opinion about it.
+
+### Exploration 3: Rehearse the Disaster
+
+The recorder only earns trust when you have used it in a fire drill:
+
+```text
+I want to rehearse a recovery. On the current page, make a change
+that breaks something obvious (as if a bad edit landed). Commit it
+as "attempt new header". Then revert the repository to the previous
+commit and confirm the page works again. Show me each command.
+```
+
+Run this drill until the sentence "we can always go back" is something you believe, because you have personally done it.
+
+## From Concept to Code
+
+The chapter's habit, as a rhythm rather than a command set:
+
+```bash
+# Before asking the agent for a change: note where you are
+git status                  # clean? good to start
+
+# After a unit of work you accept (the agent can run these)
+git add .
+git commit -m "Add opening hours block per client email"
+
+# Before a risky experiment: branch
+git switch -c bold-idea
+
+# If the experiment fails: return without grief
+git switch main
+```
+
+::: {.callout-tip title="The one-line policy"}
+If you can describe the change in one sentence, commit it in one sentence. If you cannot describe it in one sentence, the change is too big — split it. This policy, kept honestly, is the entire art of version control at department-of-one scale.
+:::
+
+## Business Connection
+
+The flight recorder is why small teams can out-manoeuvre big ones. A team with perfect version records can attempt three designs in an afternoon, show all three to the client, and lose nothing on the two that fail. A team without records must argue in meetings because trying is expensive. Clients do not buy "we were careful"; they buy "here are the three options we built you this week."
+
+And when a supplier asks for your money back, the flight recorder is the evidence: here is what was delivered, when, by which change. Chapter 15 turns that evidence into an audit.
+
+## Practice Exercises
+
+**Exercise 6.1 (Level 1).** Make three changes to your project, committing after each with a one-sentence message.
+
+**Exercise 6.2 (Level 2).** Branch for a redesign, reject the branch, return to main. Confirm the working version never changed.
+
+**Exercise 6.3 (Level 3).** Ask the agent to describe your project's history from the commit log alone. Check its story against your memory of the work.
+
+**Exercise 6.4 (Level 4).** You committed a file containing a secret API key. Commission the agent to walk you through removing it from history — and write the short policy that prevents a recurrence.
+
+**Exercise 6.5 (Level 5).** Design your branch and commit policy: when do you commit, what makes a message honest, when do you branch, when do you merge? One page. It becomes part of your AGENTS.md in the next chapter.
+
+## Chapter Summary
+
+- Version control is the department's flight recorder: fearlessness by record
+- Commit often, one idea per commit, honest messages
+- Branch for ambition; main stays safe; revert without grief
+- The history is management evidence — and Chapter 15 will read it
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Rehearsed the disaster: broke something, reverted, recovered
+- [ ] Have a history you would be comfortable showing a stranger
+- [ ] Split at least one too-big change into smaller commits
+- [ ] Believe — from experience — that no change is dangerous
+
+## Your Learning Journal
+
+1. What did the recovery rehearsal feel like — and what would have happened without it?
+2. Which commit message in your history is dishonest, and what actually happened?
+3. What experiment would you attempt this week if failure were free?
+
+## Next Steps
+
+The recorder preserves what happened. The next chapter fixes what the department knows: teaching the intern once, properly, so every future conversation starts from experience instead of zero.
