@@ -95,3 +95,18 @@ collection licence check, rendered-book validation, source checks).
 Formats: HTML primary; PDF/EPUB via the standard print pipeline. The labs
 repo keeps its own site; cross-links both ways. Open question for later:
 print edition timing — recommend after content stabilises.
+
+## Writing queue (2026-09-16)
+
+Done: skeleton, Ch 1 (Hello, Department of One), Ch 2 (The Slop
+Question), Ch 3 (The Demo Illusion), Ch 9 (The Slop Defence — the kit).
+
+Next, in order: Ch 4 (Say What You Mean), Ch 5 (The Checklist It Can't
+Charm), Ch 6 (The Flight Recorder), Ch 7 (Teach the Intern), Ch 8 (Trust,
+Then Verify), Ch 10 (The Taste Test), Ch 11 (The Last 20%), Ch 12 (The
+Filing Cabinet), Ch 13 (Slop in the Supply Chain), Ch 14 (Run the
+Department), Ch 15 (The Audit), Ch 16 (Ship Something True), Ch 17 (The
+Mini CEO's Staff), Ch 18 (Conclusion), then appendices. Then the tools:
+slop-detector kit as a repo file, evidence-trio linter, lab doctor.
+Decision made: the kit and trio linter may also become additions to the
+labs themselves.
