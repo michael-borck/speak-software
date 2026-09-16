@@ -2,4 +2,140 @@
 
 > You are not learning to code. You are learning to run the people who do — and there is only one of them.
 
-**Lab companion:** Lab 1. This chapter installs the frame: your AI agent is a brilliant, tireless, overconfident intern, and everything it does for you must live in a repository. You will set up GitHub, meet your agent, and ship a first change to a real repository — establishing the habit that separates a builder of demos from the owner of a department: *if it is not in the repo, it does not exist.*
+**Lab companion:** [Lab 1, Hello, Department of One](https://michael-borck.github.io/programming-labs/lab-01-department-of-one/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+Imagine being handed an engineering department. One employee. Brilliant — ships in minutes what used to take weeks. Tireless — never bored, never tired, never offended. And overconfident in a way no human employee has ever been: it will announce, in fluent confident prose, that the thing it just made works, when it does not.
+
+You are the manager. That is the entire frame of this book, and everything strange about the AI era becomes ordinary once you accept it. The skill of the next decade is not writing code. It is running a department of one brilliant intern: briefing it, checking its work, keeping the records straight, and knowing when it is bluffing.
+
+Managers do not need to type the code. Managers do need four things, and you will build all four in this chapter:
+
+1. A place where the work lives — a **repository** ("repo"), the department's filing cabinet
+2. A way to brief the employee — a **prompt**, then a **specification**
+3. A way to check the work — running it, then testing it
+4. A record of decisions — so the department remembers, and so you can prove what happened
+
+## Understanding Through Real Life
+
+### The Intern You Already Know
+
+Think of the best intern you have ever worked with. Fast. Eager. Produces impressive-looking first drafts in minutes. Now stack the exaggerations: this intern has read everything ever published, works in seconds, costs pennies, never sleeps — and has zero judgement about your business, no memory beyond this conversation, and no shame about inventing facts.
+
+Would you give that intern a task with no instructions? Of course not — you would be paying to generate rework. Would you accept their work without looking at it? Never — not because they are dishonest, but because confidence and correctness are different qualities, and the intern has only the first one.
+
+That gap — between confidence and correctness — is where every chapter of this book lives.
+
+### Why a Repository, Not a Chat
+
+Your first instinct will be to work in the chat window: ask, copy the answer, paste it somewhere, lose it. Everyone starts there. The chat is where you *talk*; the repository is where you *keep*. A repository is a folder with a perfect memory: every version of every file, every change, every reason, recorded forever, undoable at any moment.
+
+The single habit this chapter installs: **if it is not in the repository, it does not exist.** Not the code only — the brief, the decisions, the complaints, the version you rejected. A department that keeps no records is a department you cannot manage.
+
+## Discovering the Department with Your AI Partner
+
+### Exploration 1: The Vague Request
+
+Open your AI agent (the labs use a command-line agent; any equivalent works) and type exactly:
+
+```text
+Make a website
+```
+
+Watch what comes back. The agent guesses — and its guesses are competent, generic, and not yours. Note the assumptions it made: what the site is for, who visits it, what "make" even means. You have just met the department's central limitation: it does not ask. It assumes.
+
+### Exploration 2: The Briefed Request
+
+Now try again, with a brief:
+
+```text
+Make a single web page for a cafe called Sunrise. It shows the name,
+the tagline "Fresh coffee, warm welcome", and three menu items with
+prices. One file. No frameworks.
+```
+
+The result is smaller, closer, and checkable — because the brief gave the department something to be measured against. Keep both attempts. The gap between them is the skill you are here to build.
+
+### Exploration 3: Give It a Memory
+
+In your project folder, create a file named `AGENTS.md` and write your brief into it:
+
+```markdown
+# Project: Sunrise Cafe page
+
+## What this is
+A single web page for a small cafe.
+
+## Done means
+- Shows the cafe name and tagline
+- Shows three menu items with prices
+- Opens correctly in a browser
+```
+
+Ask the agent to read it, then to do the work again. From now on, the department starts every conversation already briefed. You have just built your first management document, and it is also your first specification.
+
+## From Concept to Code
+
+The work itself, in order:
+
+```bash
+# 1. Make the folder a repository — the filing cabinet
+git init
+
+# 2. Let the department work, briefed
+#    (your agent writes index.html from AGENTS.md)
+
+# 3. Record what was done — who, what, when, why
+git add index.html
+git commit -m "Add cafe landing page from brief"
+```
+
+Three commands. `git init` opens the filing cabinet. The agent writes. `git add` and `git commit` file the result with a note. That is the whole ritual this chapter asks you to adopt: **work, then file, with a message that says what happened.**
+
+::: {.callout-tip title="Commit messages are management records"}
+"Update" tells a future reader nothing. "Add cafe landing page from brief" tells them what happened and hints at why. When the audit comes — and Chapter 15 is an entire audit — the commit messages are the department's testimony.
+:::
+
+## Business Connection
+
+A department of one changes the economics of small software. A page that would have cost a week of a contractor's time takes minutes of briefing. But the economics only work if the work is kept: the businesses drowning in AI-era messes are the ones whose "developer" worked in chat windows, with no repo, no records, and no way to fix what eventually broke.
+
+The repo is not bureaucracy. It is the difference between owning your software and renting it from a conversation you can no longer find.
+
+## Practice Exercises
+
+**Exercise 1.1 (Level 1).** Initialise a repository and commit one file the agent produced, with a message that says what it is.
+
+**Exercise 1.2 (Level 2).** Redo the cafe brief with a different business (a plumber, a tutor). Keep the same "done" list; change only the details. Notice what the agent got right without being told.
+
+**Exercise 1.3 (Level 3).** Break the brief on purpose: remove one line from "done means". Compare what the agent delivers with and without it.
+
+**Exercise 1.4 (Level 4).** A colleague says repositories are unnecessary because "the chat history has everything." Write the strongest case against, using one real consequence.
+
+**Exercise 1.5 (Level 5).** Draft the AGENTS.md for a business you actually care about. Keep it — Chapter 6 turns it into a proper context folder.
+
+## Chapter Summary
+
+- Your agent is a department of one: brilliant, tireless, overconfident
+- The repository is the department's memory — work is not done until it is filed
+- Briefs beat requests: the agent is measured against what you wrote, not what you meant
+- Commit messages are management records, for the audit you cannot yet imagine
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Have a repository with at least one committed file
+- [ ] Wrote an AGENTS.md the agent actually reads
+- [ ] Can explain the confidence/correctness gap in one sentence
+
+## Your Learning Journal
+
+1. What surprised you about the vague-versus-briefed difference?
+2. What would your department's ideal briefing contain?
+3. What did the agent assume that you did not write down?
+
+## Next Steps
+
+The department works — for the demo. In the next chapter, we test the demo's honesty: why "it works" is the beginning of the sentence, and how the illusion is built.
