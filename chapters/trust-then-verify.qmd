@@ -2,4 +2,107 @@
 
 > "It sounds right" is the most expensive sentence in AI-assisted work.
 
-**Lab companion:** Lab 7. Demanding evidence of done: outputs shown, checks run, receipts attached. Introduces VET from *Conversation, Not Delegation* (Verify, Explain, Test) as the reader's reflex, and treats the agent's explanation as a hypothesis rather than a verdict.
+**Lab companion:** [Lab 7, Trust, Then Verify](https://michael-borck.github.io/programming-labs/lab-07-trust-then-verify/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+The agent's explanations are fluent, structured, and confident. That fluency is the product working as designed — and it is also the attack surface. An answer can be well-organised, appropriately detailed, and entirely wrong, in the same paragraph.
+
+So the rule: **trust is fine; trust is not verification.** You may absolutely accept the agent's account of what it did — provisionally, as a hypothesis. Verification is the separate act of making reality confirm it. The professional workflow is literally the chapter title: trust first, because trusting is cheap; verify always, because confidence is not evidence.
+
+## Understanding Through the Wikipedia Footnote
+
+A Wikipedia article reads confidently and is mostly right. Nobody serious disputes it *because* it is confident — they click the footnote. The footnote is the difference between "I read a claim" and "I checked a source."
+
+The agent's explanations need footnotes, and in software the footnote is always the same thing: **run it**. Not "look at the code and see if it seems right" — run the thing on the inputs that matter and observe what comes out. Chapter 5 built the checks; this chapter is about the habit of demanding they actually ran, on evidence you can see.
+
+## Discovering Verification with Your AI Partner
+
+### Exploration 1: Demand the Receipts
+
+After any build, the weakest response is "looks good." The strong pattern is to request evidence in a fixed format:
+
+```text
+For every item in the acceptance checklist, show me:
+1. The exact command or action you performed
+2. The exact output observed
+3. PASS or FAIL against the checklist item
+
+Do not summarise. Do not mark anything PASS that you did not
+actually run in this conversation.
+```
+
+### Exploration 2: The Spot-Check
+
+Then verify one at random — genuinely, yourself, in a terminal or browser. You are not checking whether the agent can do the work; you are calibrating its reliability. If the spot-checked item fails while the receipts claim PASS, you have learned something about this agent, this task type, or this session that no policy could have taught you.
+
+::: {.callout-important title="The explanation is not the evidence"}
+An agent can explain a bug fix fluently and incorrectly. The explanation is generated the same way the code is — predicted from patterns, one plausible word at a time. Fluency and accuracy are different axes. The only footnote that counts is the observed output of a run you witnessed.
+:::
+
+### Exploration 3: The VET Reflex
+
+*Conversation, Not Delegation* compresses the verification habit into three letters. Apply all three to anything the department produces:
+
+- **V — Verify**: run it on a known input; compare to the expected output from the spec
+- **E — Explain**: can you say *how* it works, in your own words, without reading the code first? If not, you do not own it yet
+- **T — Test**: poke an edge case the agent did not mention. Change one thing. Does it fail loudly or silently?
+
+The reflex takes minutes. Skipping it is how a plausible function becomes a production incident with your name on the approval.
+
+## From Concept to Code
+
+The verification habit leaves a record, like everything else in this book. Chapter 3's acceptance file gains a column — observed, with date — and the spec's hostile list becomes the source of edge cases to poke by hand:
+
+```markdown
+| Check | Expected | Observed (2026-09-16) | Result |
+|---|---|---|---|
+| Empty submit shows error, sends nothing | error, no data | confirmed in browser | PASS |
+| 200-char name does not break layout | wraps or truncates | NOT tested | ? |
+```
+
+The `NOT tested` row is the most valuable line in the file. It is an honest list of what you do not know — which is exactly what the next work session should start with.
+
+## Business Connection
+
+Verification is the product you sell when you sell "AI-era services". A business does not pay you to prompt; it pays you to be the person whose sign-off means the strange orders were tested. The receipts file — commands, outputs, dates — is how that sign-off survives being questioned in a meeting six weeks later.
+
+The same file is your defence against the agent's own confidence. When a stakeholder asks "but the AI said it worked," the answer is: "and I verified it, here is the run." That sentence is the entire professional identity this book is building.
+
+## Practice Exercises
+
+**Exercise 8.1 (Level 1).** Demand receipts for your next build in the exact three-part format. Spot-check one at random.
+
+**Exercise 8.2 (Level 2).** Apply the VET reflex to something you accepted yesterday. Run it, explain it, poke it. Record what changed in your assessment.
+
+**Exercise 8.3 (Level 3).** Ask the agent for an explanation of *how* its fix works, then ask it to prove the explanation with a demonstration. Compare.
+
+**Exercise 8.4 (Level 4).** Find a case where the agent's explanation was fluent and wrong. File it in your journal with what the verification caught.
+
+**Exercise 8.5 (Level 5).** Write the verification section of your AGENTS.md: what evidence is required before any change is accepted, for your projects, permanently.
+
+## Chapter Summary
+
+- Trust the fluency; verify the claim; the two are different axes
+- Receipts: exact command, exact output, PASS/FAIL — no summaries
+- Spot-check one claimed pass at random, every time
+- The untested list is a to-do list, not a footnote
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Collected receipts in the three-part format at least once
+- [ ] Spot-checked one claimed PASS yourself
+- [ ] Applied V — Verify, E — Explain, T — Test — to one deliverable
+- [ ] Recorded at least one NOT tested row honestly
+
+## Your Learning Journal
+
+1. What did your random spot-check find? Was the agent over-, under-, or exactly confident?
+2. Which VET step do you naturally skip — and what would it cost to keep?
+3. What would your receipts file need to contain for a stranger to sign off your work?
+
+## Next Steps
+
+You can now verify anything the department builds. The next two chapters turn to what the department cannot build: taste, and the long tail of polish — judgement as a deliverable, and the last 20% that makes software feel finished.
