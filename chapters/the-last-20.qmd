@@ -2,4 +2,122 @@
 
 > The first 80% is a demo. The last 20% is the product.
 
-**Lab companion:** Lab 9. Directing polish: what to leave alone, what to demand, and how to specify refinement without specifying pixels. The agent generates; the reader decides which gaps matter.
+**Lab companion:** [Lab 9, The Last 20%](https://michael-borck.github.io/programming-labs/lab-09-the-last-20/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+The agent is superb at the first 80%. Given a clear spec it produces the working feature, the reasonable layout, the passing demo — fast. What it does not do, reliably, is finish. The last 20% is everything the spec did not force: the empty state nobody designed, the error message that sounds like a machine, the page that works but feels unloved, the one weird input the checklist never imagined.
+
+This is not a complaint about the agent. The last 20% is *hard for the same reason taste is hard*: it requires knowing what the thing is for. The agent can complete requirements; only you can see the gap between "meets the spec" and "feels finished." Your job in this chapter is to see that gap, name it, and direct the department to close it — item by item, without accidentally rebuilding the product.
+
+## Understanding Through the House Viewing
+
+Nobody buys a house because the frame passed inspection. The frame is essential — but what sells is the door that closes softly, the light switch where your hand expects it, the absence of the smell. Those things were all "finishing touches" to the builder and deal-breakers to you.
+
+AI-built software has excellent frames. The finishing is where it shows: the button that works but has no pressed state, the form that works but forgets everything on error, the page that loads but has no opinion about loading. Each one is invisible on the demo. Each one is the reason a visitor quietly decides the site is not real.
+
+## Discovering the Last 20% with Your AI Partner
+
+### Exploration 1: The Fresh-Eyes Pass
+
+You are the wrong judge — you know what everything is supposed to do. Find the right judge, or simulate one:
+
+```text
+Act as a first-time visitor who has never seen this project and is
+mildly impatient. Walk through it and list every moment where you
+hesitated, wondered, or noticed something rough. Do not fix
+anything. Order the list by how much each moment would affect
+whether a visitor stayed.
+```
+
+### Exploration 2: Name the Categories
+
+The fresh-eyes list is always the same families, which makes it directable:
+
+- **Empty states** — what does the page look like with no data yet?
+- **Error moments** — what does the user see and *feel* when something fails?
+- **Boundaries** — the longest name, the zero items, the slow connection
+- **Loading** — what happens in the seconds you forgot to design?
+- **Consistency** — three pages, three button styles?
+- **Words** — machine messages ("Error 500") where human ones belong
+
+Commission the agent to walk each family deliberately, one prompt per family, collecting candidates. The quality jump between "make it nicer" and this list is the entire lesson.
+
+### Exploration 3: Direct Without Rebuilding
+
+Now the directing skill — the hard part. Vague polish requests ("make it feel more professional") trigger rewrites. Item-by-item requests preserve the product:
+
+```text
+Three changes, nothing else:
+1. When the item list is empty, show the message "Nothing here yet —
+   add your first item above." — not any other text.
+2. The submit button gets a pressed visual state.
+3. All error messages are rewritten as full sentences with a period.
+
+Everything else stays exactly as it is. Show me a diff of what you
+changed.
+```
+
+The diff request is the safety harness: you review the *change*, not the whole product, so the last 20% cannot quietly become a new first 80%.
+
+## From Concept to Code
+
+Polish items are tracked like everything else — as commitments, not vibes:
+
+```markdown
+## Last 20% — registered gaps (2026-09-16)
+- [ ] Empty list shows welcoming message (choice: friendly, not apologetic)
+- [ ] All error messages are full sentences with a period
+- [ ] Loading state between submit and response
+- [ ] Long names wrap without breaking the layout
+```
+
+And when an item is genuinely a *decision* rather than a task — the wording of an error message, the colour of a warning — that is CRITIQUE.md material, not a chore. The last 20% is where taste from Chapter 10 does its daily work.
+
+::: {.callout-tip title="The shipping rule"}
+The last 20% is never done. Decide how much of it a given product deserves — a throw-away prototype deserves almost none, and that is correct — and stop on purpose. Stopping is a decision to record in DECISIONS.md, like any other.
+:::
+
+## Business Connection
+
+The last 20% is the entire visible difference between "built with AI" and "built by a professional." Anyone can produce the working 80% now; the market has noticed. What clients cannot produce themselves is the judgement of which rough edges matter, the discipline of item-by-item direction, and the restraint to stop.
+
+Charge for it honestly. "Polish" is not a euphemism for padding — it is a named phase with a list, a diff review per item, and a stop decision. Projects that skip it look cheaper and are more expensive, because the visitor who hesitated at the ugly empty state did not send an email explaining why they left.
+
+## Practice Exercises
+
+**Exercise 11.1 (Level 1).** Run the fresh-eyes pass on any project from this book. List five rough moments, ranked by visitor impact.
+
+**Exercise 11.2 (Level 2).** Pick the empty-state family. Commission all its fixes in one item-by-item prompt. Review the diff.
+
+**Exercise 11.3 (Level 3).** Find one place where polish direction *did* trigger a rebuild. Diagnose which word in your request caused it.
+
+**Exercise 11.4 (Level 4).** A prototype must ship tomorrow. Write the DECISIONS.md entry: which last-20% items are consciously abandoned, and why that is correct here.
+
+**Exercise 11.5 (Level 5).** Build the "polish walk" prompt-set: six prompts (one per family) reusable on any project. File it in your context folder permanently.
+
+## Chapter Summary
+
+- The agent finishes requirements; finishing the *product* is directed judgement
+- Rough moments come in families: empty states, errors, boundaries, loading, consistency, words
+- Item-by-item direction with a diff review — never "make it nicer"
+- Stopping on purpose is a decision to record, not a failure to admit
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Walked your own project as an impatient first-time visitor
+- [ ] Commissioned fixes by item, with a diff review
+- [ ] Registered the remaining gaps as tracked items, not guilt
+- [ ] Made (and recorded) a conscious stop decision
+
+## Your Learning Journal
+
+1. Which rough moment would have actually driven a visitor away?
+2. What does your product's empty state say about how much you expect people to use it?
+3. Where in your work do you confuse "done" with "demoed"?
+
+## Next Steps
+
+The last 20% was personal — one product, your eye. The next chapter scales the same discipline up: organising a department's skills into folders so one agent can run a whole workflow, and the context wall finally stops mattering.
