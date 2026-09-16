@@ -2,4 +2,111 @@
 
 > The dispute is not restrained versus vibe. It is: what is the blast radius?
 
-**New chapter — the framing.** Boris Cherny, creator of Claude Code, was asked "what to do about slop?" by a developer torn between auditing every line and treating AI output as a black box. His answer anchors this book: black-box treatment is fine for throw-away prototypes with a small blast radius; production code written by AI deserves a higher bar than human code, met with automated guardrails. This chapter defines the terms — slop, blast radius, black-box threshold, guardrail — and ends with the reader's own first blast-radius judgement.
+**Lab companion:** [Lab 2, The Demo Illusion](https://michael-borck.github.io/programming-labs/lab-02-demo-illusion/) — read this chapter first; the lab is where the feeling becomes a habit.
+
+## The Email That Named It
+
+Somewhere inside Anthropic, someone asked a question that thousands of developers were asking quietly, at their desks, with growing unease: *"What to do about slop?"*
+
+The question went to Boris Cherny, the creator of Claude Code. The developer who wrote it described two camps forming in the wild. One camp works the way developers always worked: AI as an accelerator, but every line reviewed, explainable, and maintainable by a human — the **restrained** approach. The other camp treats generated code as a **black box**: run it, check the output, move on — never read it, never understand it. The **permissive** approach. Vibe coding, taken to its conclusion.
+
+The worry underneath the question was sharper than either workflow. Vibe-coded software, left unmanaged, degenerates into a tangle nobody can maintain — "slop." And developers feel caught: reviewing everything is becoming impossible at the volume AI produces, but not reviewing feels like the road to being the person who shipped the mess.
+
+Cherny's answer was not to pick a side. It was to dissolve the dilemma, and the way he dissolved it is this chapter.
+
+## Match the Method to the Mission
+
+The mistake in the slop debate is treating "should I read the code?" as a single question with a single answer. It is not one question. It is two:
+
+1. **What is the blast radius?** If this software breaks — silently, at the worst moment — what gets hurt? A birthday-party invitation list? Nobody. A payroll run? Everyone.
+2. **How long will it live?** Thrown away tonight, or on its second year of service?
+
+From those two answers, the rule falls out:
+
+- **Low stakes, short life** — prototypes, one-off scripts, experiments you will discard: treat the code as a black box. Check the output, not the code. Vibe coding is the correct tool here, and gatekeeping it is posturing.
+- **High stakes or long life** — anything real users touch, anything that stores data, anything someone else depends on: the code gets reviewed, tested, and explained. No black boxes.
+
+And then the twist that surprises people: for that second category, Cherny's bar for AI-written code is **higher** than for human-written code. Not equal. Higher. A human colleague's code arrives with context — you saw the conversation, you know their intentions. AI code arrives with none of that. It must prove itself entirely through checks and tests, because there is no implied understanding to fall back on.
+
+::: {.callout-note title="Blast radius"}
+The blast radius of a change is everything it can break: users affected, data touched, systems depended on, and — since software outlives intentions — every future reader who has to maintain it. A script only you run, on data you own, that you can delete in ten seconds, has a tiny blast radius. The same script wired to your customers has a large one. Radius, not language and not framework, decides how much process you owe.
+:::
+
+## Vibe Coding, Properly Understood
+
+Notice what this is not. It is not the series arguing that vibe coding was a mistake — and it is worth being honest that earlier books in this collection sound stricter than this chapter. The resolution is scope.
+
+Vibe coding is a legitimate technique **at the layer where mistakes are cheap**. Andrej Karpathy, who coined the term, meant something specific: give in to the flow, let the model drive, accept that you are not really reviewing. For a weekend prototype, that is fine. For anything that ships, the same behaviour — accept, run, move on — is how slop is manufactured.
+
+The difference between the vibe coder and the intentional prompter is not the tools or even the prompts. It is what happens *between* the prompts:
+
+- The vibe coder accepts output; the intentional prompter **verifies** it.
+- The vibe coder asks for more; the intentional prompter asks **what would break this**.
+- The vibe coder's sessions start from zero every time; the intentional prompter's **understanding compounds**.
+
+This book's position, following Cherny: vibe coding is one gear in a car that also has brakes, mirrors, and a licence. The chapters ahead build the brakes.
+
+## The Mini CEO
+
+If the agent writes the code, what is left for you? Cherny's answer: the job changes from builder to **manager** — the "mini CEO" of a very small, very fast, very literal department.
+
+A mini CEO does not read every line the department produces. That was always a fantasy; at AI volume it is impossible. A mini CEO instead does four things, and this book is organised around them:
+
+1. **Sets the standard before the work** — specifications, acceptance checks, definitions of done. (Chapters 4, 5.)
+2. **Builds systems that enforce the standard** — automated checks that run without the CEO's mood or attention. (Chapters 6–9.)
+3. **Judges the results** — reading evidence, not code; taste, not typo-hunting. (Chapters 10–12.)
+4. **Owns the outcomes** — accountability, trust policies, and the decision of when the department is out of its depth. (Chapters 14–18.)
+
+Notice what is missing from that list: heroics. When quality drops, the answer is not to read harder — it is to tighten the gate, retrain the department (the context folder), instruct a rewrite, or wait for a better model. We will earn each of those moves.
+
+::: {.callout-important title="The CEO signs"}
+Delegation is not absolution. When the agent's code leaks data or corrupts files, the accountability is yours — you approved the change, you owned the check that didn't exist. The mini CEO framing is not a way to do less; it is an accurate description of the part that cannot be delegated.
+:::
+
+## The Harness Preview
+
+"Automated guardrails" sounds enterprise. It is five small things, and by the end of Part II you will have all of them attached to your own repository:
+
+| Guardrail | What it catches | Built in |
+|---|---|---|
+| Lint rules | Style drift, obvious errors, unused code | Chapter 9 |
+| Tests with a coverage floor | Behaviour that silently breaks | Chapters 5 and 9 |
+| TODO/FIXME sweep | The promises the agent made and forgot | Chapter 9 |
+| Diff-size budget | The "one small change" that rewrites everything | Chapter 9 |
+| Commissioned reviews | The agent auditing its own output on your behalf | Chapters 15 and 18 |
+
+None of these require you to read code like a developer. All of them require you to specify what "good" means — which is the skill this book actually teaches.
+
+::: {.callout-tip title="Try it now"}
+Take the last thing you built with AI. Answer the two questions: blast radius, and lifespan. Write the answers down. If you would have treated it as a black box under this chapter's rule, and it has real users — you have found your first slop. That is not an accusation; it is a starting measurement.
+:::
+
+## Business Connection
+
+The slop debate sounds like an engineering argument. It is a budgeting argument.
+
+Unmanaged AI code is a loan: speed now, interest later — paid in outages, rewrites, and the day nobody can explain the system your business runs on. Managed AI code is just speed. The guardrails in this book are the loan terms, and they are cheap: an afternoon of setup per project, then minutes per change.
+
+The mini CEO framing is also the honest answer to the question every stakeholder is now asking: "if AI writes the code, what are we paying you for?" You are paying for the person who decides what to build, holds the bar, and can explain the system when it matters. Everything else genuinely is automatable.
+
+## Exercises
+
+**Exercise 2.1 (Level 1).** Take any AI-generated snippet you have on disk. Answer the two questions — blast radius, lifespan — in two sentences each.
+
+**Exercise 2.2 (Level 2).** Sort five things you have built with AI into black-box / reviewed, using the rule above. Be honest about anything already in the wrong pile.
+
+**Exercise 2.3 (Level 3).** Cherny says AI-written production code should face a higher bar than human code. Write the strongest counter-argument you can — then write why it fails.
+
+**Exercise 2.4 (Level 4).** A stakeholder asks: "why are we paying you if the AI writes everything?" Answer in under 100 words without mentioning typing speed.
+
+**Exercise 2.5 (Level 5).** Design the slop policy for a two-person business: which AI code gets reviewed, by what gate, and who signs. One page. You will revise it in Chapter 9.
+
+## Your Learning Journal
+
+1. Where in your own work have you already shipped a black box?
+2. What was its blast radius, honestly?
+3. Which of the four mini-CEO duties do you think you will be worst at — and why?
+
+## Next Steps
+
+The rest of Part I runs the first experiment properly. In the next chapter, the department builds its first product — and you learn why the demo is where the deception starts, not where it ends.
