@@ -2,4 +2,122 @@
 
 > "It works" is the beginning of the sentence, not the end.
 
-**Lab companion:** Lab 2. The demo always works, because the demo is the path you practised. This chapter builds the habit of defining *done* before admiring anything: acceptance criteria written before the agent runs, tested after. Introduces the evidence trio — SPEC.md, DECISIONS.md, CRITIQUE.md — that every subsequent chapter and every graded artefact in the series revolves around.
+**Lab companion:** [Lab 2, The Demo Illusion](https://michael-borck.github.io/programming-labs/lab-02-demo-illusion/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+The agent shows you a working page and says it is done. You look, you click, it works. The illusion is complete — and it was built in seconds, which is exactly what makes it dangerous.
+
+Here is the truth the demo hides: **a demo is one path through the software, walked once, by the person who already knows where the stepping stones are.** The agent typed your name correctly; it did not type two hundred characters of emoji. It pressed the button in the right order; it did not press it twice, or press back halfway, or lose the network at the wrong moment.
+
+Software is not done when one path works. It is done when the paths you never imagined have been tried — and the only reliable way to try them all is to write them down *before* the software exists.
+
+## Understanding Through the Coffee Shop
+
+A barista makes your usual perfectly. Is the cafe good? One order proves almost nothing. The cafe is good when the strange orders work: the decaf-oat-extra-hot-half-sweet, the order for here that changes to takeaway, the two customers who arrive at once.
+
+Software is a cafe full of strange orders. The agent built you a signup form — but nobody has yet:
+
+- Submitted it empty
+- Submitted it twice, fast
+- Typed an email with a doubled `@`
+- Typed an address so long it broke the layout
+- Pressed submit on a slow train, then again when nothing seemed to happen
+
+Every one of those is a real customer. The demo met none of them.
+
+## Discovering the Illusion with Your AI Partner
+
+### Exploration 1: The Agent Tries to Break It
+
+The agent built the thing; let the agent attack it. This reversal is the chapter's core move:
+
+```text
+You built this signup page for me. Now act as a hostile quality
+tester. List every way a real user could break it — strange inputs,
+double actions, empty everything. Do not fix anything yet. Just list.
+```
+
+### Exploration 2: Define Done First
+
+Now — before a single fix — write the acceptance list:
+
+```text
+Using your hostile list, write an acceptance checklist for this page.
+Each item must be a check that can be run and pass or fail — not "the
+page should be robust" but "submitting with an empty name shows an
+error message and does not send data."
+```
+
+::: {.callout-important title="Runnable or it is a wish"}
+"Should handle bad input" is a wish. "Submitting an empty form shows an error and nothing is sent" is a check. The difference is that a check can be run by someone who was not in the conversation — including a script, including a fresh agent, including you in three months. The whole discipline of this book is turning wishes into checks.
+:::
+
+### Exploration 3: The Red, Green Record
+
+Fix nothing until the checklist exists. Then hand the checklist back:
+
+```text
+Here is my acceptance checklist. For each item, run it and report
+PASS or FAIL with what you observed. Then fix the failing items, and
+report each one passing. Do not mark anything PASS that you did not
+run.
+```
+
+What you have just done is a miniature of professional software delivery — requirements agreed before the build, verification after, nothing accepted on vibes. The agent will sometimes report a pass that is not real. Check one at random. Every time.
+
+## From Concept to Code
+
+The record of this chapter is not the fixed page. It is the checklist, filed where the department keeps its records:
+
+```bash
+# The checklist is a first-class document, not a chat memory
+git add ACCEPTANCE.md
+git commit -m "Add signup acceptance checklist: 8 runnable checks"
+```
+
+Now the page, the checks, and the fixes form one story that anyone — a client, a colleague, a future you — can read without trusting anyone's memory of a chat.
+
+## Business Connection
+
+The demo illusion is where AI-era projects die commercially. A stakeholder sees the demo, assumes the product, and budgets for launch. Then the strange orders arrive — real users, real inputs — and the "working" software costs triple to repair, under deadline, with the credibility already spent.
+
+Defining done before building is the cheapest insurance in software: it costs minutes at briefing time and buys the ability to say, with evidence, "here is what works, here is what does not yet, and here is what it will cost."
+
+## Practice Exercises
+
+**Exercise 3.1 (Level 1).** Take the agent's signup page. Run the acceptance checklist yourself. Record one PASS and one FAIL.
+
+**Exercise 3.2 (Level 2).** Add three strange orders of your own to the checklist — orders no one listed.
+
+**Exercise 3.3 (Level 3).** Ask the agent to break the page on purpose, then to explain each break. Fix them with the agent, one at a time.
+
+**Exercise 3.4 (Level 4).** A stakeholder says: "the demo worked, why isn't it live?" Write the reply that shows the gap using your checklist — no jargon.
+
+**Exercise 3.5 (Level 5).** Design "definition of done" for a real project you care about: ten checks, each runnable, none a wish. File it in the repo.
+
+## Chapter Summary
+
+- A demo is one path, walked once, by someone who knew the path
+- Strange orders — real users — are what break software
+- Done is defined before building: runnable checks, not wishes
+- The record of the checks is a first-class document in the repository
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Watched the agent attack its own work — and found something
+- [ ] Wrote an acceptance checklist where every item can pass or fail
+- [ ] Fixed from the checklist, not from vibes
+- [ ] Committed the checklist itself, not just the fix
+
+## Your Learning Journal
+
+1. What did the hostile tester find that you genuinely did not expect?
+2. Which of your checklist items was secretly a wish?
+3. Where else in your working life are you accepting demos as products?
+
+## Next Steps
+
+You can now define done. The next chapter is the skill underneath everything: saying what you mean so precisely that a stranger — agent or human — could reproduce the result without you in the room.
