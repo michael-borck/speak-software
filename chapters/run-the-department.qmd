@@ -2,4 +2,120 @@
 
 > Big things are not built in one go. They are decomposed, dispatched, and verified.
 
-**Lab companion:** Lab 10. Managing work as issues: decomposition into briefs a fresh agent can execute, sequenced so each lands on verified ground. The mini CEO's first management system.
+**Lab companion:** [Lab 10, Run the Department](https://michael-borck.github.io/programming-labs/lab-10-run-the-department/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+Everything so far has been one product, one conversation, one gate. Real work arrives as a fog: "we need the whole ordering thing." The mini CEO's first management system turns fog into sequence — and the tool is not a framework. It is decomposition, written down as issues, dispatched to the department one at a time, each landing on verified ground.
+
+The principle the chapter defends: **the agent builds features; you build the sequence.** A big prompt that asks for everything produces the confident average of a big thing — plausible, interlocking, and wrong in ways that only surface when users arrive. Ten small briefs, each with a check, each landing on the last, produce a system.
+
+## Understanding Through the Renovation
+
+Nobody renovates a house by telling the builder "renovate it." The work is decomposed: roof before painting, wiring before walls, kitchen last. Each stage is inspected before the next begins, because the next stage builds *on* the inspection, not on the hope.
+
+Software sequences the same way, and the order is rarely obvious to clients. Clients describe destinations; the department needs staging posts. Translating destination-talk into staged work — and then resisting the urge to run stages in parallel — is the management skill this chapter installs.
+
+## Discovering Decomposition with Your AI Partner
+
+### Exploration 1: The Fog Meeting
+
+Brief the agent with the fog itself:
+
+```text
+A client said: "We need the whole ordering thing — customers order,
+we see the orders, and we know what's happening." I do not know what
+stages this should be built in. Interview me one question at a time
+until you can propose a staged build: each stage small, independently
+checkable, and useful on its own. Do not propose anything yet.
+```
+
+The interview is the point. Watch the agent ask about payment, notifications, and scale while you discover you had not thought about refunds. The questions *are* the management.
+
+### Exploration 2: The Issue List
+
+The interview becomes a decomposition — and the format matters. Each stage is an issue: small enough to brief fully, useful enough to verify alone:
+
+```markdown
+## Stage 1: Order intake (no payment)
+One page. Customer enters items and contact details. On submit, the
+order is appended to orders.md with a timestamp. Done means: three
+checklist items run green, including a doubled-submit test.
+
+## Stage 2: The owner's view
+One page, read-only. Lists orders from orders.md, newest first.
+Done means: shows orders from stage 1, empty state designed.
+
+## Stage 3: Payment link
+Each order gains a payment link. Done means: ...
+```
+
+### Exploration 3: Dispatch and Land
+
+Dispatch one issue per conversation — a fresh agent, briefed with the issue and the context folder, building on verified ground. Land it through the acceptance checklist. Commit. *Then* dispatch the next. The sequence is the system; parallel is how the fog gets back in.
+
+## From Concept to Code
+
+The issue list lives in the repository, where the audit can read it:
+
+```bash
+git add ISSUES.md
+git commit -m "Decompose ordering project into 5 staged issues"
+```
+
+And each landing is recorded against its issue:
+
+```markdown
+## Stage 1: Order intake — LANDED 2026-09-16
+Checks: 3/3 pass. Doubled-submit caught and fixed (dedup by timestamp).
+Deviation: used orders.md as specified; agent proposed orders.json —
+declined, the client edits the file by hand.
+```
+
+::: {.callout-warning title="The landed deviation is the gold"}
+Every time the agent proposes something different from the spec, and you choose, you are writing the project's real history. Stage notes that record deviations honestly are worth more than the code they describe — they are how the next stage's brief gets better.
+:::
+
+## Business Connection
+
+Issue-decomposition is how you can now sell *staged certainty*. The client hears: "Stage 1 in a week, checkable, useful alone; we decide together whether stage 2 starts." Compare that to the classic software quote — months of work, all or nothing, trust me. Decomposition converts trust into checkpoints, and checkpoints are what let small businesses take on projects far above their size.
+
+It is also the defence against the agent's one great weakness at scale. Left alone, the agent will attempt the whole fog in one confident act, and the result is the plausible-but-britten architecture from Chapter 4's grid — the danger zone, precisely. Decomposition is how a mini CEO keeps every unit of work in the sweet spot: small, precise, verified.
+
+## Practice Exercises
+
+**Exercise 14.1 (Level 1).** Run the fog interview on any vague request you have received recently. Count the assumptions it exposed.
+
+**Exercise 14.2 (Level 2).** Write a five-stage issue list for the same request. Each stage: one sentence of scope and one runnable check.
+
+**Exercise 14.3 (Level 3).** Land stage 1 end to end: dispatch, verify, record, commit. Note where you were tempted to dispatch two stages at once.
+
+**Exercise 14.4 (Level 4).** Take a real project of yours that stalled. Decompose it into stages so small that the first could land today.
+
+**Exercise 14.5 (Level 5).** A client insists all stages ship at once. Write the argument for staging in their terms — money, risk, and what they can show their board at each checkpoint.
+
+## Chapter Summary
+
+- The agent builds features; you build the sequence
+- Decompose into issues: small, independently checkable, useful alone
+- One issue per conversation, landed on verified ground before the next
+- Recorded deviations are the project's real history — and the next brief's teacher
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Sat through a fog interview and answered its questions honestly
+- [ ] Written an issue list where every stage lands useful
+- [ ] Landed at least one stage: dispatched, verified, recorded
+- [ ] Resisted parallel — and noticed where the temptation came from
+
+## Your Learning Journal
+
+1. What did the interview reveal that the original request hid?
+2. Which stage of your issue list is actually two stages?
+3. What was the last deviation you accepted without recording it?
+
+## Next Steps
+
+The department produced five stages — but would it survive an outsider? The next chapter borrows the audit discipline: reading someone else's trail, and judging whether the product matches its story.
