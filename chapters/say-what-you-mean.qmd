@@ -2,4 +2,134 @@
 
 > The AI knows what you said. It does not know what you meant.
 
-**Lab companion:** Lab 3 (standalone; doubles as the series taster). Specification-first development: write SPEC.md as if handing it to a stranger, because you are. Introduces the **Replication Test** — your spec, alone, handed to a fresh agent must reproduce a product you would accept. If it does, you have authored a program in English.
+**Lab companion:** [Lab 3, Say What You Mean](https://michael-borck.github.io/programming-labs/lab-03-say-what-you-mean/) — the standalone taster: one agent, one empty folder, one spec.
+
+## The Concept First
+
+When a human contractor takes a brief, they bring a lifetime of unstated context. You say "build a booking page" and they silently supply a thousand decisions — what a booking *is*, what sensible means, what the culture expects a form to look like. The contractor's filler knowledge hides the gaps in your brief.
+
+The agent has the same filler knowledge about the *world*, and none about *your world*. So the gaps in your brief do not get filled with sense. They get filled with the statistical average of the entire internet — which is fluent, plausible, and almost never your business.
+
+A **specification** is the brief with the gaps closed. Not a genre exercise: a working document whose test is brutally simple. Hand it, alone, to a fresh agent that has never seen your conversation. If what comes back is a product you would accept, you have authored a program in English. The labs call this the **Replication Test**, and it is the closest thing this book has to a definition of done for thinking.
+
+## Understanding Through the Recipe
+
+A recipe that says "season to taste" assumes a cook. A recipe that says "two teaspoons of salt" assumes nothing. Both produce food; only one survives being handed to a stranger in a strange kitchen.
+
+Specifications are the second kind. The test is not "did the agent understand me?" — it is "would a stranger, with only this document, produce the same thing?" If the answer depends on the conversation you had before the document, the document is not the program. The conversation was.
+
+## Discovering Specification with Your AI Partner
+
+### Exploration 1: Feel the Gap
+
+Ask for something real, deliberately under-specified:
+
+```text
+Build me a tip calculator
+```
+
+Then interrogate the result: What currency? Round up or exact? Split bills? What happens with a zero bill? Every answer the agent invented was a gap you owned and did not close. List the gaps. That list is your specification, discovered backwards.
+
+### Exploration 2: Close the Gaps in Order
+
+Now write the specification — but write it as a document the agent must read *before* doing anything:
+
+```text
+Read this specification completely before writing any code.
+
+SPEC — Tip Calculator v1
+
+Purpose: split a restaurant bill N ways with tip.
+
+Inputs:
+- bill total (number, currency of the bill, must be > 0)
+- number of people (whole number, 1 to 20)
+- tip percentage (whole number, 0 to 50, default 20)
+
+Behaviour:
+- Each person pays an equal share of (bill + tip).
+- Shares are rounded to the nearest cent; rounding residue goes to
+  the first person.
+- Invalid inputs stop processing with a clear message. No defaults
+  for invalid bills or party sizes.
+
+Out of scope for v1: currencies other than the bill's own, tax
+calculation, saving history.
+
+Done means: all of the above demonstrated with the five examples
+below, plus any case in my hostile list.
+```
+
+### Exploration 3: The Replication Test
+
+Open a completely fresh conversation — no memory of the last one. Paste only the specification, followed by:
+
+```text
+Build exactly this. If anything in the spec is ambiguous or
+contradictory, stop and ask.
+```
+
+Compare the two builds. Differences between them are the spec's remaining gaps — the places where you were still relying on a shared conversation that a stranger would not have. Close them, and run the test again. When a fresh agent converges on something you would accept, the spec passes.
+
+::: {.callout-important title="The Replication Test is the book's definition of authorship"}
+You did not type the code. You do not need to. You wrote the document that reproduces the product from nothing — and that document, not the code, is what you authored. This is what "programming at the natural-language layer" means, precisely.
+:::
+
+## From Concept to Code
+
+The specification lives in the repository, named and versioned like any other file:
+
+```bash
+git add SPEC.md
+git commit -m "Add tip calculator spec v1: closes splitting ambiguities"
+```
+
+From now on, every project in this book carries a `SPEC.md`. When the agent's work is evaluated — by you, by a colleague, by the audit in Chapter 15 — the question is never "is this code nice?" It is "does this meet the spec, and would the spec reproduce it?"
+
+::: {.callout-tip title="The hostile read"}
+Before running the Replication Test, read your own spec looking for the word "it" and any word you would have to gesture at to explain ("nice", "clean", "user-friendly", "handle properly"). Every one is a gap. Replace it with the example that would settle a disagreement.
+:::
+
+## Business Connection
+
+The Replication Test is not a programmer's trick — it is how organisations stop losing knowledge. Any document that only makes sense next to the person who wrote it is a liability with a resignation date. Specifications that pass a stranger test survive staff turnover, vendor changes, and the next model upgrade, because the meaning finally lives in the artefact, not the memory.
+
+This is also the quiet answer to "is prompting a real skill?" Prompting is improvisation. Specification is authorship. The first fades with the chat history; the second is an asset on your books.
+
+## Practice Exercises
+
+**Exercise 4.1 (Level 1).** Run the tip-calculator Replication Test exactly as written. Record where the two builds differ.
+
+**Exercise 4.2 (Level 2).** Write the spec for "a contact form" — then find five gaps by reading it as a stranger. Close them.
+
+**Exercise 4.3 (Level 3).** Take a real work email in which you asked someone to do something. Convert it to a spec that would pass the stranger test. Count the gaps you closed.
+
+**Exercise 4.4 (Level 4).** Write a spec where *deliberately* leaving one decision open is the right call — and specify how the open decision must be reported back.
+
+**Exercise 4.5 (Level 5).** Write the spec for your Chapter 3 project's next version (v2), run the Replication Test with a fresh agent, and file both builds. The diff between them is your spec's fingerprint.
+
+## Chapter Summary
+
+- The agent fills your brief's gaps with the statistical average of the internet
+- A specification closes the gaps; the Replication Test proves it
+- You authored a program in English when a stranger's build matches your intent
+- The spec lives in the repository, versioned — it outlives the chat
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Ran a Replication Test with a genuinely fresh conversation
+- [ ] Found and closed at least three gaps by comparing builds
+- [ ] Committed a SPEC.md that passes the stranger test
+- [ ] Can explain the difference between prompting and specifying
+
+## Your Learning Journal
+
+1. What did the fresh agent invent that the briefed agent never would?
+2. Which gap was hardest to close — and is that gap actually an undecided decision?
+3. What in your work life would survive a "stranger test" today?
+
+## Next Steps
+
+The spec says what done means. The next chapter makes done enforceable: a checklist the department cannot charm its way past — because it runs.
