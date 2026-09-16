@@ -2,4 +2,155 @@
 
 > You cannot read every line. You can refuse to ship without a gate.
 
-**New chapter — the harness.** Assembles the guardrails Cherny names into one beginner-scale gate: lint rules, tests with a coverage floor, a TODO/FIXME sweep, a diff-size budget, and a CI recipe the reader *commissions from the agent* rather than hand-writes. The chapter's product is a slop-defence kit the reader will attach to every repo for the rest of the book.
+**Lab companion:** Lab 4, *The Checklist It Can't Charm* — that lab builds one running check; this chapter assembles the whole gate around it.
+
+## The Gate, Not the Heroics
+
+The slop question resolved into a rule: production code written by AI gets a higher bar, enforced by systems rather than stamina. This chapter builds that system. By the end, every change to your repository will pass through the same five gates, in the same order, whether you made the change or the agent did:
+
+| Gate | Tool | Catches |
+|---|---|---|
+| 1. Style and obvious errors | `ruff check` | Dead code, unused imports, rookie mistakes |
+| 2. Behaviour | `pytest` | Anything that stopped working |
+| 3. Coverage floor | `pytest --cov-fail-under` | Code no test has ever touched |
+| 4. Forgotten promises | TODO/FIXME sweep | The agent's "temporary" shortcuts |
+| 5. Change-size budget | diff line count | The silent full-rewrite |
+
+None of these requires you to read code. All of them require you to have decided what "good" means — which you did, in the spec.
+
+## Commission, Don't Hand-Write
+
+Here is the pattern for the rest of the book: you describe the gate; the agent builds it. Paste this prompt into your agent, in your repository:
+
+```text
+Build a quality gate for this repository as a single script named
+slop_check.py that I can run before any commit. It must:
+
+1. Run ruff check on all Python files and fail on any error.
+2. Run pytest and fail on any test failure.
+3. Enforce a coverage floor: fail if test coverage of src/ is below 80%.
+4. Count TODO and FIXME occurrences in tracked files and fail if the
+   count exceeds 5.
+5. Show the count of changed lines versus the main branch, and fail if
+   the diff exceeds 400 lines (my change-size budget).
+6. Print one line per gate: PASS or FAIL with the reason.
+
+Keep the script under 100 lines. Use only the Python standard library
+plus ruff and pytest, which are already installed. Add a __main__ guard
+so it can be executed with python slop_check.py.
+```
+
+::: {.callout-note title="Why this prompt works"}
+It names the five gates, the failure conditions, the output format, and the constraints — the same structure as every good spec: task, requirements, done. If the result is missing a gate or over the line limit, that is not a reason to settle; it is a reason to push back, precisely.
+:::
+
+## The Kit, in Full
+
+Because you can read it — and in this book, you always can — here is the gate the agent should produce, essentially:
+
+```python
+#!/usr/bin/env python3
+"""slop_check.py - the five-gate quality check. Run before any commit."""
+
+import subprocess
+import sys
+
+TODO_LIMIT = 5
+DIFF_LIMIT = 400
+COVERAGE_FLOOR = 80
+
+def run(command):
+    """Run a shell command, return (ok, output)."""
+    result = subprocess.run(command, capture_output=True, text=True)
+    return result.returncode == 0, result.stdout + result.stderr
+
+def main():
+    failures = []
+
+    # Gate 1: style and obvious errors
+    ok, output = run(["ruff", "check", "."])
+    if not ok:
+        failures.append(f"Gate 1 (lint): {output}")
+
+    # Gate 2: behaviour
+    ok, output = run(["pytest", "-q"])
+    if not ok:
+        failures.append(f"Gate 2 (tests): {output}")
+
+    # Gate 3: coverage floor
+    ok, output = run(["pytest", "-q", "--cov=src",
+                      f"--cov-fail-under={COVERAGE_FLOOR}"])
+    if not ok:
+        failures.append(f"Gate 3 (coverage below {COVERAGE_FLOOR}%)")
+
+    # Gate 4: forgotten promises
+    ok, output = run(["git", "grep", "-c", "-E", "TODO|FIXME"])
+    todos = sum(int(line.split(":")[1]) for line in output.splitlines()
+                if ":" in line)
+    if todos > TODO_LIMIT:
+        failures.append(f"Gate 4: {todos} TODO/FIXME (limit {TODO_LIMIT})")
+
+    # Gate 5: change-size budget
+    ok, output = run(["git", "diff", "main", "--stat"])
+    changed = sum(int(line.split()[-2]) for line in output.splitlines()
+                  if line and "changed" in line)
+    if changed > DIFF_LIMIT:
+        failures.append(f"Gate 5: {changed} changed lines (budget {DIFF_LIMIT})")
+
+    if failures:
+        print("SLOP DETECTED:")
+        for failure in failures:
+            print(" -", failure)
+        sys.exit(1)
+
+    print("All five gates pass.")
+
+if __name__ == "__main__":
+    main()
+```
+
+::: {.callout-warning title="Read your gate once"}
+This script is short, and you should be able to explain every gate in one sentence. If your agent produced a gate you cannot explain, that is the black-box threshold arriving early: send it back with "explain each gate, then simplify." A gate nobody understands gets silently disabled the first time it inconveniences anyone — which is slop defending itself.
+:::
+
+## Wire It Into the Workflow
+
+A gate you must remember to run is a gate you will forget. Make git run it for you:
+
+```text
+Add a pre-commit hook that runs python slop_check.py before every
+commit and blocks the commit if it exits non-zero. Use the pre-commit
+framework with a local hook.
+```
+
+And for the strongest version — the gate that runs even when someone bypasses their own machine — commission the same five gates as a GitHub Actions workflow. You will not write the YAML. You will describe the gate in a sentence and let the agent produce the workflow file, then verify it by opening a pull request from a branch and watching it run. The verification habit matters more than the YAML, which nobody reads anyway.
+
+::: {.callout-tip title="Tune the budget, keep the gate"}
+The numbers — 80% coverage, 5 TODOs, 400 changed lines — are starting points, not laws. What is non-negotiable is that the gate exists and fails loudly. Tighten thresholds when the department earns it; never widen them silently to let one change through. Widening the gate to pass a change is the exact move this book exists to prevent — and if it must be done, it is done in a commit that says so.
+:::
+
+## Business Connection
+
+Every gate is a translation of a business sentence. "Customers should not find the bugs" is a coverage floor. "We should not forget our promises" is a TODO sweep. "Nobody rewrites the product in secret" is a diff budget. When a client asks what your higher standard actually is, you do not gesture at care and attention — you show them the five gates and the runs that failed.
+
+## Exercises
+
+**Exercise 9.1 (Level 1).** Build the gate with the prompt above. Run it. Record which gates fail on your current project.
+
+**Exercise 9.2 (Level 2).** Fix the style-gate failures only. Re-run. Notice how much of the slop was cosmetic — and how much was not.
+
+**Exercise 9.3 (Level 3).** Your diff budget is 400 lines and a needed change is 600. Write the two-sentence case for raising the budget, and the commit message that documents it.
+
+**Exercise 9.4 (Level 4).** Choose a threshold (coverage, TODOs, or diff size) and argue for a *tighter* value than this chapter's, for your specific project.
+
+**Exercise 9.5 (Level 5).** A gate fails and the only way to make the feature ship this week is to bypass it. Write the decision memo: what ships, what risk you accepted in writing, who told you to. Keep it — Chapter 15 assumes you kept it.
+
+## Your Learning Journal
+
+1. Which gate caught something real on your first run?
+2. Which gate felt like bureaucracy? What would have to be true for that feeling to be correct?
+3. What does your gate not check that you wish it did?
+
+## Next Steps
+
+The gate holds the line, but gates do not produce taste. In the next chapter, the department builds the same thing two ways, and you learn the skill the gate can never test: judging which one is better.
