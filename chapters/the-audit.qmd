@@ -2,4 +2,129 @@
 
 > The code is not the only record. Sometimes it is not even the true one.
 
-**Lab companion:** Lab 11. Reading someone else's trail — a provided repo with its spec, decisions and critique — and judging whether the product matches its story. The marking model of the series, made student-facing.
+**Lab companion:** [Lab 11, The Audit](https://michael-borck.github.io/programming-labs/lab-11-the-audit/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+Everything this book has taught — specs, gates, flight recorders, context folders — produces a trail: SPEC.md, DECISIONS.md, CRITIQUE.md, the issue list, the commit history. This chapter is where the trail becomes a skill. You audit someone else's department: a provided repository, a colleague's project, or your own work from far enough away to count as someone else.
+
+Auditing is the discipline that proves the rest of the book was not theatre. It is easy to keep good records for yourself. The audit asks: does this trail *stand alone*? Could a stranger reconstruct what was built, why it was built that way, and whether the product matches the story? For the reader, this is also the exact skill of evaluating vendors, contractors, and — increasingly — AI agents you did not personally brief.
+
+## Understanding Through the House Inspection
+
+A house inspection is not a house tour. The tour shows you the kitchen. The inspection asks for the permits, checks the wiring against code, walks the roof, and reports what the paint is covering.
+
+An audit is the same posture applied to a software trail. The README is the paint. The questions are underneath: does the spec match what was built? Do the decisions in the log match the commits in the history? Does the acceptance checklist actually run green — and was it possible to fake?
+
+## Discovering the Audit with Your AI Partner
+
+### Exploration 1: Read the Trail Before the Product
+
+The amateur opens the code. The auditor reads the trail first, in order:
+
+```text
+You are auditing this repository. I have not shown you the code yet.
+Read SPEC.md, DECISIONS.md, CRITIQUE.md, and the commit history.
+Then answer, from the documents alone:
+1. What was this supposed to be?
+2. What decisions were made, and do the reasons given still hold
+   together?
+3. Where would you expect the risks to be?
+```
+
+A trail that answers those three questions is doing its job. A trail that cannot is the finding — before the code has even been opened.
+
+### Exploration 2: The Match Test
+
+Now the product enters, and the audit becomes adversarial:
+
+```text
+Here is the actual product. Compare it to the trail:
+1. Which acceptance checks from SPEC.md does it genuinely pass? Run
+   each one; do not accept claims.
+2. Which parts of the finished product are NOT explained by the spec
+   or the decision log?
+3. Which parts of the spec were quietly dropped?
+```
+
+The two most productive questions in auditing are the last two: *unexplained product* (features that arrived from nowhere) and *quietly dropped promises* (spec items that faded). Both are slop signatures.
+
+### Exploration 3: The Verification Audit
+
+Finally, audit the verification itself — the receipts from Chapter 8:
+
+```text
+Review the acceptance checklist and its recorded results. For each
+claimed PASS, assess: could this check have been faked by a hardcoded
+answer? Was the expected output copied from the spec or from the
+program's actual behaviour? List every check you would re-run
+yourself, and re-run them.
+```
+
+## From Concept to Code
+
+The audit produces a report, and the report has a genre. Findings first, ordered by consequence; evidence attached; and the discipline that separates an audit from a review — **observations, not verdicts about people**:
+
+```markdown
+# Audit: cafe-ordering project, 2026-09-16
+
+## Findings
+1. HIGH: The doubled-submit check claims PASS, but the recorded output
+   shows only one submit attempt. Re-run required.
+2. MEDIUM: orders.md format changed in commit a9b8c7d; DECISIONS.md has
+   no entry for the change. Unexplained product.
+3. LOW: Two spec items (email confirmation, export) appear nowhere in
+   the trail. Quietly dropped, or not yet reached?
+
+## Verified
+Coverage floor, empty-state check, and receipt dedup were re-run and
+genuinely pass.
+```
+
+::: {.callout-important title="Audit the trail you leave, too"}
+The fastest way to internalise this chapter: run the same audit on your own current project and imagine the auditor dislikes you. Whatever makes you wince — the missing decision entry, the unexplained feature, the check that claims more than it ran — is the thing to fix before a real audit finds it. Chapter 16 asks for exactly that wince.
+:::
+
+## Business Connection
+
+Audit capability is a service. Small businesses adopt AI-built software faster than they can govern it, and the gap between "the agent built it" and "someone verified the trail" is now a marketable discipline: pre-purchase project audits, vendor evaluations, due diligence before the founder departs with the only copy of the context folder.
+
+The same capability internally is governance. "Who decided this, when, and on what recorded reasoning?" is a question boards ask. A department that keeps trails can answer in minutes. A department that kept vibes cannot answer at all — and the market has started noticing the difference.
+
+## Practice Exercises
+
+**Exercise 15.1 (Level 1).** Audit any repository from the labs series using the three trail questions. Report in the findings format.
+
+**Exercise 15.2 (Level 2).** Audit one of your own earlier projects. Count: unexplained product, quietly dropped promises, faked-possible checks.
+
+**Exercise 15.3 (Level 3).** Have the agent audit a repository, then re-run every check it claims to have run. Report the disagreement rate between its claims and the runs.
+
+**Exercise 15.4 (Level 4).** Write the two-page audit that a buyer's lawyer would want before the business changes hands: what exists, what matches, what is unexplained, what is missing.
+
+**Exercise 15.5 (Level 5).** Design the audit cadence for a two-person business that ships weekly: what is audited, by whom, how often, and what triggers an out-of-cycle audit.
+
+## Chapter Summary
+
+- Read the trail before the product: can it stand alone?
+- Unexplained product and quietly dropped promises are slop signatures
+- Audit the verification itself — re-run claimed passes
+- Observations, not verdicts about people: findings, evidence, consequence
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Audited a trail you did not write
+- [ ] Ran every claimed check yourself, at least once
+- [ ] Wrote findings ordered by consequence, not by annoyance
+- [ ] Audited your own current project — and winced at least once
+
+## Your Learning Journal
+
+1. What did the trail reveal that the product concealed?
+2. Which finding was hardest to write without blaming a person?
+3. What would your own trail fail an audit for, today?
+
+## Next Steps
+
+One department, taught, gated, audited. The final chapters put it all together: ship something true, end to end, under your own authority — and then meet the staff the mini CEO is growing.
