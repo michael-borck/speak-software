@@ -1,0 +1,5 @@
+# The Mini CEO's Staff {#sec-the-minimum-ceos-staff}
+
+> One agent became a department. A department gets staff.
+
+**New chapter — the management layer.** Reviewer-agents auditing builder-agents, model choice and upgrade strategy (what to re-test when the model changes), cost as a first-class constraint, and the small print of accountability: the CEO signs, the staff drafts. Closes with the reader's own staff charter written into their context folder.

@@ -1,0 +1,5 @@
+# The Checklist It Can't Charm {#sec-checklist-cant-charm}
+
+> Re-reading is not checking. A checklist that cannot run is a wish.
+
+**Lab companion:** Lab 4. Acceptance checks become executable: a list a script can verify, so charm cannot talk its way past done. You will commission your first check script from the agent — and learn what to ask for so the checks fail loudly rather than pass politely.

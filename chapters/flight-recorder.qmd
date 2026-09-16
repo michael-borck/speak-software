@@ -1,0 +1,5 @@
+# The Flight Recorder {#sec-flight-recorder}
+
+> One wrong move ruins nothing, if everything is recorded.
+
+**Lab companion:** Lab 5. Version control as the department's flight recorder: small commits, fearless branches, revert as a first-class move. The agent drives git; you own the discipline — commit size, message honesty, branch naming — because the trail is the only thing an audit can read later.

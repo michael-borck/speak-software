@@ -1,0 +1,5 @@
+# Hello, Department of One {#sec-hello-department}
+
+> You are not learning to code. You are learning to run the people who do — and there is only one of them.
+
+**Lab companion:** Lab 1. This chapter installs the frame: your AI agent is a brilliant, tireless, overconfident intern, and everything it does for you must live in a repository. You will set up GitHub, meet your agent, and ship a first change to a real repository — establishing the habit that separates a builder of demos from the owner of a department: *if it is not in the repo, it does not exist.*

@@ -1,0 +1,74 @@
+{
+  "index.qmd": {
+    "index.html": "0837dbc6"
+  },
+  "copyright.qmd": {
+    "copyright.html": "5a384521"
+  },
+  "chapters/hello-department.qmd": {
+    "hello-department.html": "86574f76"
+  },
+  "chapters/the-slop-question.qmd": {
+    "the-slop-question.html": "f1f1fed0"
+  },
+  "chapters/the-demo-illusion.qmd": {
+    "the-demo-illusion.html": "eba69cca"
+  },
+  "chapters/say-what-you-mean.qmd": {
+    "say-what-you-mean.html": "72071bed"
+  },
+  "chapters/checklist-cant-charm.qmd": {
+    "checklist-cant-charm.html": "22a8fa0d"
+  },
+  "chapters/flight-recorder.qmd": {
+    "flight-recorder.html": "6ca9ffc3"
+  },
+  "chapters/teach-the-intern.qmd": {
+    "teach-the-intern.html": "98eed848"
+  },
+  "chapters/trust-then-verify.qmd": {
+    "trust-then-verify.html": "bf230f1c"
+  },
+  "chapters/the-slop-defence.qmd": {
+    "the-slop-defence.html": "916262dd"
+  },
+  "chapters/the-taste-test.qmd": {
+    "the-taste-test.html": "8e3d2b1b"
+  },
+  "chapters/the-last-20.qmd": {
+    "the-last-20.html": "50ce62c2"
+  },
+  "chapters/the-filing-cabinet.qmd": {
+    "the-filing-cabinet.html": "9945a870"
+  },
+  "chapters/slop-in-the-supply-chain.qmd": {
+    "slop-in-the-supply-chain.html": "f10ab297"
+  },
+  "chapters/run-the-department.qmd": {
+    "run-the-department.html": "8a6da211"
+  },
+  "chapters/the-audit.qmd": {
+    "the-audit.html": "af4e190f"
+  },
+  "chapters/ship-something-true.qmd": {
+    "ship-something-true.html": "03fb7cb8"
+  },
+  "chapters/the-minimum-ceos-staff.qmd": {
+    "the-minimum-ceos-staff.html": "2aa10197"
+  },
+  "chapters/conclusion.qmd": {
+    "conclusion.html": "a1c6cc68"
+  },
+  "appendices/evidence-trio-templates.qmd": {
+    "evidence-trio-templates.html": "e8fabb29"
+  },
+  "appendices/slop-defence-kit.qmd": {
+    "slop-defence-kit.html": "eb104e85"
+  },
+  "appendices/slop-lexicon.qmd": {
+    "slop-lexicon.html": "afe177fc"
+  },
+  "appendices/resources.qmd": {
+    "resources.html": "dac3265c"
+  }
+}

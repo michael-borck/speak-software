@@ -1,0 +1,5 @@
+# The Taste Test {#sec-the-taste-test}
+
+> "Best" is not objective. That is precisely why they need you.
+
+**Lab companion:** Lab 8. Critique as a deliverable: the reader reviews two plausible implementations and writes CRITIQUE.md with arguable opinions — not verdicts, positions. Taste is presented as the durable human contribution the mini CEO cannot delegate.

@@ -1,0 +1,5 @@
+# The Filing Cabinet {#sec-the-filing-cabinet}
+
+> The most sophisticated AI orchestration is a well-organised folder.
+
+**New chapter — the skill-folder architecture.** The context wall, and why an agent with a filing cabinet beats seven bespoke frameworks: SKILL.md instructions plus scripts, read on demand by one capable agent, spawning specialists on the fly. Builds the reader's first skill folder for a repeatable personal workflow, and connects Lab 6's context folder to the company-scale pattern.

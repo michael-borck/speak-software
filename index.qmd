@@ -1,0 +1,73 @@
+# Preface {.unnumbered}
+
+## Why This Book Exists
+
+Somewhere in a shared drive right now is software that runs a real business, written by someone who cannot read a line of code. A booking page. An invoice checker. A dashboard the boss looks at every morning. It was built by describing what was wanted, in plain language, to an AI agent — and it works.
+
+The software industry does not know what to do with this. Neither do the schools. The old answer was: learn to code, for years, then build. The new answer from the hype machine is: stop learning, just vibe. Both are wrong, and the gap between them is where this book lives.
+
+Programming has moved up an abstraction level. That has happened before — machine code to assembly, assembly to languages, languages to frameworks — and every time, two things happened. More people could build. And the durable skills moved up with it: not the syntax, but the thinking underneath. Specification. Decomposition. Verification. Taste. This book teaches those skills at the newest layer: **you describe, an agent builds, and you are the one who decides whether it is true.**
+
+We call the bad version of this *vibe coding* — prompting until something looks right, never asking why. This book is not against it. Vibe coding is a legitimate tool for prototypes with a small blast radius, and pretending otherwise is gatekeeping. What this book is against is *unmanaged* vibe coding: shipping a black box to real users, with real data, and no way to know when it breaks. Boris Cherny, who built Claude Code at Anthropic, put the industry's best current answer simply: prototypes can be black boxes, but production code written by AI should be held to a **higher** standard than human code — and that standard is met with guardrails, not heroics. The developer's role is no longer the builder. It is the **mini CEO** of a department of one.
+
+## The Department of One
+
+Here is the frame for the whole book. You have been handed an engineering department: brilliant, tireless, overconfident, and it forgets everything you do not write down. One agent is an intern. A folder of well-written instructions turns it into a specialist. A filing cabinet of those folders turns it into a department. Twelve laboratories — each a real client brief, each killing one misconception — teach you to run it.
+
+The companion labs are free and live at [michael-borck.github.io/programming-labs](https://michael-borck.github.io/programming-labs/). This book is the narrative and the harness: the why behind each lab, the guardrails the labs leave you to build, and the management layer that turns twelve exercises into a working practice.
+
+## Who This Book Is For
+
+- Business-minded people who will never write code by hand — and should not have to
+- Students and career changers who want to build real things now
+- Developers' colleagues and managers who need to evaluate AI-built software
+- Programmers, too: the management layer here is the one your job is becoming
+
+## What This Book Is Not
+
+It is not a Python book. You will not learn syntax; you will learn to specify so precisely that syntax stops being the bottleneck. (*Code Python, Consult AI* is the book for the language itself.)
+
+It is not a prompt cookbook. Prompts appear throughout, but a prompt without a specification, a verification plan, and a decision log is delegation with extra steps.
+
+It is not an argument that AI always gets it right. A third of this book is about the opposite: AI output is a hypothesis, and the guarded pipeline — not your confidence — is the verdict.
+
+And it is not *Converse Python, Partner AI*, its companion on the shelf. That book teaches you to programme *alongside* AI, line by considered line. This one assumes you will never touch the code at all — and teaches you to direct anyway. If you cannot decide between them: if you want a language under your fingers, choose the companion; if you want a department at your command, choose this.
+
+## If You Are Feeling Uncertain
+
+You do not need to be "technical". That word is a gatekeeper, and the gate it guards just moved. If you can write a clear email, you can write a clear specification. If you can organise a folder, you can organise a department. The people who appear to have mastered AI tools are weeks ahead, not years. This book starts where you are.
+
+## How This Book Is Structured
+
+**Part I: The Department of One** — the frame, the slop question, and the first spec. **Part II: The Guardrails** — checklists that run, version control as a flight recorder, context that persists, evidence of done, and the assembled slop defence. **Part III: Judgement** — taste, the last 20%, the filing cabinet of skills, and slop in the supply chain. **Part IV: The Mini CEO** — decomposition, audits, shipping, and the staff of sub-agents you will one day manage.
+
+Every chapter pairs a lab from the companion series with the reasoning the lab leaves implicit, and closes by building one piece of the harness you will rely on for everything after.
+
+## The Series
+
+This book is part of a series designed to help you master modern software development in the AI era.
+
+| Start with | Continue with | Because |
+|---|---|---|
+| *Conversation, Not Delegation* | *Speak Software* (this book) | You want the thinking-with-AI framework, then to build without code |
+| *Think Python, Direct AI* | *Code Python, Consult AI*, then *Ship Python, Orchestrate AI* | You want a language under your fingers |
+| *The Absolute Minimum You Must Know* | anywhere | You want the free, always-current quick reference first |
+
+*Converse Python, Partner AI* and *Build Web, Guide AI* deepen the tracks. All titles are at [books.borck.education](https://books.borck.education).
+
+## Ways to Engage with This Book
+
+- **Read it online.** The full book is freely available at the companion website.
+- **Read it on paper or e-reader.** Available as a paperback and ebook through Amazon KDP.
+- **Do the labs.** The companion labs at [michael-borck.github.io/programming-labs](https://michael-borck.github.io/programming-labs/) are the hands-on half of this book, free and self-paced.
+- **Run the code.** Every listing and template is on [GitHub](https://github.com/michael-borck/speak-software).
+- **Browse all books.** See the full series at [books.borck.education](https://books.borck.education).
+
+The online version is always the most current.
+
+## Source Code & Feedback
+
+Found an error? Have a suggestion?
+
+- Open an issue: https://github.com/michael-borck/speak-software/issues
+- Email: michael@borck.me

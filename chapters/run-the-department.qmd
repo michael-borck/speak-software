@@ -1,0 +1,5 @@
+# Run the Department {#sec-run-the-department}
+
+> Big things are not built in one go. They are decomposed, dispatched, and verified.
+
+**Lab companion:** Lab 10. Managing work as issues: decomposition into briefs a fresh agent can execute, sequenced so each lands on verified ground. The mini CEO's first management system.

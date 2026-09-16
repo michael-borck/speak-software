@@ -1,0 +1,97 @@
+project:
+  type: book
+  output-dir: _book
+  resources:
+    - LICENSE
+    - LICENSE-CONTENT.md
+    - LICENSE-CODE.md
+
+book:
+  title: "Speak Software"
+  subtitle: "Programming at the Natural-Language Layer"
+  author: "Michael Borck"
+  date: "last-modified"
+  license: "CC BY 4.0 International"
+  description: "A book for people who will never write code by hand: direct AI agents with specifications, guardrails, and taste — and ship software that is true."
+  site-url: https://michael-borck.github.io/speak-software
+  repo-url: https://github.com/michael-borck/speak-software
+  repo-branch: main
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - copyright.qmd
+    - part: "The Department of One"
+      chapters:
+        - chapters/hello-department.qmd
+        - chapters/the-slop-question.qmd
+        - chapters/the-demo-illusion.qmd
+        - chapters/say-what-you-mean.qmd
+    - part: "The Guardrails"
+      chapters:
+        - chapters/checklist-cant-charm.qmd
+        - chapters/flight-recorder.qmd
+        - chapters/teach-the-intern.qmd
+        - chapters/trust-then-verify.qmd
+        - chapters/the-slop-defence.qmd
+    - part: "Judgement"
+      chapters:
+        - chapters/the-taste-test.qmd
+        - chapters/the-last-20.qmd
+        - chapters/the-filing-cabinet.qmd
+        - chapters/slop-in-the-supply-chain.qmd
+    - part: "The Mini CEO"
+      chapters:
+        - chapters/run-the-department.qmd
+        - chapters/the-audit.qmd
+        - chapters/ship-something-true.qmd
+        - chapters/the-minimum-ceos-staff.qmd
+        - chapters/conclusion.qmd
+  appendices:
+    - appendices/evidence-trio-templates.qmd
+    - appendices/slop-defence-kit.qmd
+    - appendices/slop-lexicon.qmd
+    - appendices/resources.qmd
+  page-navigation: true
+  sidebar:
+    style: docked
+    search: true
+    collapse-level: 2
+  other-links:
+    - text: The Labs (companion)
+      icon: flask
+      href: https://michael-borck.github.io/programming-labs/
+    - text: All Books
+      icon: collection
+      href: https://books.borck.education
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    highlight-style: github
+  pdf:
+    documentclass: book
+    toc: true
+    toc-depth: 1
+    number-sections: true
+    geometry:
+      - paperwidth=6in
+      - paperheight=9in
+      - inner=1in
+      - outer=0.625in
+      - top=0.75in
+      - bottom=0.75in
+  epub:
+    toc: true
+    toc-depth: 1
+
+execute:
+  echo: true
+  warning: false
+  error: false

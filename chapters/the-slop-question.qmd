@@ -1,0 +1,5 @@
+# The Slop Question {#sec-the-slop-question}
+
+> The dispute is not restrained versus vibe. It is: what is the blast radius?
+
+**New chapter — the framing.** Boris Cherny, creator of Claude Code, was asked "what to do about slop?" by a developer torn between auditing every line and treating AI output as a black box. His answer anchors this book: black-box treatment is fine for throw-away prototypes with a small blast radius; production code written by AI deserves a higher bar than human code, met with automated guardrails. This chapter defines the terms — slop, blast radius, black-box threshold, guardrail — and ends with the reader's own first blast-radius judgement.

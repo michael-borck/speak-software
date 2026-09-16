@@ -1,0 +1,5 @@
+# Conclusion: The Referee and the Department {#sec-conclusion}
+
+> The tools will keep changing. The referee's job will not.
+
+What does not commoditise: the judgement that decides what to build, what "done" means, and what is worth shipping. The pipeline can be templated; the taste cannot. A closing tour of the reader's portfolio — twelve repos, three documents each — and where the series goes next for readers who now want the layer underneath.

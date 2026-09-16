@@ -1,0 +1,3 @@
+# Appendix: The Evidence Trio Templates {#sec-evidence-trio}
+
+Fill-in templates for SPEC.md, DECISIONS.md and CRITIQUE.md, with worked examples from the labs and the acceptance-criteria format the Replication Test expects.

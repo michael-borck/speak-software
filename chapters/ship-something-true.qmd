@@ -1,0 +1,5 @@
+# Ship Something True {#sec-ship-something-true}
+
+> You do not need permission to ship. You need evidence it is true.
+
+**Lab companion:** Lab 12. The full loop owned end to end: brief, spec, build, gate, ship, critique. The portfolio that *is* the evidence of the skills, and the honest answer to "so what can you actually do?"

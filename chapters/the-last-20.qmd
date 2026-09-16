@@ -1,0 +1,5 @@
+# The Last 20% {#sec-the-last-20}
+
+> The first 80% is a demo. The last 20% is the product.
+
+**Lab companion:** Lab 9. Directing polish: what to leave alone, what to demand, and how to specify refinement without specifying pixels. The agent generates; the reader decides which gaps matter.

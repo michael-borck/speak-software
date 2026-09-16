@@ -1,0 +1,3 @@
+# Appendix: A Slop Lexicon {#sec-slop-lexicon}
+
+Short definitions: slop, vibe coding, blast radius, black-box threshold, guardrail, harness, context wall, skill folder, sub-agent, mini CEO, Replication Test, evidence trio.

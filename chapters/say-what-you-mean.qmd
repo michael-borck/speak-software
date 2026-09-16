@@ -1,0 +1,5 @@
+# Say What You Mean {#sec-say-what-you-mean}
+
+> The AI knows what you said. It does not know what you meant.
+
+**Lab companion:** Lab 3 (standalone; doubles as the series taster). Specification-first development: write SPEC.md as if handing it to a stranger, because you are. Introduces the **Replication Test** — your spec, alone, handed to a fresh agent must reproduce a product you would accept. If it does, you have authored a program in English.

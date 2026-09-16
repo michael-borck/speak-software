@@ -1,0 +1,5 @@
+# Slop in the Supply Chain {#sec-slop-in-the-supply-chain}
+
+> The agent does not just write code. It chooses what to trust.
+
+**New chapter — the sharpest real risk.** Hallucinated packages (slopsquatting), dependency vetting, licence and attribution of AI-generated code, and the short list of what must never be pasted into any tool. The reader runs a dependency audit on their own lab product and writes a trust policy into their context folder.

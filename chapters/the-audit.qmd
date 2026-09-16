@@ -1,0 +1,5 @@
+# The Audit {#sec-the-audit}
+
+> The code is not the only record. Sometimes it is not even the true one.
+
+**Lab companion:** Lab 11. Reading someone else's trail — a provided repo with its spec, decisions and critique — and judging whether the product matches its story. The marking model of the series, made student-facing.

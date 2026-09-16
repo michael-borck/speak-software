@@ -1,0 +1,5 @@
+# The Demo Illusion {#sec-the-demo-illusion}
+
+> "It works" is the beginning of the sentence, not the end.
+
+**Lab companion:** Lab 2. The demo always works, because the demo is the path you practised. This chapter builds the habit of defining *done* before admiring anything: acceptance criteria written before the agent runs, tested after. Introduces the evidence trio — SPEC.md, DECISIONS.md, CRITIQUE.md — that every subsequent chapter and every graded artefact in the series revolves around.

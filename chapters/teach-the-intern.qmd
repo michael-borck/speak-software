@@ -1,0 +1,5 @@
+# Teach the Intern {#sec-teach-the-intern}
+
+> Every chat that starts from zero wastes everything you already learned.
+
+**Lab companion:** Lab 6. The context folder: AGENTS.md and the standing documents that make the agent arrive already briefed. This is the seed of the skill-folder architecture — one department, taught once, consulted on demand.

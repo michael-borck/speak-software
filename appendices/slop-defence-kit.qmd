@@ -1,0 +1,3 @@
+# Appendix: The Slop Defence Kit {#sec-slop-defence-kit}
+
+The complete starter gate in one place: the lint and test configuration, the coverage floor, the TODO sweep, the diff-size budget, and the CI recipe to hand the agent — each with the threshold to start with and the signal to tighten it.

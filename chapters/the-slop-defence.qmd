@@ -1,0 +1,5 @@
+# The Slop Defence {#sec-the-slop-defence}
+
+> You cannot read every line. You can refuse to ship without a gate.
+
+**New chapter — the harness.** Assembles the guardrails Cherny names into one beginner-scale gate: lint rules, tests with a coverage floor, a TODO/FIXME sweep, a diff-size budget, and a CI recipe the reader *commissions from the agent* rather than hand-writes. The chapter's product is a slop-defence kit the reader will attach to every repo for the rest of the book.

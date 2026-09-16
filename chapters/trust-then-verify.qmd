@@ -1,0 +1,5 @@
+# Trust, Then Verify {#sec-trust-then-verify}
+
+> "It sounds right" is the most expensive sentence in AI-assisted work.
+
+**Lab companion:** Lab 7. Demanding evidence of done: outputs shown, checks run, receipts attached. Introduces VET from *Conversation, Not Delegation* (Verify, Explain, Test) as the reader's reflex, and treats the agent's explanation as a hypothesis rather than a verdict.
