@@ -1,0 +1,240 @@
+# Quarto build outputs
+/_book/
+/_site/
+/.quarto/
+*.html
+*.pdf
+*.epub
+*.docx
+
+# Quarto cache
+_cache/
+.quarto-cache/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+.~*
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.blg
+*.bbl
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+.venv
+*.egg-info/
+dist/
+build/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Node (if using any JavaScript tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Exercise solutions (if kept separate)
+/exercises/solutions/private/
+/exercises/instructor-only/
+
+# Generated files
+/assets/fonts/*.ttf
+/assets/fonts/*.otf
+/assets/fonts/*.woff
+/assets/fonts/*.woff2
+
+# Rendered output formats
+*.mobi
+*.azw3
+
+# Local configuration
+.quarto-local.yml
+_quarto-local.yml
+local-settings.yml
+
+# Drafts and work in progress
+/drafts/
+/wip/
+*-draft.*
+*-wip.*
+
+# Personal notes
+/notes/personal/
+/notes/private/
+TODO.md
+NOTES.md
+
+# Backup files
+backup/
+*.backup
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Logs
+logs/
+*.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets and credentials
+secrets/
+credentials/
+*.key
+*.pem
+.env.local
+.env.*.local
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Media source files (keep only optimized versions)
+*.psd
+*.ai
+*.sketch
+*.fig
+
+# Video files (if not needed in repo)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+
+# Large data files
+*.csv
+*.json
+*.xml
+!*-sample.csv
+!*-sample.json
+!*-sample.xml
+!code/*.csv
+!code/*.json
+!code/*.py
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# VS Code specific
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+out/
+
+# macOS specific
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows specific
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux specific
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+**/*.quarto_ipynb
+llm.txt
+rag-documents/
+
+# AnythingLLM workspace config
+.anythingllm.yml
+_print_source/
+
+# macOS AppleDouble metadata
+._*
