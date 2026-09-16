@@ -1,3 +1,47 @@
 # Appendix: The Evidence Trio Templates {#sec-evidence-trio}
 
-Fill-in templates for SPEC.md, DECISIONS.md and CRITIQUE.md, with worked examples from the labs and the acceptance-criteria format the Replication Test expects.
+The three documents every project keeps. Copy them at project start; the discipline is filling them *at the moment of the event*, not after.
+
+## SPEC.md
+
+```markdown
+# SPEC — <project name> v<n>
+
+Purpose: <one sentence — what this is for>
+
+Inputs: <every input, with type, range, and format>
+Behaviour: <numbered rules; every rule specific enough to test>
+Out of scope: <explicitly not doing, this version>
+
+Done means:
+- [ ] <runnable check 1>
+- [ ] <runnable check 2>
+```
+
+## DECISIONS.md
+
+```markdown
+# Decisions
+
+| Date | Decision | Why | Revisit when |
+|---|---|---|---|
+| 2026-09-16 | Use plain files, no database | One user, data must be human-editable | More than one user appears |
+```
+
+## CRITIQUE.md
+
+```markdown
+# Critique
+
+## Position
+<what you chose and would choose again>
+
+## Why
+<the reason that names a person and a situation>
+
+## What I gave up
+<the admitted cost of the choice>
+
+## What would change my mind
+<the condition that reverses it>
+```

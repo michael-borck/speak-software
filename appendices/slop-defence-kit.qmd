@@ -1,3 +1,25 @@
 # Appendix: The Slop Defence Kit {#sec-slop-defence-kit}
 
-The complete starter gate in one place: the lint and test configuration, the coverage floor, the TODO sweep, the diff-size budget, and the CI recipe to hand the agent — each with the threshold to start with and the signal to tighten it.
+The five gates from Chapter 9, as a starting configuration. Tune the thresholds; never remove a gate silently.
+
+| Gate | Tool | Starting threshold |
+|---|---|---|
+| Style and errors | `ruff check` | any error fails |
+| Behaviour | `pytest` | any failure fails |
+| Coverage floor | `pytest --cov-fail-under` | 80% |
+| Forgotten promises | TODO/FIXME grep | more than 5 fails |
+| Change-size budget | `git diff main --stat` | more than 400 lines fails |
+
+## Commissioning prompt
+
+```text
+Build slop_check.py implementing the five gates above as one script,
+per the specification in this conversation. Under 100 lines,
+standard library plus ruff and pytest only.
+```
+
+## Wiring
+
+- Local: pre-commit hook running `python slop_check.py`.
+- Remote: the same five gates as a CI workflow — commission the YAML
+  from the agent, then verify it by opening a branch pull request.

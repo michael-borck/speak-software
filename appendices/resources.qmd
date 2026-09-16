@@ -1,3 +1,19 @@
 # Appendix: Resources {#sec-resources}
 
-The labs and their toys, the named agent path and honest alternatives, model access and costs, and the reference shelf for readers who go on to the layer underneath.
+## The labs
+- **Programming labs** (companion series): [michael-borck.github.io/programming-labs](https://michael-borck.github.io/programming-labs/)
+- **Programming toys**: [github.com/michael-borck/programming-toys](https://github.com/michael-borck/programming-toys)
+- Labs thesis essay: SPEAK-SOFTWARE.md in the labs repository
+
+## Agents and skills
+- Named path in the labs: [pi](https://pi.dev); any CLI agent works
+- Anthropic Agent Skills documentation — the skill-folder architecture of Chapter 12
+- Boris Cherny / Claude Code guidance on AI slop and the mini-CEO role (2026) — see Chapter 2
+
+## The series
+- All titles: [books.borck.education](https://books.borck.education)
+- *Conversation, Not Delegation* — the underlying framework
+- *The Absolute Minimum You Must Know* — the free quick reference at [minimum.borck.education](https://minimum.borck.education)
+
+## Feedback
+- Issues: [github.com/michael-borck/speak-software/issues](https://github.com/michael-borck/speak-software/issues)

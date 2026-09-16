@@ -1,3 +1,14 @@
 # Appendix: A Slop Lexicon {#sec-slop-lexicon}
 
-Short definitions: slop, vibe coding, blast radius, black-box threshold, guardrail, harness, context wall, skill folder, sub-agent, mini CEO, Replication Test, evidence trio.
+- **Slop** — plausible, unverified AI output that degrades a codebase or body of work.
+- **Vibe coding** — prompting until something works, without reviewing or understanding it. Legitimate where mistakes are cheap.
+- **Blast radius** — everything a failure can hurt: users, data, systems, future maintainers.
+- **Black-box threshold** — the blast radius beyond which code must be read, tested and explained.
+- **Guardrail** — an automated check that fails loudly without human attention.
+- **Harness** — the assembled set of guardrails a change must pass to ship.
+- **Context wall** — the challenge of getting the right instructions, data and tools into the model's working memory at the right moment.
+- **Skill folder** — a folder holding a SKILL.md (procedure) and any scripts/data, read by an agent on demand.
+- **Sub-agent** — a specialist created on the fly by pointing a capable agent at a skill folder.
+- **Mini CEO** — the developer's management role: set the standard, build the gate, judge the results, sign the outcomes.
+- **Replication Test** — a spec, alone, handed to a fresh agent, reproducing a product you would accept.
+- **Evidence trio** — SPEC.md, DECISIONS.md, CRITIQUE.md: the trail an audit can stand on.
