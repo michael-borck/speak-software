@@ -28,6 +28,9 @@ python tools/lab_doctor.py .
 
 ## Licence
 
-Book content: [CC BY 4.0 International](LICENSE-CONTENT.md). Original code examples and
-accompanying software (including the tools in `tools/`): [MIT](LICENSE-CODE.md).
-See [LICENSE](LICENSE).
+Book content: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/)
+([LICENSE-CONTENT.md](LICENSE-CONTENT.md)). Original code examples and accompanying software
+(including the tools in `tools/`): [MIT License](https://opensource.org/licenses/MIT)
+([LICENSE-CODE.md](LICENSE-CODE.md)). See [LICENSE](LICENSE) for scope.
+
+Separately credited third-party material retains its stated terms.
