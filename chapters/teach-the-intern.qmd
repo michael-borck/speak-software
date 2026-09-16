@@ -2,4 +2,127 @@
 
 > Every chat that starts from zero wastes everything you already learned.
 
-**Lab companion:** Lab 6. The context folder: AGENTS.md and the standing documents that make the agent arrive already briefed. This is the seed of the skill-folder architecture — one department, taught once, consulted on demand.
+**Lab companion:** [Lab 6, Teach the Intern](https://michael-borck.github.io/programming-labs/lab-06-teach-the-intern/) — this chapter is the reasoning; the lab is the doing.
+
+## The Concept First
+
+Your department has one crippling trait left: amnesia. Every fresh conversation, the agent arrives knowing everything about software and nothing about your project — your standards, your decisions, the client's quirks, the three things you decided were out of scope last Tuesday. So you re-explain. And the re-explanations drift, because explanations given casually are never quite the same twice.
+
+The fix is embarrassingly physical: **a folder of markdown files in the repository**. Instructions the agent reads at the start of every session. Decisions recorded as they are made. Preferences the agent should stop guessing about. This is the context folder — with `AGENTS.md` as its front door — and it is the single highest-leverage artefact in AI-era work.
+
+Two reasons it matters more than any clever prompt. First, it converts your private knowledge into a company asset: the department stops depending on your presence. Second, it is the foundation of the skill-folder architecture in Chapter 12 — the filing cabinet that lets one agent become a whole department. You cannot organise skills you have not first written down.
+
+## Understanding Through the New Barista
+
+A new barista asks the regulars their orders every morning for a month. Sweet, but slow — and the day the barista is replaced, all that learning walks out. The good cafe writes the orders down.
+
+Your context folder is the orders notebook. The test of every entry: *could a replacement worker do it right from the file, without asking?* If a note only makes sense to you, it is a memory aid. If it works for a stranger, it is a **system**.
+
+## Discovering the Context Folder with Your AI Partner
+
+### Exploration 1: Audit the Re-explanations
+
+Think back over your last three agent conversations. What did you explain more than once?
+
+```text
+Here are the last three briefs I gave you in separate conversations.
+Identify everything I re-explained — every instruction, preference,
+or decision that appeared in more than one brief. List them as
+candidates for a standing instructions file.
+```
+
+That list is your context folder's first draft. Repetition is the signal: anything explained twice belongs in a file.
+
+### Exploration 2: The Front Door
+
+The file `AGENTS.md` at the repository root is read by agents before they start work. Fill it with what a replacement needs:
+
+```markdown
+# Project: Sunrise Cafe page
+
+## What this is
+A one-page site for a small cafe. Plain HTML/CSS, no frameworks,
+deliberately.
+
+## Standards
+- One file per concern; no build tools
+- Australian English spelling
+- Mobile-first: the page must work at 360px width
+- All text content comes from content.md, never hard-coded
+
+## Decisions
+- No contact form: the client wants phone calls (decided 2026-09-10)
+- Menu items live in a list at the top of index.html, so the client
+  can edit them without help
+
+## Never
+- No external fonts or scripts (client is on slow rural internet)
+- Do not add pages without a spec
+```
+
+### Exploration 3: Watch the Difference
+
+Start a fresh conversation. Ask the agent to add a new menu item — nothing else. Then ask it how it knew the spelling convention, the mobile rule, or the no-new-pages decision. Its answer should cite the file. If it guessed anyway, your AGENTS.md was not read — which happens when the file is vague, buried, or contradicts itself. Fix the file, not the agent.
+
+## From Concept to Code
+
+The context folder grows one file at a time, each with one job:
+
+```text
+project/
+├── AGENTS.md          # Front door: standards, decisions, never-list
+├── SPEC.md            # What is being built and what done means
+├── DECISIONS.md       # The decision log: what, why, when
+├── CRITIQUE.md        # What you would still change, and why
+└── content.md         # The client's actual words and prices
+```
+
+The discipline that keeps it alive: **the moment a decision is made, it goes in the file.** Not after the project. The moment. Decisions recorded later are decisions reconstructed from a chat transcript — which is archaeology, not management.
+
+::: {.callout-important title="Contradictions are poison"}
+An agent reading "always ask before deleting" in one file and "clean up old files automatically" in another will pick one and run with it — silently. When the department does something inexplicable, the first place to look is a contradiction between standing documents. One topic, one file, one ruling.
+:::
+
+## Business Connection
+
+The context folder is the difference between *your* AI advantage and an AI advantage the business owns. Everything in your head is a single point of failure with a notice period. Everything in the folder survives your holiday, your resignation, and the migration to next year's model.
+
+It is also the cheapest onboarding ever invented. A new employee, a new contractor, a new agent version — all of them start by reading the same four files. The business that writes its decisions down is the business that can change hands.
+
+## Practice Exercises
+
+**Exercise 7.1 (Level 1).** Create AGENTS.md with three sections: What this is, Standards, Never. Ten lines is enough.
+
+**Exercise 7.2 (Level 2).** Start a fresh agent conversation and ask for a change without mentioning the file. Did the agent read it? How do you know?
+
+**Exercise 7.3 (Level 3).** Add DECISIONS.md. Backfill the last three decisions you made on this project, each with its date and reason.
+
+**Exercise 7.4 (Level 4).** Deliberately introduce a contradiction between two files, then ask the agent to perform the affected task. Observe which ruling it followed. Document the behaviour.
+
+**Exercise 7.5 (Level 5).** Write the onboarding set for a business process you run outside software: what would a folder need to contain for a replacement to run your Tuesday?
+
+## Chapter Summary
+
+- Re-explaining is the tax; the context folder abolishes it
+- AGENTS.md is the front door: standards, decisions, the never-list
+- One topic, one file, one ruling — contradictions poison the department
+- Decisions go in the file the moment they are made, not later
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Have AGENTS.md in the repository, actually read by the agent
+- [ ] Backfilled your decisions with reasons
+- [ ] Tested the folder with a fresh conversation
+- [ ] Fixed at least one contradiction or vagueness the test exposed
+
+## Your Learning Journal
+
+1. What instruction, repeated three times, is finally in a file?
+2. What decision did you record — and what reason surprised you when you wrote it down?
+3. What process in your life would collapse without its notebook?
+
+## Next Steps
+
+Briefed, recorded, and taught. The next chapter is the trust exercise: the department sounds certain — so you make it show you the evidence.
