@@ -2,4 +2,135 @@
 
 > The agent does not just write code. It chooses what to trust.
 
-**New chapter — the sharpest real risk.** Hallucinated packages (slopsquatting), dependency vetting, licence and attribution of AI-generated code, and the short list of what must never be pasted into any tool. The reader runs a dependency audit on their own lab product and writes a trust policy into their context folder.
+**Lab companion:** Lab 7, *Trust, Then Verify* — same reflex, new target: not the agent's code, but everything the agent pulls in to make it work.
+
+## The Concept First
+
+When the agent builds a feature, it rarely builds everything. It reaches for the department's supply chain: existing packages, libraries, and snippets that already do parts of the job. That reach is what makes it fast — and it is also the widest unsupervised door in your project.
+
+Two slops live in that door. **Hallucinated dependencies**: the agent confidently instructs you to install a package that does not exist — or worse, *did not exist until scammers noticed that AI assistants keep recommending the same made-up names* and registered them, filled with malware. Security researchers have a name for this: **slopsquatting**. The fake package waits, squatting on the exact name the agent is most likely to invent. And **unvetted real dependencies**: packages that exist, work, and come with licences you have not read, maintenance that stopped years ago, or maintainers you are now trusting with your data.
+
+The agent treats the supply chain as a menu of names it remembers. You are the only one at the table who can check the kitchen.
+
+## Understanding Through the Price Tag
+
+A package is never free. Every dependency is a hire: it can do the job, but it can also resign (abandoned), change personality (a breaking update), leak your information (poorly maintained), or have been an impersonator all along (the squatting attack). Businesses learned this lesson the hard way with human-open-source years ago; AI multiplies the pace of hiring past the pace of checking.
+
+The discipline is the same one any purchasing officer uses: nothing enters the building without three questions answered. What is this? Who stands behind it? What does it cost us beyond the price?
+
+## Discovering the Supply Chain with Your AI Partner
+
+### Exploration 1: The Bill of Materials
+
+Ask the department to declare what it used:
+
+```text
+List every package, library, CDN script, and external snippet the
+current project depends on. For each: its name, where it came from,
+what it does for us, and what we lose if we removed it.
+```
+
+The list is your **bill of materials** — and its length is a finding in itself. Projects built by agents accumulate dependencies the way drawers accumulate cables.
+
+### Exploration 2: The Vetting Pass
+
+Now interrogate each hire:
+
+```text
+For each dependency on that list, answer:
+1. Who maintains it, and when was the last release?
+2. Is the name spelled exactly as the real project spells it? Check
+   character by character — report anything that looks like a
+   misspelling of a better-known package.
+3. What licence does it use, and does that licence permit commercial
+   use?
+4. If we deleted it, what would we write ourselves, and how many
+   lines would that be?
+```
+
+::: {.callout-warning title="Character by character"}
+Slopsquatting works because the fake name is *nearly* right — a swapped letter, a reordered word. The defence is unglamorous: before installing anything the agent suggested, look the package up in the official registry by typing or searching the name yourself, and confirm the project exists, is maintained, and is the one you meant. The agent's spelling is not evidence.
+:::
+
+### Exploration 3: The Snippet Question
+
+Dependencies are not the only imports. Ask:
+
+```text
+Which parts of this project did you copy from documentation,
+examples, or training memory rather than writing fresh? For each,
+tell me where it came from and whether it carries a licence.
+```
+
+AI-copied snippets usually carry no licence at all — which is not automatically a problem, but is definitely something a business should know it is shipping.
+
+## From Concept to Code
+
+The vetting answers belong in the repository, where Chapter 7's context folder lives:
+
+```markdown
+# Dependency policy
+
+## Rules
+- Every new dependency is vetted before install: maintainer, last
+  release, licence, exact-name check in the official registry.
+- Fewer is better. A dependency that saves 20 lines and needs
+  updates forever is a cost, not a win.
+- No package installs from a name the agent invented without a
+  registry lookup I performed myself.
+
+## Current bill of materials
+| Package | Since | Purpose | Last vetted |
+|---|---|---|---|
+| requests | 2026-09-01 | HTTP calls | 2026-09-16, MIT, active |
+```
+
+The table is the asset. When a dependency breaks next year — and one will — you will know instantly which hires you made, and whether the fix is an update, a replacement, or a 20-line rewrite.
+
+::: {.callout-important title="What never goes into any tool"}
+Independent of supply chains, three categories of information never enter an AI prompt: credentials and API keys; personal data about identifiable people; and anything your organisation, client, or regulator has marked confidential. Redact first, then paste. No workflow in this book needs those categories — and no blast-radius argument rescues them.
+:::
+
+## Business Connection
+
+Supply-chain vetting is where the mini CEO does risk management that a manager from 2019 would recognise instantly: approved-supplier lists, purchase records, spot audits. The vocabulary changed — registries instead of vendors — and the pace increased, but the control is the same, and businesses already have muscle memory for it.
+
+The competitive angle: businesses that adopt AI without a dependency policy are accumulating invisible liabilities faster than any era of software in history. The business that can hand an auditor a bill of materials with vetting dates is not just safer — it is saleable, insurable, and eligible for work the others are quietly being disqualified from.
+
+## Practice Exercises
+
+**Exercise 13.1 (Level 1).** Produce your project's bill of materials. Count them. Would you have guessed that number?
+
+**Exercise 13.2 (Level 2).** Run the character-by-character name check on every dependency. Confirm each in the official registry yourself.
+
+**Exercise 13.3 (Level 3).** Find the licence of each dependency and write one sentence: what this licence allows, forbids, and obligates.
+
+**Exercise 13.4 (Level 4).** Remove one dependency and replace it with the smallest code that does its job. Record whether the rewrite was more or less than the lines you saved.
+
+**Exercise 13.5 (Level 5).** Write your dependency policy into your context folder: vetting steps, approval rules, review cadence. Have the agent read it back and challenge a loophole.
+
+## Chapter Summary
+
+- The agent hires from a menu it remembers; you check the kitchen
+- Slopsquatting: fake packages registered on the names agents invent — verify exact names in the official registry, yourself
+- Every dependency is a hire with a licence and a maintenance future
+- The bill of materials is the asset: vetted hires, dated, in the repository
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Produced and vetted a complete bill of materials
+- [ ] Confirmed at least one package name in the official registry, yourself
+- [ ] Wrote the never-paste list into your context folder
+- [ ] Started a dependency table with vetting dates
+
+## Your Learning Journal
+
+1. Which dependency did you discover you could simply delete?
+2. What was the closest call — the name that was nearly a fake?
+3. What information did you almost paste before writing the never-list?
+
+## Next Steps
+
+One product, defended. The next chapter scales the department up: several pieces of work, sequenced, dispatched, and verified — the mini CEO's first management system.
