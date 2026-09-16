@@ -2,4 +2,60 @@
 
 > The tools will keep changing. The referee's job will not.
 
-What does not commoditise: the judgement that decides what to build, what "done" means, and what is worth shipping. The pipeline can be templated; the taste cannot. A closing tour of the reader's portfolio — twelve repos, three documents each — and where the series goes next for readers who now want the layer underneath.
+## What You Built
+
+Count it honestly. Over seventeen chapters you did not learn to code — you built something older and more durable: a working management practice for a new kind of department.
+
+- A **repository** that remembers, so nothing depends on your memory of a chat
+- A **specification** discipline, proven by the Replication Test
+- A **gate** — lint, tests, coverage, a TODO sweep, a diff budget — that fails loudly
+- A **context folder** and, grown from it, a **filing cabinet of skills**
+- **Receipts** for every claim, a **vetted supply chain**, an **audit** reflex
+- **Staff**: builders, reviewers, and the signature at the bottom that is yours alone
+
+Twelve labs, twelve products, three documents each. The portfolio does not say "I know about AI." It says: *I run a department.*
+
+## What Does Not Commoditise
+
+Be precise about the claim, because it is the book's last and largest. The pipeline commoditises. Gates get templated; specs get drafted by the department itself; whole workflows fold into skill folders that the agent reads and runs. That is fine — it was always the plan. The parts of this practice that resist automation are exactly the parts that were never typing:
+
+- **Deciding what to build** — the judgement of which problem matters
+- **Defining done** — the difference between a demo and a product
+- **Holding the bar** — the refusal to let plausible stand in for correct
+- **Taste** — the position you take when two good options argue
+- **Signing** — accountability, taken in writing
+
+An agent can generate code into your repository. It cannot decide, on your behalf, what good looks like. When everyone's agent is competent, the competent code stops being an advantage — and the referee who can tell true from plausible, who knows what to build and why, and who signs the launch record, becomes the scarce thing.
+
+That is not a consolation prize for people who never learned to program. It is the actual job, arriving ahead of schedule.
+
+## The Skills That Transfer
+
+Nothing you practised here is locked to software. The evidence trio is meeting discipline. The acceptance checklist is procurement. The Replication Test is delegation to any professional. The flight recorder is file management with courage. The gate is quality control. The audit is due diligence. The context folder is the operations manual your business should have had anyway. The filing cabinet is training documentation that survives staff turnover. You have been learning management, in the sharpest arena available — which is why it transfers.
+
+And the series is designed to meet you where you go next:
+
+- If the labs made you hungry for the layer underneath — a real language under your fingers — open ***Think Python, Direct AI***, then ***Code Python, Consult AI***.
+- If you want the professional pipeline at full depth — testing, packaging, delivery — ***Ship Python, Orchestrate AI*** is waiting.
+- If you build for the web, ***Build Web, Guide AI*** runs this entire discipline in HTML, CSS, JavaScript, WordPress and React.
+- If the thinking-with-AI framework intrigued you beyond code, the source of it all is ***Conversation, Not Delegation*** — and the prompting methodology, applied to software line by line, is ***Converse Python, Partner AI***.
+- And *The Absolute Minimum You Must Know* remains what it has been all along: the free, always-current quick reference, one link away at minimum.borck.education.
+
+All of it is listed at [books.borck.education](https://books.borck.education).
+
+## The Last Drill
+
+Before the shelf, one final exercise — the one the whole book was secretly preparing you for:
+
+1. Take a real problem that matters to you. Not a toy: a thing a real person needs.
+2. Run the department at it: spec, Replication Test, build, gate, audit, ship, listen.
+3. File every document. Sign the launch record.
+4. Then ask the question that ends this book the way it began: *what did I decide, that the department could not?*
+
+That list is your CV now. Keep it current.
+
+## Thank You
+
+This book was written with AI assistance using exactly the method it teaches — specifications before drafting, verification before acceptance, critique before shipping — and every claim in it was reviewed the way Chapter 8 taught you to review: by checking the thing, not the confidence. If you find slop in these pages, the errata link is real, and the critique form is the same one we hand you.
+
+The department is waiting. Brief it well.
