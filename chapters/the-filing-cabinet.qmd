@@ -2,4 +2,140 @@
 
 > The most sophisticated AI orchestration is a well-organised folder.
 
-**New chapter — the skill-folder architecture.** The context wall, and why an agent with a filing cabinet beats seven bespoke frameworks: SKILL.md instructions plus scripts, read on demand by one capable agent, spawning specialists on the fly. Builds the reader's first skill folder for a repeatable personal workflow, and connects Lab 6's context folder to the company-scale pattern.
+**Lab companion:** [Lab 6, Teach the Intern](https://michael-borck.github.io/programming-labs/lab-06-teach-the-intern/) built your first context folder; this chapter scales it into an architecture.
+
+## The Concept First
+
+Every organisation adopting AI runs into the same obstacle. It is not model quality and it is not cost. It is the **context wall**: the challenge of getting your organisation's instructions, data, and tools into the model's narrow working memory at the right moment, without overwhelming it or watching it improvise what it did not know.
+
+The industry's default answer is infrastructure — a separate bespoke agent for every task, wired together in a framework, each with its own setup and maintenance. For a department of one, that is a mistake of scale: seven fragile contraptions to do the work of one good agent and a filing cabinet.
+
+The alternative — the one Anthropic productised as **Agent Skills**, and the one this book has been inching toward since Chapter 7 — is almost embarrassingly physical:
+
+- **One capable agent** that can read, write, and run tools
+- **A folder per skill**, named for the workflow it serves
+- Inside each: a markdown instruction file (the skill's rules and steps — a `SKILL.md`) alongside any data and scripts the workflow needs
+
+When work arrives, the agent is pointed at the folder. It reads the instructions, runs the scripts, and — effectively — *becomes* the specialist the folder describes. One agent, many skills, zero infrastructure. Spin up as many conversations as you have hands: each one is a specialist, instantiated on the fly from a document you wrote once.
+
+## Understanding Through the Filing Cabinet
+
+You do not hire a different accountant for every form the business files. You hire one competent accountant and give them a filing cabinet: this drawer for tax, with the checklist taped inside the drawer; that drawer for payroll. The accountant reads the right procedure when the work arrives.
+
+An agentic framework is ten tiny robots, each hard-wired to one form, plus the wiring between them. The filing cabinet is one professional plus an organised cabinet. When a new form appears, the framework needs a new robot; the cabinet needs a new piece of paper.
+
+That is the whole architecture. And its deepest property is the one that matters to a business: **the cabinet survives the accountant.** Skills written down are assets. Skills kept in an agent's memory, or in one person's prompting habits, are favours that expire.
+
+## Discovering Skills with Your AI Partner
+
+### Exploration 1: Feel the Context Wall
+
+Ask the agent to run a repeatable workflow you never wrote down — say, your monthly expense routine, from memory, in one prompt. Watch what it gets wrong or invents. Every invented step is a file that does not exist yet. The context wall is not the model's memory limit; it is the paperwork you never wrote.
+
+### Exploration 2: Build the First Skill Folder
+
+Turn your most repeatable workflow into a folder:
+
+```text
+project/
+└── skills/
+    └── weekly-expenses/
+        ├── SKILL.md        # the procedure
+        └── totals.py       # the tool, if the workflow needs one
+```
+
+The `SKILL.md` is a brief to a stranger:
+
+```markdown
+# Skill: Weekly Expenses
+
+## When to use
+Run every Friday, or whenever asked "do the expenses".
+
+## Inputs
+- Receipts photographed into receipts/ during the week
+
+## Procedure
+1. List every file in receipts/ (photo or PDF, either is fine)
+2. For each: extract date, merchant, amount
+3. Enter each into expenses.csv using the existing columns
+4. Run totals.py and report the week's total by category
+
+## Never
+- Overwrite existing rows in expenses.csv
+- Guess a merchant: write "UNKNOWN — check photo"
+
+## Done means
+- Every receipt appears in expenses.csv
+- Totals reported per category and overall
+```
+
+Then use it: "Run the weekly-expenses skill." Watch the agent find the folder, read the procedure, follow it — including the parts (the never-list) that no generic prompt would have produced.
+
+### Exploration 3: Spawn the Specialist
+
+The payoff of the architecture is that skills compose with conversations. Any chat — today's, next month's, a colleague's — can say "run the weekly-expenses skill" and the same specialist appears, identical every time. One master agent, a cabinet of skills, specialists on demand. You have stopped writing prompts and started writing *roles*.
+
+## From Concept to Code
+
+The SKILL.md format is deliberately boring, and that is its strength. The parts that earn their keep:
+
+```markdown
+# Skill: <name>
+
+## When to use        <- so the agent picks the right skill
+## Inputs             <- exactly what must be at hand first
+## Procedure          <- numbered, specific, in order
+## Never              <- the mistakes you have already paid for
+## Done means         <- the checkable definition, imported from Ch 5
+```
+
+Two rules keep the cabinet healthy. **One skill, one folder** — a SKILL.md that covers "expenses and invoicing" is two skills and will be read wrong. And **scripts earn their place**: if a step needs precision (totalling, date maths, file renaming), put it in a small script the skill calls — precision belongs in code, judgement belongs in the markdown.
+
+::: {.callout-warning title="The cabinet needs a librarian"}
+Skills drift. The procedure that was right in September fails in December because the receipt format changed. Once a quarter — or whenever the agent does something inexplicable — read the whole cabinet top to bottom and fix what no longer matches reality. Chapter 15's audit is this discipline, practised on someone else's cabinet first.
+:::
+
+## Business Connection
+
+This architecture is how the department of one becomes a department that serves the whole business. Every repeatable workflow in the organisation — invoicing, onboarding, reporting, the weekly order — becomes a skill folder: procedure in markdown, precision in scripts, the never-list written in blood. Staff point the agent at a folder; the specialist appears; the work is done the *company's* way, not the model's way.
+
+The strategic property is independence. The cabinet is plain files: they work with this year's agent and next year's, they move between tools, and they are readable by any human who wants to audit what the AI is actually doing. That is not a limitation of the approach. That is the approach.
+
+## Practice Exercises
+
+**Exercise 12.1 (Level 1).** Write SKILL.md for a workflow you do weekly. Ten lines. Run the skill; watch what it gets wrong; fix the file, not the chat.
+
+**Exercise 12.2 (Level 2).** Add a `## Never` section from real experience — one entry per mistake that has already cost you something.
+
+**Exercise 12.3 (Level 3).** Move one step of the skill from prose into a small script. Compare reliability before and after, over three runs.
+
+**Exercise 12.4 (Level 4).** A colleague must run your skill while you are away. Watch them do it. Every question they ask is a missing line in SKILL.md.
+
+**Exercise 12.5 (Level 5).** Design the cabinet for your whole role: the folder tree, one line per skill, marked built/needed. This is the blueprint Chapter 14 runs.
+
+## Chapter Summary
+
+- The context wall is unwritten paperwork, not a technology limit
+- One capable agent plus a cabinet of skill folders beats a framework of fragile contraptions
+- SKILL.md holds the judgement; scripts hold the precision; the never-list holds your scars
+- Skills are assets — they survive staff changes, agent changes, and time
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Built one skill folder and ran it successfully
+- [ ] Wrote a never-list from real experience
+- [ ] Moved precision steps into scripts
+- [ ] Watched a fresh conversation become a specialist from a folder
+
+## Your Learning Journal
+
+1. What workflow surprised you by being skill-able?
+2. What did the agent invent when the SKILL.md was silent — and which line would have prevented it?
+3. If you left tomorrow, which parts of your role have no folder yet?
+
+## Next Steps
+
+Skills organise *your* workflows. But the department's output carries risks the cabinet cannot fix — because some of the slop arrives attached to things the agent *trusts*. Next: hallucinated packages, supply-chain slop, and the short list of what must never be pasted.
