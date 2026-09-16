@@ -2,4 +2,108 @@
 
 > You do not need permission to ship. You need evidence it is true.
 
-**Lab companion:** Lab 12. The full loop owned end to end: brief, spec, build, gate, ship, critique. The portfolio that *is* the evidence of the skills, and the honest answer to "so what can you actually do?"
+**Lab companion:** [Lab 12, Ship Something True](https://michael-borck.github.io/programming-labs/lab-12-ship-something-true/) — the capstone: the full loop, owned.
+
+## The Concept First
+
+Everything in this book converges on one moment: the change goes from your repository to a real person who was not in the conversation. Shipping is not the opposite of care — it is care's proof. A product that sits in a finished state, fully checked and never delivered, has passed no test that matters, because the only users who count are the ones who did not read your spec.
+
+"True" is the word the labs chose deliberately. Not *working* — working is Chapter 3's illusion, passed by one path walked once. True means: does what the spec says, survived the strange orders, passed the gate, carries a trail that explains it, and is in the hands of someone it was built for. That is the whole pipeline, landing.
+
+## Understanding Through the Restaurant Opening
+
+Restaurants do not open with the full menu. They open small: a soft launch, a short menu, the dishes the kitchen can execute blind. The opening is not the end of construction — it is the first time construction meets reality, and reality orders something unusual, at volume, at 8:15 p.m. on a Saturday.
+
+Shipping software is a soft launch. The gate has run; the receipts exist; and reality will still find the thing you did not imagine — because reality always does. The mini CEO ships expecting that, watches for it, and treats the first strange order from a real user as the most valuable data the project has ever collected.
+
+## Discovering Shipping with Your AI Partner
+
+### Exploration 1: The Landing Choice
+
+Where true things live depends on what they are, and the choice is yours to make deliberately:
+
+```text
+My project is [describe: what it does, who uses it, how often, what
+breakage costs]. Recommend where it should live — a static host, a
+shared drive, a managed platform, or a server I control — with the
+trade-offs in my terms: cost, effort, blast radius, and what happens
+when it breaks at 3 a.m.
+```
+
+### Exploration 2: The Pre-Flight
+
+The gate has run, but shipping adds questions the gate does not know:
+
+```text
+I am about to make this project public for real users. Audit it for
+pre-flight: What should be true before launch that is not checked
+yet? What happens on day one, day thirty, and day 365? What is the
+rollback plan if a user reports a disaster?
+```
+
+::: {.callout-important title="The rollback plan is the launch checklist"}
+Before shipping, write the sentence: "if this goes wrong, I will ___ and the users will see ___." If the blank takes more than a minute to fill, ship behind a smaller blast radius first — fewer users, a test group, a copy of the data. The rollback plan is not pessimism. It is what makes day one survivable.
+:::
+
+### Exploration 3: Ship, Then Listen
+
+After launch, the department's job changes: watch, log, and resist the urge to react to every report. The first week's reports are a requirements document written by reality. Collect them where the trail lives — DECISIONS.md for what changed, CRITIQUE.md for what you would still change — and sequence the responses through the issue discipline of Chapter 14.
+
+## From Concept to Code
+
+The launch record completes the trail:
+
+```markdown
+## Launch — 2026-09-16
+- Live at: [URL]
+- Blast radius accepted: users = ~30 colleagues; data = menu items only
+- Rollback: redeploy previous commit (a9b8c7d); content restored from
+  content.md
+- First-week watcher: me, reports to feedback.md
+```
+
+The portfolio value is the point of the whole series: twelve shipped things, each with spec, gate, critique, and launch record. That folder does not say "I know about AI." It says "I run a department." Employers, clients, and funders can see the difference without a word of code.
+
+## Business Connection
+
+Shipping is where the mini CEO's two roles meet. To the department, you are the standard. To the users, you are the supplier. The launch record is the hinge between them: it is the moment the accountability you accepted in Chapter 2's blast-radius exercise becomes real, attached to a URL real people can touch.
+
+And the strategy lands here too. The pipeline you have built — spec, gate, audit, launch, listen — is what lets a department of one ship things that used to need agencies, at a pace agencies cannot match, with a trail that outlives the tooling. That is not a hack. That is the new baseline, and you are standing on it.
+
+## Practice Exercises
+
+**Exercise 16.1 (Level 1).** Write the rollback sentence for your current project. Fill the blank in under a minute or shrink the blast radius first.
+
+**Exercise 16.2 (Level 2).** Run the pre-flight audit on a project you consider finished. Fix the cheapest gap it names.
+
+**Exercise 16.3 (Level 3).** Ship something genuinely — to one real user, today. File the launch record with date, radius, and rollback.
+
+**Exercise 16.4 (Level 4).** Design the first-week listening plan: where reports land, how they are triaged, which three kinds of report trigger immediate action.
+
+**Exercise 16.5 (Level 5).** Write the launch announcement to your first user that includes the honest version: what it does, what it does not do yet, and how to report the strange order you did not imagine.
+
+## Chapter Summary
+
+- True means: meets the spec, survived the strange orders, passed the gate, carries a trail
+- The landing choice — where it lives — is a business decision in cost, effort, and blast radius
+- The rollback sentence is the launch checklist's first line
+- First-week reports from real users are the most valuable requirements document you will ever receive
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Made the landing choice deliberately, with trade-offs in your terms
+- [ ] Wrote the rollback sentence and timed yourself filling the blank
+- [ ] Shipped to at least one real user, with a launch record
+- [ ] Began collecting reality's requirements document
+
+## Your Learning Journal
+
+1. What was the first strange order reality sent — and when?
+2. What did shipping feel like compared to finishing?
+3. Who was your first real user, and what did they teach you in the first week?
+
+## Next Steps
+
+The department is built, gated, audited, and shipping. Two chapters remain: the staff you are about to hire — reviewer-agents, model strategy, cost as a constraint — and the close of the argument: what the referee keeps, when everything else can be automated.
