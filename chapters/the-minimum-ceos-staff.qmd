@@ -2,4 +2,129 @@
 
 > One agent became a department. A department gets staff.
 
-**New chapter — the management layer.** Reviewer-agents auditing builder-agents, model choice and upgrade strategy (what to re-test when the model changes), cost as a first-class constraint, and the small print of accountability: the CEO signs, the staff drafts. Closes with the reader's own staff charter written into their context folder.
+**Lab companion:** Labs 10–12, extended — this chapter is the management layer the labs leave for after you can walk.
+
+## The Concept First
+
+Every chapter so far has used one agent, briefed well. The last discipline changes the shape: the mini CEO hires **staff** — specialised roles the same underlying model plays, each with its own instructions, each checking the others' work.
+
+The reason is the slop question again, at higher volume. One agent building while the same agent self-reviews is a conflict of interest — the reviewer shares the blind spots of the builder. The professional answer is separation of duties: a **builder** agent working from the spec, a **reviewer** agent auditing the diff against the spec alone (never having seen the builder's self-assurance), and sometimes a third — a fuzzer, a security pass, a hostile user — each a fresh conversation with no stake in the builder's pride of authorship.
+
+This is Cherny's guardrail stack, staffed. And the staffing plan is written in exactly the material Chapter 12 taught: folders of instructions. The reviewer is a skill folder. The fuzzer is a skill folder. The staff is the filing cabinet, pointed at itself.
+
+## Understanding Through the Newspaper
+
+A newspaper does not let reporters publish directly. Reporter writes; editor checks against standards; fact-checker verifies claims; only then does it ship. Everyone in the chain is a professional; the quality comes from the *separation*, not from any individual genius — and crucially, the editor does not read the reporter's explanation of their own draft. The editor reads the draft.
+
+Your staff works the same way. The builder's conversation is full of context and confidence. The reviewer must arrive knowing only the spec and the diff. Fresh eyes are not a compliment; they are a control.
+
+## Discovering the Staff with Your AI Partner
+
+### Exploration 1: Hire the Reviewer
+
+Write the reviewer's skill folder — once, permanently:
+
+```markdown
+# Skill: Code Reviewer
+
+## When to use
+After any builder conversation produces a change, before it lands.
+
+## Inputs
+- SPEC.md (you have not seen the builder's conversation, and must not
+  pretend you have)
+- The diff between main and the change branch
+
+## Procedure
+1. Read SPEC.md. List every requirement in your own words.
+2. For each requirement, find where the diff satisfies it. If a
+   requirement has no matching diff, report SILENTLY DROPPED.
+3. If the diff contains anything the spec does not require, report
+   INVENTED.
+4. Check every new dependency against the dependency policy (Ch 13).
+5. Run the slop-defence gate. Report the real results.
+
+## Output
+A findings list ordered by consequence: DROPPED, INVENTED, BROKEN,
+RISKY, CLEAN. You are a referee, not a cheerleader. No praise unless
+specifically earned by evidence.
+```
+
+The reviewer prompt includes the sentence most people forget: *you have not seen the builder's conversation.* Fresh eyes are a control, and controls only work if the eyes are actually fresh.
+
+### Exploration 2: The Builder-Reviewer Loop
+
+Run the loop on a real change:
+
+```text
+(Conversation 1 — builder) Implement stage 3 of the ordering project
+per ISSUES.md and AGENTS.md. Commit to a branch when done.
+
+(Conversation 2 — reviewer, fresh) Run the code-reviewer skill on
+the diff between main and the change branch.
+```
+
+Then you read the findings and decide — because the CEO signs. Some findings the builder fixes. Some findings you overrule, in writing, in DECISIONS.md, with the reason. That last step is not bureaucracy; it is the difference between having a review process and having a ritual.
+
+### Exploration 3: Plan for Model Change
+
+Staff change. Models change faster. Cherny's advice — when quality drops, "wait for the next model" — has a management corollary: **the department's output must survive the department being replaced.** The way to guarantee that is the pipeline itself: when a new model arrives, re-run the current spec through the Replication Test, re-run the gate, and compare the audit findings to the last model's.
+
+```text
+Model upgrade checklist:
+1. Re-run the Replication Test on two representative specs
+2. Re-run the full gate on the current product
+3. Re-audit one landed stage; compare findings to the previous audit
+4. Record the model and date in DECISIONS.md — the staff roster changed
+```
+
+The book you are holding is deliberately model-agnostic for this reason. The specs, checks, gates and skills are the durable layer; the model is staff, and staff turn over.
+
+::: {.callout-tip title="Cost is a constraint, not a surprise"}
+Staff salaries were a line item; model credits are too. Track spend per project the way you track hours. When a task is routine, say so in the brief — smaller, cheaper models handle routine well, and the frontier model is for the work that earns it. The mini CEO allocates, not just approves.
+:::
+
+## Business Connection
+
+Staffed AI review is what lets a department of one credibly serve clients larger than itself. The pitch writes itself from this chapter: every change is built by an agent, reviewed by a different agent configured as an adversary, gated by automated checks, and signed by a human who read the findings. That is a control structure some regulated industries would envy — and it runs from a folder.
+
+The staff folder is also the transferable asset at its purest. The reviewer skill you wrote for your project works on the next project unchanged. Your staff follows you, trained, to every job.
+
+## Practice Exercises
+
+**Exercise 17.1 (Level 1).** Write the code-reviewer skill folder. Run it on any change in any repository from this book.
+
+**Exercise 17.2 (Level 2).** Deliberately introduce one spec violation into a builder's output. Does the reviewer catch it? If not, tighten the skill.
+
+**Exercise 17.3 (Level 3).** Run the full loop — builder, reviewer, CEO decision with one overrule recorded in DECISIONS.md. The overrule is the exercise.
+
+**Exercise 17.4 (Level 4).** Write the model-upgrade checklist for your current project and execute step 1 with two different models. Compare the findings lists.
+
+**Exercise 17.5 (Level 5).** Design your staff org chart: every role, its skill folder, its separation-of-duties boundary, and what only the CEO may decide. One page; revisited quarterly.
+
+## Chapter Summary
+
+- Separation of duties: builder and reviewer are different conversations, by design
+- The reviewer sees the spec and the diff — never the builder's confidence
+- The staff is a filing cabinet pointed at itself: reviewer, fuzzer, auditor skills
+- Models are staff: they turn over, and the pipeline is how output survives the turnover
+- The CEO signs; overrules are made in writing, in the decision log
+
+## Reflection
+
+Before moving on, ensure you:
+
+- [ ] Hired a reviewer that has never seen the builder's conversation
+- [ ] Watched the reviewer catch something — or calibrated why not
+- [ ] Recorded an overrule, in writing, with a reason
+- [ ] Wrote the model-upgrade checklist while it did not feel urgent
+
+## Your Learning Journal
+
+1. What did the fresh-eyed reviewer find that the builder's conversation would have talked its way past?
+2. Which overrule were you proudest to sign? Which one worries you now?
+3. What would have to be true for you to trust the department unsupervised — and is that day real?
+
+## Next Steps
+
+The department runs; the staff is hired; the products are true. One chapter remains — the close of the argument: what the referee keeps when everything else can be automated, and where a portfolio of twelve true things takes you next.
