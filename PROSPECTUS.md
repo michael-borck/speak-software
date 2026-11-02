@@ -1,14 +1,18 @@
 # Speak Software: Prospectus
 
-Date: 2026-09-16. Status: planning — skeleton, chapter plan and strategy.
+Date: 2026-09-17. Status: online-edition-ready draft (updated after the
+local HTML/PDF/EPUB build pass); fresh-reader pass and the push stage
+(chatbot, publication) pending. Cover is in place.
 The living labs remain at `programming/programming-labs` (the "Speak
-Software" labs, 12 labs, all ready); this book is the narrative and the
+Software" labs: twelve core labs plus three staff-tool labs, all shipped;
+Labs 13–15 pair with this book's harness chapters and its `tools/`
+reference implementations); this book is the narrative and the
 harness the labs deliberately leave out.
 
 ## Thesis
 
 Programming has moved up an abstraction level: the newest way to build
-software is to describe, direct, and verify — in natural language — while
+software is to describe, direct, and verify (in natural language) while
 an agent writes the code. Vibe coding is not the enemy; *unmanaged* vibe
 coding is. The developer's job is no longer typing every line. It is
 holding the bar as the **mini CEO of a department of one**: a brilliant,
@@ -18,11 +22,11 @@ Two source arguments anchor the book:
 
 1. **Boris Cherny (creator of Claude Code, Anthropic) on "slop"**: black-box
    treatment is fine for low-stakes prototypes; production code written by
-   AI deserves a *higher* bar than human-written code — met with automated
+   AI deserves a *higher* bar than human-written code: met with automated
    guardrails (lint, tests, AI-driven E2E tests, fuzzers, automated
    reviews), not heroics. The developer is a "mini CEO".
 2. **The skill-folder architecture (Anthropic Agent Skills)**: the way past
-   the "context wall" is not an agentic framework per task — it is folders
+   the "context wall" is not an agentic framework per task. It is folders
    of markdown instructions and scripts that one capable agent reads on
    demand, spawning "thousands of sub-agents" from organised local files.
    The most sophisticated AI orchestration is basic file organisation.
@@ -33,16 +37,16 @@ the why, the harness, the defence against slop, and the management layer.
 
 ## Audience and boundaries
 
-Zero prior programming assumed — the reader who will never write code by
+Zero prior programming assumed: the reader who will never write code by
 hand. Boundary statement for "What this book is not":
 
 - Not *Code Python, Consult AI*: you will not learn Python syntax.
-- Not *Converse Python, Partner AI*: you are not pairing with AI — you are
+- Not *Converse Python, Partner AI*: you are not pairing with AI. You are
   directing it.
 - Not *Ship Python, Orchestrate AI*: you will commission guardrails, not
   hand-write CI configs (though the book shows what to ask for).
 - Compared with *Think Python, Direct AI*: same zero-prior reader,
-  different interface — Think puts a language under your fingers; this
+  different interface: Think puts a language under your fingers; this
   book puts a department at your command. A routing note in the preface
   will help beginners choose.
 
@@ -76,7 +80,7 @@ cross-link.
 
 ## Missing tools and harnesses to build or reference
 
-- **Slop-detector starter kit**: one script — ruff + pytest + coverage
+- **Slop-detector starter kit**: one script (ruff + pytest + coverage
   floor + TODO/FIXME count + diff-size budget, readable thresholds.
 - **CI recipe per lab**: GitHub Actions the reader commissions from the
   agent (never hand-writes).
@@ -94,19 +98,39 @@ Quarto book in this workspace, standard series pipeline (licence files,
 collection licence check, rendered-book validation, source checks).
 Formats: HTML primary; PDF/EPUB via the standard print pipeline. The labs
 repo keeps its own site; cross-links both ways. Open question for later:
-print edition timing — recommend after content stabilises.
+print edition timing; recommend after content stabilises.
 
-## Writing queue (2026-09-16)
+## Writing queue (2026-09-17)
 
-Done: skeleton, Ch 1 (Hello, Department of One), Ch 2 (The Slop
-Question), Ch 3 (The Demo Illusion), Ch 9 (The Slop Defence — the kit).
+Done: draft complete. All 18 chapters and all 5 appendices.
+Tools done: slop-detector kit (`tools/slop_check.py`), evidence-trio
+linter (`tools/trio_lint.py`), lab doctor (`tools/lab_doctor.py`),
+manuscript checks (`scripts/check_manuscript.py`). Ch 12 gained a
+callout on choosing an agent: where instructions live, what the agent
+can reach, what the tool conceals.
+Done 2026-09-18: labs drift reconciled. The labs repo shipped Labs
+13–15 (staff tools pairing with this book's harness chapters); the
+preface, conclusion, slop-defence chapter, evidence-trio appendix and
+resources now reference them. Added the Model Access appendix
+(accounts, subscriptions, tokens, free tiers and brokers, local versus
+frontier, provider handover kit) and a Trust Tool cross-reference in
+Chapter 8 and the resources.
 
-Next, in order: Ch 4 (Say What You Mean), Ch 5 (The Checklist It Can't
-Charm), Ch 6 (The Flight Recorder), Ch 7 (Teach the Intern), Ch 8 (Trust,
-Then Verify), Ch 10 (The Taste Test), Ch 11 (The Last 20%), Ch 12 (The
-Filing Cabinet), Ch 13 (Slop in the Supply Chain), Ch 14 (Run the
-Department), Ch 15 (The Audit), Ch 16 (Ship Something True), Ch 17 (The
-Mini CEO's Staff), Ch 18 (Conclusion), then appendices. Then the tools:
-slop-detector kit as a repo file, evidence-trio linter, lab doctor.
-Decision made: the kit and trio linter may also become additions to the
-labs themselves.
+Decision recorded 2026-09-17: the book names no public skill collections
+(Matt Pocock's skills repo, obra/superpowers) and adds no agent-comparison
+table. Named repos date within a year or two, and product tables contradict
+the book's stated tool-independence (Ch 12, Ch 17). The named path in the
+labs stays pi; any CLI agent works. The agent-comparison handout remains
+course material (ISYS6014 Module 7), not book content.
+
+Done in the online-edition pass: standard print files, favicon,
+acknowledgments and about-author pages, download and DeepWiki links,
+and a validated local HTML/PDF/EPUB build with `llm.txt` and RAG
+documents. The acknowledgments are factual and generic; the author
+still needs to personalise them.
+
+Next, in order: fresh-reader pass (a named person, not yet done), then
+the push stage (chatbot update, commit, publish). Print-edition timing
+remains an open question for after content stabilises.
+Previous decision stands: the kit and trio linter may also become
+additions to the labs themselves.

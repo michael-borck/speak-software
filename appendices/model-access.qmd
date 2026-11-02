@@ -1,0 +1,76 @@
+# Appendix: Model Access, Credits, and Handover {#sec-model-access}
+
+The labs' gear guide ([RESOURCES.md](https://github.com/michael-borck/programming-labs/blob/main/RESOURCES.md) in the labs repository) covers environments, models, and costs. This appendix covers the administrative layer the labs leave alone: accounts, subscriptions, tokens, and how to switch any of them without losing the department. Principles over prices. Prices move monthly; the principles have not moved in years.
+
+## What you are actually paying for
+
+Three layers, three decisions:
+
+- **The agent** is the command-line tool that reads and writes files in a folder. Some agents ship with bundled model access; some bring your own key.
+- **The model access** is the intern's brain: a subscription (flat monthly fee) or pay-as-you-go credit consumed per token. A token is the unit models read and you are billed for; the labs' resources list a visualiser that shows your words the way the model sees them.
+- **GitHub** holds the memory. It is free for this work.
+
+## Choosing a payment shape
+
+A **subscription** wins when you are doing several labs or projects a month: predictable, no meter anxiety. **Pay-as-you-go** wins at a casual pace (a lab costs roughly a coffee) and for cohorts, where per-student keys with **spend caps** keep the bill boring. Set the cap before the first session, not after the first surprise.
+
+**Free tiers are real but throttled.** They suit Lab 3's taster and a first look; mid-arc, the rate limits will cost more patience than money.
+
+**Model brokers and free models.** Services such as OpenRouter and OpenCode Zen sit between you and many providers: one account, many models, and some free or cheap tiers. Used deliberately, they are a sensible way to run routine work cheaply and to try alternatives without new accounts everywhere. Three cautions:
+
+1. Free models are usually smaller or older. Fine for drafts and routine fixes; do not hand them consequential work (Chapter 17's allocation rule).
+2. Read each broker's data policy before pasting anything you would not put on a poster. That caution applies to every hosted model, free or paid.
+3. These are examples, not a ranking. The book stays tool-independent on purpose; the named product will age before the method does.
+
+## Local versus frontier
+
+A local model (Ollama and friends) runs on your own machine: free, private, offline. Today's local models are also noticeably weaker interns: more wrong turns, worse tool use, more of your time spent unsticking them. The labs' advice holds: learn to direct on a frontier model, where a strong intern isolates the variable that matters, which is your words. Run a local model later as an experiment, and as a home for routine, privacy-sensitive drafting.
+
+The allocation principle is Chapter 17's: routine work goes to the cheap model, consequential work to the frontier model, and the gate decides whether the cheap model was good enough. The gate does not care what the model cost.
+
+## When you hit a wall
+
+Diagnose first. Three common walls, three different responses:
+
+| Wall | What it feels like | Response |
+|---|---|---|
+| Rate limit | "Too many requests", resets later | Wait, or slow the pace; nothing is broken |
+| Quota or credits | Requests rejected until you top up or the month rolls over | Top up, allocate down, or switch |
+| Entitlement | The agent or model is not in your plan at all | Change plan, or move the work to access you have |
+
+None of these blocks the work for long, because the department's memory is the repository, not the chat. Options, in order: wait for the reset; allocate the routine work down to a cheaper model; switch provider using the handover kit below; or pay. Whatever you choose, **re-run the gate afterwards**. The checks, not the vibe, confirm the new arrangement is fine.
+
+## The handover kit
+
+Models, subscriptions, accounts, and laptops all turn over. The department survives the turnover if everything that matters was written down.
+
+**What survives a switch:** the repositories on GitHub, the skill folders inside them, the evidence trio, the specs, the gate configuration, the launch records.
+
+**What does not:** chat history, the agent's memory of your conversations, uncommitted files, and anything installed only on the old machine.
+
+| # | Handover step | Why |
+|---|---|---|
+| 1 | `git status` clean on every project; everything pushed | The memory lives in the repo, not the machine |
+| 2 | Skill folders inside the repos, not only in the old tool's memory | The cabinet survives the accountant (Chapter 12) |
+| 3 | Evidence trio current; DECISIONS.md records the switch: model, date, reason | The staff roster changed (Chapter 17) |
+| 4 | Run the new setup through the pre-flight | Lab 15, *The Doctor Is In*, and this book's `tools/lab_doctor.py` exist for exactly this |
+| 5 | Re-run the gate and one Replication Test on the new model | Parity is checked, never assumed |
+| 6 | Retire the old access: revoke keys and tokens, note final spend | An unused key is an unlocked door |
+
+Hand the fresh agent a continuity brief, not a history:
+
+```text
+I am continuing an existing project, not starting one.
+Read AGENTS.md, SPEC.md, DECISIONS.md and CRITIQUE.md in this
+folder before anything else.
+The previous model was <name>; you are <name>. Do not redo
+decided work.
+Current stage: <stage>. Finish by running <gate command> and
+showing the receipts in the three-part format.
+```
+
+If the Replication Test on the new model reproduces a product you would accept, and the gate passes, the switch is done. Record it in DECISIONS.md and move on.
+
+## How much checking does a switch deserve?
+
+Route by stakes, not by habit. The Trust Tool in *Prove, Don't Persuade* places an intended use on a green, yellow, red grid by exactness and consequence: a private prototype sits green and needs the gate only; anything a customer depends on sits yellow or red and needs the receipts reviewed before it ships. The VET reflex from *Conversation, Not Delegation* (Chapter 8) is the per-deliverable habit; the Trust Tool is the per-use decision above it.

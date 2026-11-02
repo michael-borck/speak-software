@@ -1,0 +1,5 @@
+/* EPUB styles: minimal */
+/* Quarto callouts used in this book (callout-note, callout-tip,
+   callout-important, callout-warning) */
+.callout { background: #f0f0f0; padding: 0.5em; border-left: 3px solid #885E32; margin: 1em 0; }
+.callout .callout-title { font-weight: bold; }

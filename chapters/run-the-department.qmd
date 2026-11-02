@@ -2,19 +2,19 @@
 
 > Big things are not built in one go. They are decomposed, dispatched, and verified.
 
-**Lab companion:** [Lab 10, Run the Department](https://michael-borck.github.io/programming-labs/lab-10-run-the-department/) — this chapter is the reasoning; the lab is the doing.
+**Lab companion:** [Lab 10, Run the Department](https://michael-borck.github.io/programming-labs/lab-10-run-the-department/): this chapter is the reasoning; the lab is the doing.
 
 ## The Concept First
 
-Everything so far has been one product, one conversation, one gate. Real work arrives as a fog: "we need the whole ordering thing." The mini CEO's first management system turns fog into sequence — and the tool is not a framework. It is decomposition, written down as issues, dispatched to the department one at a time, each landing on verified ground.
+Everything so far has been one product, one conversation, one gate. Real work arrives as a fog: "we need the whole ordering thing." The mini CEO's first management system turns fog into sequence, and the tool is not a framework. It is decomposition, written down as issues, dispatched to the department one at a time, each landing on verified ground.
 
-The principle the chapter defends: **the agent builds features; you build the sequence.** A big prompt that asks for everything produces the confident average of a big thing — plausible, interlocking, and wrong in ways that only surface when users arrive. Ten small briefs, each with a check, each landing on the last, produce a system.
+The principle the chapter defends: **the agent builds features; you build the sequence.** A big prompt that asks for everything produces the confident average of a big thing: plausible, interlocking, and wrong in ways that only surface when users arrive. Ten small briefs, each with a check, each landing on the last, produce a system.
 
 ## Understanding Through the Renovation
 
 Nobody renovates a house by telling the builder "renovate it." The work is decomposed: roof before painting, wiring before walls, kitchen last. Each stage is inspected before the next begins, because the next stage builds *on* the inspection, not on the hope.
 
-Software sequences the same way, and the order is rarely obvious to clients. Clients describe destinations; the department needs staging posts. Translating destination-talk into staged work — and then resisting the urge to run stages in parallel — is the management skill this chapter installs.
+Software sequences the same way, and the order is rarely obvious to clients. Clients describe destinations; the department needs staging posts. Translating destination-talk into staged work, and then resisting the urge to run stages in parallel, is the management skill this chapter installs.
 
 ## Discovering Decomposition with Your AI Partner
 
@@ -34,7 +34,7 @@ The interview is the point. Watch the agent ask about payment, notifications, an
 
 ### Exploration 2: The Issue List
 
-The interview becomes a decomposition — and the format matters. Each stage is an issue: small enough to brief fully, useful enough to verify alone:
+The interview becomes a decomposition, and the format matters. Each stage is an issue: small enough to brief fully, useful enough to verify alone:
 
 ```markdown
 ## Stage 1: Order intake (no payment)
@@ -52,7 +52,7 @@ Each order gains a payment link. Done means: ...
 
 ### Exploration 3: Dispatch and Land
 
-Dispatch one issue per conversation — a fresh agent, briefed with the issue and the context folder, building on verified ground. Land it through the acceptance checklist. Commit. *Then* dispatch the next. The sequence is the system; parallel is how the fog gets back in.
+Dispatch one issue per conversation: a fresh agent, briefed with the issue and the context folder, building on verified ground. Land it through the acceptance checklist. Commit. *Then* dispatch the next. The sequence is the system; parallel is how the fog gets back in.
 
 ## From Concept to Code
 
@@ -73,14 +73,14 @@ declined, the client edits the file by hand.
 ```
 
 ::: {.callout-warning title="The landed deviation is the gold"}
-Every time the agent proposes something different from the spec, and you choose, you are writing the project's real history. Stage notes that record deviations honestly are worth more than the code they describe — they are how the next stage's brief gets better.
+Every time the agent proposes something different from the spec, and you choose, you are writing the project's real history. Stage notes that record deviations honestly are worth more than the code they describe. They are how the next stage's brief gets better.
 :::
 
 ## Business Connection
 
-Issue-decomposition is how you can now sell *staged certainty*. The client hears: "Stage 1 in a week, checkable, useful alone; we decide together whether stage 2 starts." Compare that to the classic software quote — months of work, all or nothing, trust me. Decomposition converts trust into checkpoints, and checkpoints are what let small businesses take on projects far above their size.
+Issue-decomposition is how you can now sell *staged certainty*. The client hears: "Stage 1 in a week, checkable, useful alone; we decide together whether stage 2 starts." Compare that to the classic software quote: months of work, all or nothing, trust me. Decomposition converts trust into checkpoints, and checkpoints are what let small businesses take on projects far above their size.
 
-It is also the defence against the agent's one great weakness at scale. Left alone, the agent will attempt the whole fog in one confident act, and the result is the plausible-but-britten architecture from Chapter 4's grid — the danger zone, precisely. Decomposition is how a mini CEO keeps every unit of work in the sweet spot: small, precise, verified.
+It is also the defence against the agent's one great weakness at scale. Left alone, the agent will attempt the whole fog in one confident act, and the result is the plausible-but-broken architecture from Chapter 4's grid (the danger zone, precisely). Decomposition is how a mini CEO keeps every unit of work in the sweet spot: small, precise, verified.
 
 ## Practice Exercises
 
@@ -92,14 +92,14 @@ It is also the defence against the agent's one great weakness at scale. Left alo
 
 **Exercise 14.4 (Level 4).** Take a real project of yours that stalled. Decompose it into stages so small that the first could land today.
 
-**Exercise 14.5 (Level 5).** A client insists all stages ship at once. Write the argument for staging in their terms — money, risk, and what they can show their board at each checkpoint.
+**Exercise 14.5 (Level 5).** A client insists all stages ship at once. Write the argument for staging in their terms: money, risk, and what they can show their board at each checkpoint.
 
 ## Chapter Summary
 
 - The agent builds features; you build the sequence
 - Decompose into issues: small, independently checkable, useful alone
 - One issue per conversation, landed on verified ground before the next
-- Recorded deviations are the project's real history — and the next brief's teacher
+- Recorded deviations are the project's real history, and the next brief's teacher
 
 ## Reflection
 
@@ -108,7 +108,7 @@ Before moving on, ensure you:
 - [ ] Sat through a fog interview and answered its questions honestly
 - [ ] Written an issue list where every stage lands useful
 - [ ] Landed at least one stage: dispatched, verified, recorded
-- [ ] Resisted parallel — and noticed where the temptation came from
+- [ ] Resisted parallel, and noticed where the temptation came from
 
 ## Your Learning Journal
 
@@ -118,4 +118,4 @@ Before moving on, ensure you:
 
 ## Next Steps
 
-The department produced five stages — but would it survive an outsider? The next chapter borrows the audit discipline: reading someone else's trail, and judging whether the product matches its story.
+The department produced five stages. But would it survive an outsider? The next chapter borrows the audit discipline: reading someone else's trail, and judging whether the product matches its story.

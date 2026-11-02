@@ -21,5 +21,5 @@ standard library plus ruff and pytest only.
 ## Wiring
 
 - Local: pre-commit hook running `python slop_check.py`.
-- Remote: the same five gates as a CI workflow — commission the YAML
+- Remote: the same five gates as a CI workflow. Commission the YAML
   from the agent, then verify it by opening a branch pull request.

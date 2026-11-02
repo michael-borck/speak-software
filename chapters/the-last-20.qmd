@@ -2,17 +2,17 @@
 
 > The first 80% is a demo. The last 20% is the product.
 
-**Lab companion:** [Lab 9, The Last 20%](https://michael-borck.github.io/programming-labs/lab-09-the-last-20/) — this chapter is the reasoning; the lab is the doing.
+**Lab companion:** [Lab 9, The Last 20%](https://michael-borck.github.io/programming-labs/lab-09-the-last-20/). This chapter is the reasoning; the lab is the doing.
 
 ## The Concept First
 
-The agent is superb at the first 80%. Given a clear spec it produces the working feature, the reasonable layout, the passing demo — fast. What it does not do, reliably, is finish. The last 20% is everything the spec did not force: the empty state nobody designed, the error message that sounds like a machine, the page that works but feels unloved, the one weird input the checklist never imagined.
+The agent is superb at the first 80%. Given a clear spec it produces the working feature, the reasonable layout, the passing demo, fast. What it does not do, reliably, is finish. The last 20% is everything the spec did not force: the empty state nobody designed, the error message that sounds like a machine, the page that works but feels unloved, the one weird input the checklist never imagined.
 
-This is not a complaint about the agent. The last 20% is *hard for the same reason taste is hard*: it requires knowing what the thing is for. The agent can complete requirements; only you can see the gap between "meets the spec" and "feels finished." Your job in this chapter is to see that gap, name it, and direct the department to close it — item by item, without accidentally rebuilding the product.
+This is not a complaint about the agent. The last 20% is *hard for the same reason taste is hard*: it requires knowing what the thing is for. The agent can complete requirements; only you can see the gap between "meets the spec" and "feels finished." Your job in this chapter is to see that gap, name it, and direct the department to close it: item by item, without accidentally rebuilding the product.
 
 ## Understanding Through the House Viewing
 
-Nobody buys a house because the frame passed inspection. The frame is essential — but what sells is the door that closes softly, the light switch where your hand expects it, the absence of the smell. Those things were all "finishing touches" to the builder and deal-breakers to you.
+Nobody buys a house because the frame passed inspection. The frame is essential, but what sells is the door that closes softly, the light switch where your hand expects it, the absence of the smell. Those things were all "finishing touches" to the builder and deal-breakers to you.
 
 AI-built software has excellent frames. The finishing is where it shows: the button that works but has no pressed state, the form that works but forgets everything on error, the page that loads but has no opinion about loading. Each one is invisible on the demo. Each one is the reason a visitor quietly decides the site is not real.
 
@@ -20,7 +20,7 @@ AI-built software has excellent frames. The finishing is where it shows: the but
 
 ### Exploration 1: The Fresh-Eyes Pass
 
-You are the wrong judge — you know what everything is supposed to do. Find the right judge, or simulate one:
+You are the wrong judge: you know what everything is supposed to do. Find the right judge, or simulate one:
 
 ```text
 Act as a first-time visitor who has never seen this project and is
@@ -34,18 +34,18 @@ whether a visitor stayed.
 
 The fresh-eyes list is always the same families, which makes it directable:
 
-- **Empty states** — what does the page look like with no data yet?
-- **Error moments** — what does the user see and *feel* when something fails?
-- **Boundaries** — the longest name, the zero items, the slow connection
-- **Loading** — what happens in the seconds you forgot to design?
-- **Consistency** — three pages, three button styles?
-- **Words** — machine messages ("Error 500") where human ones belong
+- **Empty states**: what does the page look like with no data yet?
+- **Error moments**: what does the user see and *feel* when something fails?
+- **Boundaries**: the longest name, the zero items, the slow connection
+- **Loading**: what happens in the seconds you forgot to design?
+- **Consistency**: three pages, three button styles?
+- **Words**: machine messages ("Error 500") where human ones belong
 
 Commission the agent to walk each family deliberately, one prompt per family, collecting candidates. The quality jump between "make it nicer" and this list is the entire lesson.
 
 ### Exploration 3: Direct Without Rebuilding
 
-Now the directing skill — the hard part. Vague polish requests ("make it feel more professional") trigger rewrites. Item-by-item requests preserve the product:
+Now the directing skill, the hard part. Vague polish requests ("make it feel more professional") trigger rewrites. Item-by-item requests preserve the product:
 
 ```text
 Three changes, nothing else:
@@ -62,7 +62,7 @@ The diff request is the safety harness: you review the *change*, not the whole p
 
 ## From Concept to Code
 
-Polish items are tracked like everything else — as commitments, not vibes:
+Polish items are tracked like everything else, as commitments, not vibes:
 
 ```markdown
 ## Last 20% — registered gaps (2026-09-16)
@@ -72,17 +72,17 @@ Polish items are tracked like everything else — as commitments, not vibes:
 - [ ] Long names wrap without breaking the layout
 ```
 
-And when an item is genuinely a *decision* rather than a task — the wording of an error message, the colour of a warning — that is CRITIQUE.md material, not a chore. The last 20% is where taste from Chapter 10 does its daily work.
+And when an item is genuinely a *decision* rather than a task (the wording of an error message, the colour of a warning), that is CRITIQUE.md material, not a chore. The last 20% is where taste from Chapter 10 does its daily work.
 
 ::: {.callout-tip title="The shipping rule"}
-The last 20% is never done. Decide how much of it a given product deserves — a throw-away prototype deserves almost none, and that is correct — and stop on purpose. Stopping is a decision to record in DECISIONS.md, like any other.
+The last 20% is never done. Decide how much of it a given product deserves (a throw-away prototype deserves almost none, and that is correct) and stop on purpose. Stopping is a decision to record in DECISIONS.md, like any other.
 :::
 
 ## Business Connection
 
 The last 20% is the entire visible difference between "built with AI" and "built by a professional." Anyone can produce the working 80% now; the market has noticed. What clients cannot produce themselves is the judgement of which rough edges matter, the discipline of item-by-item direction, and the restraint to stop.
 
-Charge for it honestly. "Polish" is not a euphemism for padding — it is a named phase with a list, a diff review per item, and a stop decision. Projects that skip it look cheaper and are more expensive, because the visitor who hesitated at the ugly empty state did not send an email explaining why they left.
+Charge for it honestly. "Polish" is not an euphemism for padding; it is a named phase with a list, a diff review per item, and a stop decision. Projects that skip it look cheaper and are more expensive, because the visitor who hesitated at the ugly empty state did not send an email explaining why they left.
 
 ## Practice Exercises
 
@@ -100,7 +100,7 @@ Charge for it honestly. "Polish" is not a euphemism for padding — it is a name
 
 - The agent finishes requirements; finishing the *product* is directed judgement
 - Rough moments come in families: empty states, errors, boundaries, loading, consistency, words
-- Item-by-item direction with a diff review — never "make it nicer"
+- Item-by-item direction with a diff review: never "make it nicer"
 - Stopping on purpose is a decision to record, not a failure to admit
 
 ## Reflection
@@ -120,4 +120,4 @@ Before moving on, ensure you:
 
 ## Next Steps
 
-The last 20% was personal — one product, your eye. The next chapter scales the same discipline up: organising a department's skills into folders so one agent can run a whole workflow, and the context wall finally stops mattering.
+The last 20% was personal: one product, your eye. The next chapter scales the same discipline up: organising a department's skills into folders so one agent can run a whole workflow, and the context wall finally stops mattering.

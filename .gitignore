@@ -3,6 +3,7 @@
 /_site/
 /.quarto/
 *.html
+!chatbot.html
 *.pdf
 *.epub
 *.docx

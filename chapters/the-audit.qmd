@@ -2,19 +2,19 @@
 
 > The code is not the only record. Sometimes it is not even the true one.
 
-**Lab companion:** [Lab 11, The Audit](https://michael-borck.github.io/programming-labs/lab-11-the-audit/) — this chapter is the reasoning; the lab is the doing.
+**Lab companion:** [Lab 11, The Audit](https://michael-borck.github.io/programming-labs/lab-11-the-audit/): this chapter is the reasoning; the lab is the doing.
 
 ## The Concept First
 
-Everything this book has taught — specs, gates, flight recorders, context folders — produces a trail: SPEC.md, DECISIONS.md, CRITIQUE.md, the issue list, the commit history. This chapter is where the trail becomes a skill. You audit someone else's department: a provided repository, a colleague's project, or your own work from far enough away to count as someone else.
+Everything this book has taught (specs, gates, flight recorders, context folders) produces a trail: SPEC.md, DECISIONS.md, CRITIQUE.md, the issue list, the commit history. This chapter is where the trail becomes a skill. You audit someone else's department: a provided repository, a colleague's project, or your own work from far enough away to count as someone else.
 
-Auditing is the discipline that proves the rest of the book was not theatre. It is easy to keep good records for yourself. The audit asks: does this trail *stand alone*? Could a stranger reconstruct what was built, why it was built that way, and whether the product matches the story? For the reader, this is also the exact skill of evaluating vendors, contractors, and — increasingly — AI agents you did not personally brief.
+Auditing is the discipline that proves the rest of the book was not theatre. It is easy to keep good records for yourself. The audit asks: does this trail *stand alone*? Could a stranger reconstruct what was built, why it was built that way, and whether the product matches the story? For the reader, this is also the exact skill of evaluating vendors, contractors, and, increasingly, AI agents you did not personally brief.
 
 ## Understanding Through the House Inspection
 
 A house inspection is not a house tour. The tour shows you the kitchen. The inspection asks for the permits, checks the wiring against code, walks the roof, and reports what the paint is covering.
 
-An audit is the same posture applied to a software trail. The README is the paint. The questions are underneath: does the spec match what was built? Do the decisions in the log match the commits in the history? Does the acceptance checklist actually run green — and was it possible to fake?
+An audit is the same posture applied to a software trail. The README is the paint. The questions are underneath: does the spec match what was built? Do the decisions in the log match the commits in the history? Does the acceptance checklist actually run green, and was it possible to fake?
 
 ## Discovering the Audit with Your AI Partner
 
@@ -32,7 +32,7 @@ Then answer, from the documents alone:
 3. Where would you expect the risks to be?
 ```
 
-A trail that answers those three questions is doing its job. A trail that cannot is the finding — before the code has even been opened.
+A trail that answers those three questions is doing its job. A trail that cannot is the finding. The code has not even been opened yet.
 
 ### Exploration 2: The Match Test
 
@@ -51,7 +51,7 @@ The two most productive questions in auditing are the last two: *unexplained pro
 
 ### Exploration 3: The Verification Audit
 
-Finally, audit the verification itself — the receipts from Chapter 8:
+Finally, audit the verification itself, the receipts from Chapter 8:
 
 ```text
 Review the acceptance checklist and its recorded results. For each
@@ -63,7 +63,7 @@ yourself, and re-run them.
 
 ## From Concept to Code
 
-The audit produces a report, and the report has a genre. Findings first, ordered by consequence; evidence attached; and the discipline that separates an audit from a review — **observations, not verdicts about people**:
+The audit produces a report, and the report has a genre. Findings first, ordered by consequence; evidence attached; and the discipline that separates an audit from a review (**observations, not verdicts about people**):
 
 ```markdown
 # Audit: cafe-ordering project, 2026-09-16
@@ -82,14 +82,14 @@ genuinely pass.
 ```
 
 ::: {.callout-important title="Audit the trail you leave, too"}
-The fastest way to internalise this chapter: run the same audit on your own current project and imagine the auditor dislikes you. Whatever makes you wince — the missing decision entry, the unexplained feature, the check that claims more than it ran — is the thing to fix before a real audit finds it. Chapter 16 asks for exactly that wince.
+The fastest way to internalise this chapter: run the same audit on your own current project and imagine the auditor dislikes you. Whatever makes you wince (the missing decision entry, the unexplained feature, the check that claims more than it ran) is the thing to fix before a real audit finds it. Chapter 16 asks for exactly that wince.
 :::
 
 ## Business Connection
 
 Audit capability is a service. Small businesses adopt AI-built software faster than they can govern it, and the gap between "the agent built it" and "someone verified the trail" is now a marketable discipline: pre-purchase project audits, vendor evaluations, due diligence before the founder departs with the only copy of the context folder.
 
-The same capability internally is governance. "Who decided this, when, and on what recorded reasoning?" is a question boards ask. A department that keeps trails can answer in minutes. A department that kept vibes cannot answer at all — and the market has started noticing the difference.
+The same capability internally is governance. "Who decided this, when, and on what recorded reasoning?" is a question boards ask. A department that keeps trails can answer in minutes. A department that kept vibes cannot answer at all. The market has started noticing the difference.
 
 ## Practice Exercises
 
@@ -107,7 +107,7 @@ The same capability internally is governance. "Who decided this, when, and on wh
 
 - Read the trail before the product: can it stand alone?
 - Unexplained product and quietly dropped promises are slop signatures
-- Audit the verification itself — re-run claimed passes
+- Audit the verification itself: re-run claimed passes
 - Observations, not verdicts about people: findings, evidence, consequence
 
 ## Reflection
@@ -117,7 +117,7 @@ Before moving on, ensure you:
 - [ ] Audited a trail you did not write
 - [ ] Ran every claimed check yourself, at least once
 - [ ] Wrote findings ordered by consequence, not by annoyance
-- [ ] Audited your own current project — and winced at least once
+- [ ] Audited your own current project, and winced at least once
 
 ## Your Learning Journal
 
@@ -127,4 +127,4 @@ Before moving on, ensure you:
 
 ## Next Steps
 
-One department, taught, gated, audited. The final chapters put it all together: ship something true, end to end, under your own authority — and then meet the staff the mini CEO is growing.
+One department, taught, gated, audited. The final chapters put it all together: ship something true, end to end, under your own authority. Then meet the staff the mini CEO is growing.

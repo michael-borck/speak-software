@@ -1,0 +1,46 @@
+# About the Author {.unnumbered}
+
+![Photo of Michael Borck](images/author-photo.jpg){fig-alt="Photo of Michael Borck, the author" width=200px fig-align="center"}
+
+**Michael Borck** is a software developer and educator working at the intersection of human expertise and artificial intelligence. He teaches applied AI and AI in business at Curtin University, and runs *The Human Edge* masterclasses through Curtin Executive Education.
+
+*Speak Software: Programming at the Natural-Language Layer* is for readers who will never write code by hand. It treats programming as a management job: you describe what you want, an AI agent builds it, and your work is specification, verification, decomposition, and taste. The hands-on companion is the Speak Software programming labs, a free set of client-brief exercises at [michael-borck.github.io/programming-labs](https://michael-borck.github.io/programming-labs/). The labs supply the doing; this book supplies the why, the guardrails, and the harness the labs leave out, including the slop gate, the evidence-trio linter, and the environment pre-flight in this book's `tools/` folder.
+
+His earlier book, *Conversation, Not Delegation*, argues for treating AI as a thinking partner you converse with. The Python track in this series teaches the language itself for readers who want it under their fingers. *Speak Software* takes the other interface: no syntax, and a department of one to run instead.
+
+Michael builds educational software and resources, and writes about the 80/20 principle in learning and professional judgement.
+
+---
+
+\newpage
+
+**Connect**
+
+- [GitHub projects](https://github.com/michael-borck): Software and educational resources
+- [Free book collection](https://books.borck.education): Current online editions and downloads
+- [8020workshop.com](https://8020workshop.com): Passion projects and workshops
+- [LinkedIn](https://linkedin.com/in/michaelborck)
+
+---
+
+**Other Books in This Series**
+
+*AI-Collaboration and Judgement Track:*
+
+- *Conversation, Not Delegation: How to Think With AI, Not Just Use It*: the general method behind this book
+- *The Human Edge: Using AI with Judgement*: judgement with AI in professional work
+- *Prove, Don't Persuade: Why Proof Beats the Demo in Applied AI*
+- *Substantiate, Don't Assume: Why the Auditor's Opinion Matters More Than Ever in the Age of AI*
+- *Partner, Don't Police: AI in the Business Classroom*
+- *The Absolute Minimum You Must Know*: the free, always-current quick reference
+
+*Python Track:*
+
+- *Think Python, Direct AI: Computational Thinking for Beginners*
+- *Code Python, Consult AI: Python Fundamentals for the AI Era*
+- *Ship Python, Orchestrate AI: Professional Python in the AI Era*
+- *Converse Python, Partner AI: The Intentional Prompting Methodology*
+
+*Web Track:*
+
+- *Build Web, Guide AI: Business Web Development with AI*

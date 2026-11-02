@@ -5,14 +5,17 @@ project:
     - LICENSE
     - LICENSE-CONTENT.md
     - LICENSE-CODE.md
+    - tools/**
 
 book:
+  cover-image: cover.png
   title: "Speak Software"
   subtitle: "Programming at the Natural-Language Layer"
   author: "Michael Borck"
   date: "last-modified"
   license: "CC BY 4.0 International"
-  description: "A book for people who will never write code by hand: direct AI agents with specifications, guardrails, and taste — and ship software that is true."
+  favicon: favicon.svg
+  description: "A book for people who will never write code by hand: direct AI agents with specifications, guardrails, and taste, and ship software that is true."
   site-url: https://michael-borck.github.io/speak-software
   repo-url: https://github.com/michael-borck/speak-software
   repo-branch: main
@@ -50,16 +53,34 @@ book:
     - appendices/evidence-trio-templates.qmd
     - appendices/slop-defence-kit.qmd
     - appendices/slop-lexicon.qmd
+    - appendices/model-access.qmd
     - appendices/resources.qmd
+    - acknowledgments.qmd
+    - about-author.qmd
   page-navigation: true
   sidebar:
     style: docked
     search: true
     collapse-level: 2
   other-links:
+    - text: Download PDF
+      icon: file-pdf
+      href: /speak-software.pdf
+    - text: Download EPUB
+      icon: book
+      href: /speak-software.epub
+    - text: Download llm.txt
+      icon: robot
+      href: llm.txt
     - text: The Labs (companion)
       icon: flask
       href: https://michael-borck.github.io/programming-labs/
+    - text: GitHub
+      icon: github
+      href: https://github.com/michael-borck/speak-software
+    - text: DeepWiki
+      icon: search
+      href: https://deepwiki.com/michael-borck/speak-software
     - text: All Books
       icon: collection
       href: https://books.borck.education
@@ -71,11 +92,19 @@ format:
     theme:
       light: cosmo
       dark: darkly
+    css: book-design.css
+    include-after-body: chatbot.html
     toc: true
     toc-depth: 3
     number-sections: true
     highlight-style: github
   pdf:
+    pdf-engine: lualatex
+    fontsize: 11pt
+    linestretch: 1.08
+    include-in-header: [pdf-header.tex, book-design.tex]
+    include-before-body:
+      - copyright-page.tex
     documentclass: book
     toc: true
     toc-depth: 1
@@ -88,6 +117,8 @@ format:
       - top=0.75in
       - bottom=0.75in
   epub:
+    epub-cover-image: cover.png
+    css: [epub-styles.css, book-design-epub.css]
     toc: true
     toc-depth: 1
 

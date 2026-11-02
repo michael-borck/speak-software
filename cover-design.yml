@@ -1,0 +1,13 @@
+version: 1
+style: editorial-c
+art: cover-art.png
+family: PROGRAMMING / NATURAL LANGUAGE
+accent: '#885E32'
+background: '#F1E5D6'
+title_lines:
+- Speak
+- Software
+dark: false
+pixel: false
+scene: speak
+art_origin: Locally constructed editable vector illustration.

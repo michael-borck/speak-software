@@ -1,16 +1,18 @@
 # Speak Software
 
-**Programming at the Natural-Language Layer** — a book for people who will never write code by
-hand. You describe, an AI agent builds, and the durable human skills — specification,
-verification, decomposition, taste — are the curriculum.
+**Programming at the Natural-Language Layer**: a book for people who will never write code by
+hand. You describe, an AI agent builds, and the durable human skills (specification,
+verification, decomposition, taste) are the curriculum.
 
 Part of the [books.borck.education](https://books.borck.education) series. The hands-on
 companion is the [Speak Software labs](https://michael-borck.github.io/programming-labs/).
 
 ## Status
 
-First draft complete: 18 chapters, 4 appendices. Fresh-reader pass, print build and cover
-pending. See `PROSPECTUS.md` for the plan and the writing queue.
+Online-edition-ready draft: 18 chapters, 5 appendices, plus acknowledgments and author
+page. Local HTML/PDF/EPUB build and validation pass. Fresh-reader pass and the push stage
+(chatbot, publication) are still to come. See `PROSPECTUS.md` for the plan and the writing
+queue.
 
 ## Build
 

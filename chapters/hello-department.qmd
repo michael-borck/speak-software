@@ -1,37 +1,37 @@
 # Hello, Department of One {#sec-hello-department}
 
-> You are not learning to code. You are learning to run the people who do — and there is only one of them.
+> You are not learning to code. You are learning to run the people who do, and there is only one of them.
 
-**Lab companion:** [Lab 1, Hello, Department of One](https://michael-borck.github.io/programming-labs/lab-01-department-of-one/) — this chapter is the reasoning; the lab is the doing.
+**Lab companion:** [Lab 1, Hello, Department of One](https://michael-borck.github.io/programming-labs/lab-01-department-of-one/). This chapter is the reasoning; the lab is the doing.
 
 ## The Concept First
 
-Imagine being handed an engineering department. One employee. Brilliant — ships in minutes what used to take weeks. Tireless — never bored, never tired, never offended. And overconfident in a way no human employee has ever been: it will announce, in fluent confident prose, that the thing it just made works, when it does not.
+Imagine being handed an engineering department. One employee. Brilliant: ships in minutes what used to take weeks. Tireless: never bored, never tired, never offended. And overconfident in a way no human employee has ever been: it will announce, in fluent confident prose, that the thing it just made works, when it does not.
 
 You are the manager. That is the entire frame of this book, and everything strange about the AI era becomes ordinary once you accept it. The skill of the next decade is not writing code. It is running a department of one brilliant intern: briefing it, checking its work, keeping the records straight, and knowing when it is bluffing.
 
 Managers do not need to type the code. Managers do need four things, and you will build all four in this chapter:
 
-1. A place where the work lives — a **repository** ("repo"), the department's filing cabinet
-2. A way to brief the employee — a **prompt**, then a **specification**
-3. A way to check the work — running it, then testing it
-4. A record of decisions — so the department remembers, and so you can prove what happened
+1. A place where the work lives: a **repository** ("repo"), the department's filing cabinet
+2. A way to brief the employee: a **prompt**, then a **specification**
+3. A way to check the work: running it, then testing it
+4. A record of decisions: so the department remembers, and so you can prove what happened
 
 ## Understanding Through Real Life
 
 ### The Intern You Already Know
 
-Think of the best intern you have ever worked with. Fast. Eager. Produces impressive-looking first drafts in minutes. Now stack the exaggerations: this intern has read everything ever published, works in seconds, costs pennies, never sleeps — and has zero judgement about your business, no memory beyond this conversation, and no shame about inventing facts.
+Think of the best intern you have ever worked with. Fast. Eager. Produces impressive-looking first drafts in minutes. Now stack the exaggerations: this intern has read everything ever published, works in seconds, costs pennies, never sleeps, and has zero judgement about your business, no memory beyond this conversation, and no shame about inventing facts.
 
-Would you give that intern a task with no instructions? Of course not — you would be paying to generate rework. Would you accept their work without looking at it? Never — not because they are dishonest, but because confidence and correctness are different qualities, and the intern has only the first one.
+Would you give that intern a task with no instructions? Of course not: you would be paying to generate rework. Would you accept their work without looking at it? Never: not because they are dishonest, but because confidence and correctness are different qualities, and the intern has only the first one.
 
-That gap — between confidence and correctness — is where every chapter of this book lives.
+That gap, between confidence and correctness, is where every chapter of this book lives.
 
 ### Why a Repository, Not a Chat
 
 Your first instinct will be to work in the chat window: ask, copy the answer, paste it somewhere, lose it. Everyone starts there. The chat is where you *talk*; the repository is where you *keep*. A repository is a folder with a perfect memory: every version of every file, every change, every reason, recorded forever, undoable at any moment.
 
-The single habit this chapter installs: **if it is not in the repository, it does not exist.** Not the code only — the brief, the decisions, the complaints, the version you rejected. A department that keeps no records is a department you cannot manage.
+The single habit this chapter installs: **if it is not in the repository, it does not exist.** Not the code only: the brief, the decisions, the complaints, the version you rejected. A department that keeps no records is a department you cannot manage.
 
 ## Discovering the Department with Your AI Partner
 
@@ -43,7 +43,7 @@ Open your AI agent (the labs use a command-line agent; any equivalent works) and
 Make a website
 ```
 
-Watch what comes back. The agent guesses — and its guesses are competent, generic, and not yours. Note the assumptions it made: what the site is for, who visits it, what "make" even means. You have just met the department's central limitation: it does not ask. It assumes.
+Watch what comes back. The agent guesses, and its guesses are competent, generic, and not yours. Note the assumptions it made: what the site is for, who visits it, what "make" even means. You have just met the department's central limitation: it does not ask. It assumes.
 
 ### Exploration 2: The Briefed Request
 
@@ -55,7 +55,7 @@ the tagline "Fresh coffee, warm welcome", and three menu items with
 prices. One file. No frameworks.
 ```
 
-The result is smaller, closer, and checkable — because the brief gave the department something to be measured against. Keep both attempts. The gap between them is the skill you are here to build.
+The result is smaller, closer, and checkable, because the brief gave the department something to be measured against. Keep both attempts. The gap between them is the skill you are here to build.
 
 ### Exploration 3: Give It a Memory
 
@@ -94,7 +94,7 @@ git commit -m "Add cafe landing page from brief"
 Three commands. `git init` opens the filing cabinet. The agent writes. `git add` and `git commit` file the result with a note. That is the whole ritual this chapter asks you to adopt: **work, then file, with a message that says what happened.**
 
 ::: {.callout-tip title="Commit messages are management records"}
-"Update" tells a future reader nothing. "Add cafe landing page from brief" tells them what happened and hints at why. When the audit comes — and Chapter 15 is an entire audit — the commit messages are the department's testimony.
+"Update" tells a future reader nothing. "Add cafe landing page from brief" tells them what happened and hints at why. When the audit comes (and Chapter 15 is an entire audit), the commit messages are the department's testimony.
 :::
 
 ## Business Connection
@@ -113,12 +113,12 @@ The repo is not bureaucracy. It is the difference between owning your software a
 
 **Exercise 1.4 (Level 4).** A colleague says repositories are unnecessary because "the chat history has everything." Write the strongest case against, using one real consequence.
 
-**Exercise 1.5 (Level 5).** Draft the AGENTS.md for a business you actually care about. Keep it — Chapter 6 turns it into a proper context folder.
+**Exercise 1.5 (Level 5).** Draft the AGENTS.md for a business you actually care about. Keep it. Chapter 6 turns it into a proper context folder.
 
 ## Chapter Summary
 
 - Your agent is a department of one: brilliant, tireless, overconfident
-- The repository is the department's memory — work is not done until it is filed
+- The repository is the department's memory: work is not done until it is filed
 - Briefs beat requests: the agent is measured against what you wrote, not what you meant
 - Commit messages are management records, for the audit you cannot yet imagine
 
@@ -138,4 +138,4 @@ Before moving on, ensure you:
 
 ## Next Steps
 
-The department works — for the demo. In the next chapter, we test the demo's honesty: why "it works" is the beginning of the sentence, and how the illusion is built.
+The department works (for the demo). In the next chapter, we test the demo's honesty: why "it works" is the beginning of the sentence, and how the illusion is built.

@@ -70,5 +70,14 @@
   },
   "appendices/resources.qmd": {
     "resources.html": "dac3265c"
+  },
+  "appendices/model-access.qmd": {
+    "model-access.html": "2384072f"
+  },
+  "acknowledgments.qmd": {
+    "acknowledgments.html": "a188a6e8"
+  },
+  "about-author.qmd": {
+    "about-author.html": "c4d31aeb"
   }
 }

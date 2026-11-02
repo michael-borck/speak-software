@@ -2,6 +2,8 @@
 
 The three documents every project keeps. Copy them at project start; the discipline is filling them *at the moment of the event*, not after.
 
+**Lab companion:** [Lab 14, The Paper Trail](https://michael-borck.github.io/programming-labs/lab-14-the-paper-trail/): the trio as a checked artefact rather than a good intention, with the reference linter in this book's `tools/trio_lint.py`.
+
 ## SPEC.md
 
 ```markdown
