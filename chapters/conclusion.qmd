@@ -27,7 +27,17 @@ Be precise about the claim, because it is the book's last and largest. The pipel
 
 An agent can generate code into your repository. It cannot decide, on your behalf, what good looks like. When everyone's agent is competent, the competent code stops being an advantage. And the referee who can tell true from plausible, who knows what to build and why, and who signs the launch record, becomes the scarce thing.
 
-That is not a consolation prize for people who never learned to program. It is the actual job, arriving ahead of schedule.
+The actual job is arriving ahead of schedule, and it belongs to people who never learned to program as much as to those who did.
+
+## If Everyone Can Speak Software
+
+The claim has a second edge. If the pipeline commoditises, then the ability to direct an agent stops being scarce. Anyone can describe a feature and get a working first draft. The difference moves to the judgement around the build: which problem is worth solving, what done means, which check matters, and who signs the result.
+
+*The Human Edge* makes the same argument for people who never open a code editor. The tools are different, and the residue is the same. The workplace version spends more time on briefing, trust, and the decision to keep a person in the step. This book spends more time on the gate, the audit, and the launch record.
+
+The shared failure mode is over-automation. A workflow removes the human check because the demo looked good, and the absence stays invisible until something goes wrong. Speak Software gives you the harness to catch that in code. *The Human Edge* gives you the judgement to catch it in the work around the code.
+
+Read it next if you want the same discipline for the rest of your job: [The Human Edge](https://michael-borck.github.io/the-human-edge-using/).
 
 ## The Skills That Transfer
 

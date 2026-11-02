@@ -47,6 +47,8 @@ Every chapter pairs a lab from the companion series with the reasoning the lab l
 
 This book is part of a series designed to help you master modern software development in the AI era.
 
+The series has a trunk: *Conversation, Not Delegation* for method and *The Human Edge* for professional judgement. This book is the branch for building with agents.
+
 | Start with | Continue with | Because |
 |---|---|---|
 | *Conversation, Not Delegation* | *Speak Software* (this book) | You want the thinking-with-AI framework, then to build without code |

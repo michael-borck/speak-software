@@ -8,7 +8,7 @@
 
 Imagine being handed an engineering department. One employee. Brilliant: ships in minutes what used to take weeks. Tireless: never bored, never tired, never offended. And overconfident in a way no human employee has ever been: it will announce, in fluent confident prose, that the thing it just made works, when it does not.
 
-You are the manager. That is the entire frame of this book, and everything strange about the AI era becomes ordinary once you accept it. The skill of the next decade is not writing code. It is running a department of one brilliant intern: briefing it, checking its work, keeping the records straight, and knowing when it is bluffing.
+You are the manager. That frame makes everything strange about the AI era ordinary once you accept it. The skill of the next decade is running a department of one brilliant intern: briefing it, checking its work, keeping the records straight, and knowing when it is bluffing.
 
 Managers do not need to type the code. Managers do need four things, and you will build all four in this chapter:
 
@@ -91,7 +91,7 @@ git add index.html
 git commit -m "Add cafe landing page from brief"
 ```
 
-Three commands. `git init` opens the filing cabinet. The agent writes. `git add` and `git commit` file the result with a note. That is the whole ritual this chapter asks you to adopt: **work, then file, with a message that says what happened.**
+Three commands. `git init` opens the filing cabinet. The agent writes. `git add` and `git commit` file the result with a note. The ritual is simple: **work, then file, with a message that says what happened.**
 
 ::: {.callout-tip title="Commit messages are management records"}
 "Update" tells a future reader nothing. "Add cafe landing page from brief" tells them what happened and hints at why. When the audit comes (and Chapter 15 is an entire audit), the commit messages are the department's testimony.
@@ -101,7 +101,7 @@ Three commands. `git init` opens the filing cabinet. The agent writes. `git add`
 
 A department of one changes the economics of small software. A page that would have cost a week of a contractor's time takes minutes of briefing. But the economics only work if the work is kept: the businesses drowning in AI-era messes are the ones whose "developer" worked in chat windows, with no repo, no records, and no way to fix what eventually broke.
 
-The repo is not bureaucracy. It is the difference between owning your software and renting it from a conversation you can no longer find.
+The repo is the difference between owning your software and renting it from a conversation you can no longer find.
 
 ## Practice Exercises
 

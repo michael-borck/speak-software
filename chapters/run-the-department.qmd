@@ -6,7 +6,7 @@
 
 ## The Concept First
 
-Everything so far has been one product, one conversation, one gate. Real work arrives as a fog: "we need the whole ordering thing." The mini CEO's first management system turns fog into sequence, and the tool is not a framework. It is decomposition, written down as issues, dispatched to the department one at a time, each landing on verified ground.
+Everything so far has been one product, one conversation, one gate. Real work arrives as a fog: "we need the whole ordering thing." The mini CEO's first management system turns fog into sequence. The tool is decomposition, written down as issues, dispatched to the department one at a time, each landing on verified ground.
 
 The principle the chapter defends: **the agent builds features; you build the sequence.** A big prompt that asks for everything produces the confident average of a big thing: plausible, interlocking, and wrong in ways that only surface when users arrive. Ten small briefs, each with a check, each landing on the last, produce a system.
 
@@ -30,7 +30,7 @@ until you can propose a staged build: each stage small, independently
 checkable, and useful on its own. Do not propose anything yet.
 ```
 
-The interview is the point. Watch the agent ask about payment, notifications, and scale while you discover you had not thought about refunds. The questions *are* the management.
+The interview is where the work happens. Watch the agent ask about payment, notifications, and scale while you discover you had not thought about refunds. The questions *are* the management.
 
 ### Exploration 2: The Issue List
 

@@ -1,6 +1,6 @@
 # The Slop Question {#sec-the-slop-question}
 
-> The dispute is not restrained versus vibe. It is: what is the blast radius?
+> The question is the blast radius.
 
 **Lab companion:** [Lab 2, The Demo Illusion](https://michael-borck.github.io/programming-labs/lab-02-demo-illusion/). Read this chapter first; the lab is where the feeling becomes a habit.
 
@@ -16,7 +16,7 @@ Cherny's answer was not to pick a side. It was to dissolve the dilemma, and the 
 
 ## Match the Method to the Mission
 
-The mistake in the slop debate is treating "should I read the code?" as a single question with a single answer. It is not one question. It is two:
+The mistake in the slop debate is treating "should I read the code?" as a single question with a single answer. There are two questions:
 
 1. **What is the blast radius?** If this software breaks (silently, at the worst moment), what gets hurt? A birthday-party invitation list? Nobody. A payroll run? Everyone.
 2. **How long will it live?** Thrown away tonight, or on its second year of service?
@@ -38,7 +38,7 @@ Notice what this is not. It is not the series arguing that vibe coding was a mis
 
 Vibe coding is a legitimate technique **at the layer where mistakes are cheap**. Andrej Karpathy, who coined the term, meant something specific: give in to the flow, let the model drive, accept that you are not really reviewing. For a weekend prototype, that is fine. For anything that ships, the same behaviour (accept, run, move on) is how slop is manufactured.
 
-The difference between the vibe coder and the intentional prompter is not the tools or even the prompts. It is what happens *between* the prompts:
+What separates the vibe coder from the intentional prompter is what happens *between* the prompts:
 
 - The vibe coder accepts output; the intentional prompter **verifies** it.
 - The vibe coder asks for more; the intentional prompter asks **what would break this**.
@@ -78,7 +78,7 @@ Delegation is not absolution. When the agent's code leaks data or corrupts files
 None of these require you to read code like a developer. All of them require you to specify what "good" means, which is the skill this book actually teaches.
 
 ::: {.callout-tip title="Try it now"}
-Take the last thing you built with AI. Answer the two questions: blast radius, and lifespan. Write the answers down. If you would have treated it as a black box under this chapter's rule, and it has real users, you have found your first slop. That is not an accusation; it is a starting measurement.
+Take the last thing you built with AI. Answer the two questions: blast radius, and lifespan. Write the answers down. If you would have treated it as a black box under this chapter's rule, and it has real users, you have found your first slop. Use it as a starting measurement.
 :::
 
 ## Business Connection

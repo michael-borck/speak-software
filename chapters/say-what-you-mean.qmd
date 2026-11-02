@@ -72,7 +72,7 @@ contradictory, stop and ask.
 Compare the two builds. Differences between them are the spec's remaining gaps, the places where you were still relying on a shared conversation that a stranger would not have. Close them, and run the test again. When a fresh agent converges on something you would accept, the spec passes.
 
 ::: {.callout-important title="The Replication Test is the book's definition of authorship"}
-You did not type the code. You do not need to. You wrote the document that reproduces the product from nothing, and that document, not the code, is what you authored. This is what "programming at the natural-language layer" means, precisely.
+You did not type the code. You do not need to. You wrote the document that reproduces the product from nothing, and that document, not the code, is what you authored.
 :::
 
 ## From Concept to Code
@@ -94,7 +94,7 @@ Before running the Replication Test, read your own spec looking for the word "it
 
 The Replication Test is how organisations stop losing knowledge. Any document that only makes sense next to the person who wrote it is a liability with a resignation date. Specifications that pass a stranger test survive staff turnover, vendor changes, and the next model upgrade, because the meaning finally lives in the artefact, not the memory.
 
-This is also the quiet answer to "is prompting a real skill?" Prompting is improvisation. Specification is authorship. The first fades with the chat history; the second is an asset on your books.
+This also answers "is prompting a real skill?" Prompting is improvisation. Specification is authorship. The first fades with the chat history; the second is an asset on your books.
 
 ## Practice Exercises
 

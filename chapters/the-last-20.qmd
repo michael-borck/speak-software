@@ -8,7 +8,7 @@
 
 The agent is superb at the first 80%. Given a clear spec it produces the working feature, the reasonable layout, the passing demo, fast. What it does not do, reliably, is finish. The last 20% is everything the spec did not force: the empty state nobody designed, the error message that sounds like a machine, the page that works but feels unloved, the one weird input the checklist never imagined.
 
-This is not a complaint about the agent. The last 20% is *hard for the same reason taste is hard*: it requires knowing what the thing is for. The agent can complete requirements; only you can see the gap between "meets the spec" and "feels finished." Your job in this chapter is to see that gap, name it, and direct the department to close it: item by item, without accidentally rebuilding the product.
+The last 20% is *hard for the same reason taste is hard*: it requires knowing what the thing is for. The agent can complete requirements; only you can see the gap between "meets the spec" and "feels finished." Your job in this chapter is to see that gap, name it, and direct the department to close it: item by item, without accidentally rebuilding the product.
 
 ## Understanding Through the House Viewing
 

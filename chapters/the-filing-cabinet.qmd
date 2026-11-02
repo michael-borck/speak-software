@@ -6,7 +6,7 @@
 
 ## The Concept First
 
-Every organisation adopting AI runs into the same obstacle. It is not model quality and it is not cost. It is the **context wall**: the challenge of getting your organisation's instructions, data, and tools into the model's narrow working memory at the right moment, without overwhelming it or watching it improvise what it did not know.
+Every organisation adopting AI runs into the same obstacle. The obstacle is the **context wall**: the challenge of getting your organisation's instructions, data, and tools into the model's narrow working memory at the right moment, without overwhelming it or watching it improvise what it did not know.
 
 The industry's default answer is infrastructure: a separate bespoke agent for every task, wired together in a framework, each with its own setup and maintenance. For a department of one, that is a mistake of scale: seven fragile contraptions to do the work of one good agent and a filing cabinet.
 
@@ -24,7 +24,7 @@ You do not hire a different accountant for every form the business files. You hi
 
 An agentic framework is ten tiny robots, each hard-wired to one form, plus the wiring between them. The filing cabinet is one professional plus an organised cabinet. When a new form appears, the framework needs a new robot; the cabinet needs a new piece of paper.
 
-That is the whole architecture. And its deepest property is the one that matters to a business: **the cabinet survives the accountant.** Skills written down are assets. Skills kept in an agent's memory, or in one person's prompting habits, are favours that expire.
+Its deepest property is the one that matters to a business: **the cabinet survives the accountant.** Skills written down are assets. Skills kept in an agent's memory, or in one person's prompting habits, are favours that expire.
 
 ## Discovering Skills with Your AI Partner
 
@@ -100,7 +100,7 @@ Skills drift. The procedure that was right in September fails in December becaus
 
 This architecture is how the department of one becomes a department that serves the whole business. Every repeatable workflow in the organisation (invoicing, onboarding, reporting, the weekly order) becomes a skill folder: procedure in markdown, precision in scripts, the never-list written in blood. Staff point the agent at a folder; the specialist appears; the work is done the *company's* way, not the model's way.
 
-The strategic property is independence. The cabinet is plain files: they work with this year's agent and next year's, they move between tools, and they are readable by any human who wants to audit what the AI is actually doing. That is the approach.
+The strategic property is independence. The cabinet is plain files: they work with this year's agent and next year's, they move between tools, and they are readable by any human who wants to audit what the AI is actually doing.
 
 ::: {.callout-tip title="Choosing an agent: three questions"}
 Because the cabinet is plain files, the brand of agent matters less than the sales page suggests. Evaluate any agent with three questions and ignore the feature list.

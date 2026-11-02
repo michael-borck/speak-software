@@ -58,7 +58,7 @@ History B:
   6f5e4d3 Add address block to footer
 ```
 
-Ask your agent which history it would rather investigate a complaint from. Then ask it to explain what makes History B usable. The answer will be: each commit is one idea, and each message says what happened. That is a management standard, not a technical one, which is why you are allowed to have an opinion about it.
+Ask your agent which history it would rather investigate a complaint from. Then ask it to explain what makes History B usable. The answer will be: each commit is one idea, and each message says what happened. That is a management standard, so you are allowed to have an opinion about it.
 
 ### Exploration 3: Rehearse the Disaster
 
