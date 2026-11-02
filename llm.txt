@@ -56,6 +56,8 @@ Every chapter pairs a lab from the companion series with the reasoning the lab l
 
 This book is part of a series designed to help you master modern software development in the AI era.
 
+The series has a trunk: Conversation, Not Delegation for method and The Human Edge for professional judgement. This book is the branch for building with agents.
+
 | Start with | Continue with | Because |
 |---|---|---|
 | Conversation, Not Delegation | Speak Software (this book) | You want the thinking-with-AI framework, then to build without code |
@@ -111,7 +113,7 @@ Lab companion: Lab 1, Hello, Department of One. This chapter is the reasoning; t
 
 Imagine being handed an engineering department. One employee. Brilliant: ships in minutes what used to take weeks. Tireless: never bored, never tired, never offended. And overconfident in a way no human employee has ever been: it will announce, in fluent confident prose, that the thing it just made works, when it does not.
 
-You are the manager. That is the entire frame of this book, and everything strange about the AI era becomes ordinary once you accept it. The skill of the next decade is not writing code. It is running a department of one brilliant intern: briefing it, checking its work, keeping the records straight, and knowing when it is bluffing.
+You are the manager. That frame makes everything strange about the AI era ordinary once you accept it. The skill of the next decade is running a department of one brilliant intern: briefing it, checking its work, keeping the records straight, and knowing when it is bluffing.
 
 Managers do not need to type the code. Managers do need four things, and you will build all four in this chapter:
 
@@ -171,7 +173,7 @@ git init
 git add index.html
 git commit -m "Add cafe landing page from brief"
 
-Three commands. `git init` opens the filing cabinet. The agent writes. `git add` and `git commit` file the result with a note. That is the whole ritual this chapter asks you to adopt: work, then file, with a message that says what happened.
+Three commands. `git init` opens the filing cabinet. The agent writes. `git add` and `git commit` file the result with a note. The ritual is simple: work, then file, with a message that says what happened.
 
 "Update" tells a future reader nothing. "Add cafe landing page from brief" tells them what happened and hints at why. When the audit comes (and Chapter 15 is an entire audit), the commit messages are the department's testimony.
 
@@ -179,7 +181,7 @@ Three commands. `git init` opens the filing cabinet. The agent writes. `git add`
 
 A department of one changes the economics of small software. A page that would have cost a week of a contractor's time takes minutes of briefing. But the economics only work if the work is kept: the businesses drowning in AI-era messes are the ones whose "developer" worked in chat windows, with no repo, no records, and no way to fix what eventually broke.
 
-The repo is not bureaucracy. It is the difference between owning your software and renting it from a conversation you can no longer find.
+The repo is the difference between owning your software and renting it from a conversation you can no longer find.
 
 ## Practice Exercises
 
@@ -224,7 +226,7 @@ SOURCE: chapters/the-slop-question.qmd
 
 # The Slop Question 
 
-> The dispute is not restrained versus vibe. It is: what is the blast radius?
+> The question is the blast radius.
 
 Lab companion: Lab 2, The Demo Illusion. Read this chapter first; the lab is where the feeling becomes a habit.
 
@@ -240,7 +242,7 @@ Cherny's answer was not to pick a side. It was to dissolve the dilemma, and the 
 
 ## Match the Method to the Mission
 
-The mistake in the slop debate is treating "should I read the code?" as a single question with a single answer. It is not one question. It is two:
+The mistake in the slop debate is treating "should I read the code?" as a single question with a single answer. There are two questions:
 
 1. What is the blast radius? If this software breaks (silently, at the worst moment), what gets hurt? A birthday-party invitation list? Nobody. A payroll run? Everyone.
 2. How long will it live? Thrown away tonight, or on its second year of service?
@@ -260,7 +262,7 @@ Notice what this is not. It is not the series arguing that vibe coding was a mis
 
 Vibe coding is a legitimate technique at the layer where mistakes are cheap. Andrej Karpathy, who coined the term, meant something specific: give in to the flow, let the model drive, accept that you are not really reviewing. For a weekend prototype, that is fine. For anything that ships, the same behaviour (accept, run, move on) is how slop is manufactured.
 
-The difference between the vibe coder and the intentional prompter is not the tools or even the prompts. It is what happens between the prompts:
+What separates the vibe coder from the intentional prompter is what happens between the prompts:
 
 - The vibe coder accepts output; the intentional prompter verifies it.
 - The vibe coder asks for more; the intentional prompter asks what would break this.
@@ -297,7 +299,7 @@ Delegation is not absolution. When the agent's code leaks data or corrupts files
 
 None of these require you to read code like a developer. All of them require you to specify what "good" means, which is the skill this book actually teaches.
 
-Take the last thing you built with AI. Answer the two questions: blast radius, and lifespan. Write the answers down. If you would have treated it as a black box under this chapter's rule, and it has real users, you have found your first slop. That is not an accusation; it is a starting measurement.
+Take the last thing you built with AI. Answer the two questions: blast radius, and lifespan. Write the answers down. If you would have treated it as a black box under this chapter's rule, and it has real users, you have found your first slop. Use it as a starting measurement.
 
 ## Business Connection
 
@@ -514,7 +516,7 @@ contradictory, stop and ask.
 
 Compare the two builds. Differences between them are the spec's remaining gaps, the places where you were still relying on a shared conversation that a stranger would not have. Close them, and run the test again. When a fresh agent converges on something you would accept, the spec passes.
 
-You did not type the code. You do not need to. You wrote the document that reproduces the product from nothing, and that document, not the code, is what you authored. This is what "programming at the natural-language layer" means, precisely.
+You did not type the code. You do not need to. You wrote the document that reproduces the product from nothing, and that document, not the code, is what you authored.
 
 ## From Concept to Code
 
@@ -528,7 +530,7 @@ Before running the Replication Test, read your own spec looking for the word "it
 
 The Replication Test is how organisations stop losing knowledge. Any document that only makes sense next to the person who wrote it is a liability with a resignation date. Specifications that pass a stranger test survive staff turnover, vendor changes, and the next model upgrade, because the meaning finally lives in the artefact, not the memory.
 
-This is also the quiet answer to "is prompting a real skill?" Prompting is improvisation. Specification is authorship. The first fades with the chat history; the second is an asset on your books.
+This also answers "is prompting a real skill?" Prompting is improvisation. Specification is authorship. The first fades with the chat history; the second is an asset on your books.
 
 ## Practice Exercises
 
@@ -728,7 +730,7 @@ History B:
   a9b8c7d Fix price alignment in menu
   6f5e4d3 Add address block to footer
 
-Ask your agent which history it would rather investigate a complaint from. Then ask it to explain what makes History B usable. The answer will be: each commit is one idea, and each message says what happened. That is a management standard, not a technical one, which is why you are allowed to have an opinion about it.
+Ask your agent which history it would rather investigate a complaint from. Then ask it to explain what makes History B usable. The answer will be: each commit is one idea, and each message says what happened. That is a management standard, so you are allowed to have an opinion about it.
 
 ### Exploration 3: Rehearse the Disaster
 
@@ -1089,7 +1091,7 @@ Lab companion: Lab 8, The Taste Test. This chapter is the reasoning; the lab is 
 
 ## The Concept First
 
-Ask the agent for the same feature twice and you will get two working implementations. Both pass the checks. Both satisfy the spec. Neither is wrong. And choosing between them is the first task in this book that the agent cannot do for you: not because it lacks ability, but because "better" here is not a fact. It is a position.
+Ask the agent for the same feature twice and you will get two working implementations. Both pass the checks. Both satisfy the spec. Neither is wrong. And choosing between them is the first task in this book that the agent cannot do for you. "Better" here is a position.
 
 This is taste: the judgement that one good option fits your situation better than another good option. The agent can generate options endlessly and enumerate trade-offs fluently. It cannot know that your client phones support at 11 p.m., that your successor will be a temp, or that you would rather debug a boring file than a clever one. Those preferences, held and defended, are the deliverable.
 
@@ -1138,7 +1140,7 @@ And the habit generalises. From now on, every fork the agent offers you gets the
 3. What does each do when the input is strange?
 4. What does it cost to change later?
 
-Four answers, one position, one reason. That is a taste test.
+Four answers, one position, and one reason make a taste test.
 
 You can ask the agent to enumerate dimensions, play advocate, or pressure-test your position: all good uses. Do not ask it "which is better?" and accept the answer. Its preference is the average of the internet's; your situation is the specific thing that makes this decision yours. Delegate the menu. Keep the choosing.
 
@@ -1200,7 +1202,7 @@ Lab companion: Lab 9, The Last 20%. This chapter is the reasoning; the lab is th
 
 The agent is superb at the first 80%. Given a clear spec it produces the working feature, the reasonable layout, the passing demo, fast. What it does not do, reliably, is finish. The last 20% is everything the spec did not force: the empty state nobody designed, the error message that sounds like a machine, the page that works but feels unloved, the one weird input the checklist never imagined.
 
-This is not a complaint about the agent. The last 20% is hard for the same reason taste is hard: it requires knowing what the thing is for. The agent can complete requirements; only you can see the gap between "meets the spec" and "feels finished." Your job in this chapter is to see that gap, name it, and direct the department to close it: item by item, without accidentally rebuilding the product.
+The last 20% is hard for the same reason taste is hard: it requires knowing what the thing is for. The agent can complete requirements; only you can see the gap between "meets the spec" and "feels finished." Your job in this chapter is to see that gap, name it, and direct the department to close it: item by item, without accidentally rebuilding the product.
 
 ## Understanding Through the House Viewing
 
@@ -1312,7 +1314,7 @@ Lab companion: Lab 6, Teach the Intern built your first context folder; this cha
 
 ## The Concept First
 
-Every organisation adopting AI runs into the same obstacle. It is not model quality and it is not cost. It is the context wall: the challenge of getting your organisation's instructions, data, and tools into the model's narrow working memory at the right moment, without overwhelming it or watching it improvise what it did not know.
+Every organisation adopting AI runs into the same obstacle. The obstacle is the context wall: the challenge of getting your organisation's instructions, data, and tools into the model's narrow working memory at the right moment, without overwhelming it or watching it improvise what it did not know.
 
 The industry's default answer is infrastructure: a separate bespoke agent for every task, wired together in a framework, each with its own setup and maintenance. For a department of one, that is a mistake of scale: seven fragile contraptions to do the work of one good agent and a filing cabinet.
 
@@ -1330,7 +1332,7 @@ You do not hire a different accountant for every form the business files. You hi
 
 An agentic framework is ten tiny robots, each hard-wired to one form, plus the wiring between them. The filing cabinet is one professional plus an organised cabinet. When a new form appears, the framework needs a new robot; the cabinet needs a new piece of paper.
 
-That is the whole architecture. And its deepest property is the one that matters to a business: the cabinet survives the accountant. Skills written down are assets. Skills kept in an agent's memory, or in one person's prompting habits, are favours that expire.
+Its deepest property is the one that matters to a business: the cabinet survives the accountant. Skills written down are assets. Skills kept in an agent's memory, or in one person's prompting habits, are favours that expire.
 
 ## Discovering Skills with Your AI Partner
 
@@ -1367,7 +1369,7 @@ Skills drift. The procedure that was right in September fails in December becaus
 
 This architecture is how the department of one becomes a department that serves the whole business. Every repeatable workflow in the organisation (invoicing, onboarding, reporting, the weekly order) becomes a skill folder: procedure in markdown, precision in scripts, the never-list written in blood. Staff point the agent at a folder; the specialist appears; the work is done the company's way, not the model's way.
 
-The strategic property is independence. The cabinet is plain files: they work with this year's agent and next year's, they move between tools, and they are readable by any human who wants to audit what the AI is actually doing. That is the approach.
+The strategic property is independence. The cabinet is plain files: they work with this year's agent and next year's, they move between tools, and they are readable by any human who wants to audit what the AI is actually doing.
 
 Because the cabinet is plain files, the brand of agent matters less than the sales page suggests. Evaluate any agent with three questions and ignore the feature list.
 
@@ -1537,7 +1539,7 @@ Lab companion: Lab 10, Run the Department: this chapter is the reasoning; the la
 
 ## The Concept First
 
-Everything so far has been one product, one conversation, one gate. Real work arrives as a fog: "we need the whole ordering thing." The mini CEO's first management system turns fog into sequence, and the tool is not a framework. It is decomposition, written down as issues, dispatched to the department one at a time, each landing on verified ground.
+Everything so far has been one product, one conversation, one gate. Real work arrives as a fog: "we need the whole ordering thing." The mini CEO's first management system turns fog into sequence. The tool is decomposition, written down as issues, dispatched to the department one at a time, each landing on verified ground.
 
 The principle the chapter defends: the agent builds features; you build the sequence. A big prompt that asks for everything produces the confident average of a big thing: plausible, interlocking, and wrong in ways that only surface when users arrive. Ten small briefs, each with a check, each landing on the last, produce a system.
 
@@ -1559,7 +1561,7 @@ stages this should be built in. Interview me one question at a time
 until you can propose a staged build: each stage small, independently
 checkable, and useful on its own. Do not propose anything yet.
 
-The interview is the point. Watch the agent ask about payment, notifications, and scale while you discover you had not thought about refunds. The questions are the management.
+The interview is where the work happens. Watch the agent ask about payment, notifications, and scale while you discover you had not thought about refunds. The questions are the management.
 
 ### Exploration 2: The Issue List
 
@@ -1740,13 +1742,13 @@ Lab companion: Lab 12, Ship Something True, the capstone: the full loop, owned.
 
 ## The Concept First
 
-Everything in this book converges on one moment: the change goes from your repository to a real person who was not in the conversation. Shipping is not the opposite of care. It is care's proof. A product that sits in a finished state, fully checked and never delivered, has passed no test that matters, because the only users who count are the ones who did not read your spec.
+Everything in this book converges on one moment: the change goes from your repository to a real person who was not in the conversation. Shipping is where care becomes visible. A product that sits in a finished state, fully checked and never delivered, has passed no test that matters, because the only users who count are the ones who did not read your spec.
 
-"True" is the word the labs chose deliberately. Not working: working is Chapter 3's illusion, passed by one path walked once. True means: does what the spec says, survived the strange orders, passed the gate, carries a trail that explains it, and is in the hands of someone it was built for. That is the whole pipeline, landing.
+"True" is the word the labs chose deliberately. Not working: working is Chapter 3's illusion, passed by one path walked once. True means: does what the spec says, survived the strange orders, passed the gate, carries a trail that explains it, and is in the hands of someone it was built for.
 
 ## Understanding Through the Restaurant Opening
 
-Restaurants do not open with the full menu. They open small: a soft launch, a short menu, the dishes the kitchen can execute blind. The opening is not the end of construction. It is the first time construction meets reality, and reality orders something unusual, at volume, at 8:15 p.m. on a Saturday.
+Restaurants do not open with the full menu. They open small: a soft launch, a short menu, the dishes the kitchen can execute blind. The opening is the first time construction meets reality, and reality orders something unusual, at volume, at 8:15 p.m. on a Saturday.
 
 Shipping software is a soft launch. The gate has run; the receipts exist; and reality will still find the thing you did not imagine, because reality always does. The mini CEO ships expecting that, watches for it, and treats the first strange order from a real user as the most valuable data the project has ever collected.
 
@@ -1771,7 +1773,7 @@ pre-flight: What should be true before launch that is not checked
 yet? What happens on day one, day thirty, and day 365? What is the
 rollback plan if a user reports a disaster?
 
-Before shipping, write the sentence: "if this goes wrong, I will ___ and the users will see ___." If the blank takes more than a minute to fill, ship behind a smaller blast radius first: fewer users, a test group, a copy of the data. The rollback plan is not pessimism. It is what makes day one survivable.
+Before shipping, write the sentence: "if this goes wrong, I will ___ and the users will see ___." If the blank takes more than a minute to fill, ship behind a smaller blast radius first: fewer users, a test group, a copy of the data. The rollback plan is what makes day one survivable.
 
 ### Exploration 3: Ship, Then Listen
 
@@ -1781,13 +1783,13 @@ After launch, the department's job changes: watch, log, and resist the urge to r
 
 The launch record completes the trail:
 
-The portfolio value is the point of the whole series: twelve shipped things, each with spec, gate, critique, and launch record. That folder does not say "I know about AI." It says "I run a department." Employers, clients, and funders can see the difference without a word of code.
+The portfolio is what the series builds toward: twelve shipped things, each with spec, gate, critique, and launch record. That folder does not say "I know about AI." It says "I run a department." Employers, clients, and funders can see the difference without a word of code.
 
 ## Business Connection
 
 Shipping is where the mini CEO's two roles meet. To the department, you are the standard. To the users, you are the supplier. The launch record is the hinge between them: it is the moment the accountability you accepted in Chapter 2's blast-radius exercise becomes real, attached to a URL real people can touch.
 
-And the strategy lands here too. The pipeline you have built (spec, gate, audit, launch, listen) is what lets a department of one ship things that used to need agencies, at a pace agencies cannot match, with a trail that outlives the tooling. That is the new baseline, and you are standing on it.
+And the strategy lands here too. The pipeline you have built (spec, gate, audit, launch, listen) is what lets a department of one ship things that used to need agencies, at a pace agencies cannot match, with a trail that outlives the tooling.
 
 ## Practice Exercises
 
@@ -1882,7 +1884,7 @@ Staff salaries were a line item; model credits are too. Track spend per project 
 
 ## Business Connection
 
-Staffed AI review is what lets a department of one credibly serve clients larger than itself. The pitch writes itself from this chapter: every change is built by an agent, reviewed by a different agent configured as an adversary, gated by automated checks, and signed by a human who read the findings. That is a control structure some regulated industries would envy. And it runs from a folder.
+Staffed AI review is what lets a department of one credibly serve clients larger than itself. The pitch writes itself from this chapter: every change is built by an agent, reviewed by a different agent configured as an adversary, gated by automated checks, and signed by a human who read the findings. Some regulated industries would envy that control structure, and it runs from a folder.
 
 The staff folder is also the transferable asset at its purest. The reviewer skill you wrote for your project works on the next project unchanged. Your staff follows you, trained, to every job.
 
@@ -1958,7 +1960,17 @@ Be precise about the claim, because it is the book's last and largest. The pipel
 
 An agent can generate code into your repository. It cannot decide, on your behalf, what good looks like. When everyone's agent is competent, the competent code stops being an advantage. And the referee who can tell true from plausible, who knows what to build and why, and who signs the launch record, becomes the scarce thing.
 
-That is not a consolation prize for people who never learned to program. It is the actual job, arriving ahead of schedule.
+The actual job is arriving ahead of schedule, and it belongs to people who never learned to program as much as to those who did.
+
+## If Everyone Can Speak Software
+
+The claim has a second edge. If the pipeline commoditises, then the ability to direct an agent stops being scarce. Anyone can describe a feature and get a working first draft. The difference moves to the judgement around the build: which problem is worth solving, what done means, which check matters, and who signs the result.
+
+The Human Edge makes the same argument for people who never open a code editor. The tools are different, and the residue is the same. The workplace version spends more time on briefing, trust, and the decision to keep a person in the step. This book spends more time on the gate, the audit, and the launch record.
+
+The shared failure mode is over-automation. A workflow removes the human check because the demo looked good, and the absence stays invisible until something goes wrong. Speak Software gives you the harness to catch that in code. The Human Edge gives you the judgement to catch it in the work around the code.
+
+Read it next if you want the same discipline for the rest of your job: The Human Edge.
 
 ## The Skills That Transfer
 
