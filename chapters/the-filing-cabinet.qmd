@@ -16,6 +16,8 @@ The alternative (the one Anthropic productised as **Agent Skills**, and the one 
 - **A folder per skill**, named for the workflow it serves
 - Inside each: a markdown instruction file (the skill's rules and steps, a `SKILL.md`) alongside any data and scripts the workflow needs
 
+The argument that a folder can do the work of a framework comes from Jake Van Clief and David McDermott [@vanclief2026icm]. Anthropic's Agent Skills documentation supplies the skill-folder pattern this chapter uses.
+
 When work arrives, the agent is pointed at the folder. It reads the instructions, runs the scripts, and, effectively, *becomes* the specialist the folder describes. One agent, many skills, zero infrastructure. Spin up as many conversations as you have hands: each one is a specialist, instantiated on the fly from a document you wrote once.
 
 ## Understanding Through the Filing Cabinet

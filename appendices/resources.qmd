@@ -17,6 +17,7 @@ Three follow-on labs pair with this book's harness chapters and ship a reference
 
 ## Agents and skills
 - Named path in the labs: [pi](https://pi.dev); any CLI agent works
+- Jake Van Clief and David McDermott, *Interpretable Context Methodology: Folder Structure as Agent Architecture* (2026): the folders-over-agents framing and numbered stage workspaces: [arxiv.org/html/2603.16021v2](https://arxiv.org/html/2603.16021v2)
 - Anthropic Agent Skills documentation: the skill-folder architecture of Chapter 12
 - Boris Cherny / Claude Code guidance on AI slop and the mini-CEO role (2026): see Chapter 2
 
