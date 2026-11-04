@@ -62,7 +62,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -603,6 +622,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>A folder per skill</strong>, named for the workflow it serves</li>
 <li>Inside each: a markdown instruction file (the skill’s rules and steps, a <code>SKILL.md</code>) alongside any data and scripts the workflow needs</li>
 </ul>
+<p>The argument that a folder can do the work of a framework comes from Jake Van Clief and David McDermott <span class="citation" data-cites="vanclief2026icm">(<a href="#ref-vanclief2026icm" role="doc-biblioref">Van Clief and McDermott 2026</a>)</span>. Anthropic’s Agent Skills documentation supplies the skill-folder pattern this chapter uses.</p>
 <p>When work arrives, the agent is pointed at the folder. It reads the instructions, runs the scripts, and, effectively, <em>becomes</em> the specialist the folder describes. One agent, many skills, zero infrastructure. Spin up as many conversations as you have hands: each one is a specialist, instantiated on the fly from a document you wrote once.</p>
 </section>
 <section id="understanding-through-the-filing-cabinet" class="level2" data-number="12.2">
@@ -738,6 +758,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Skills organise <em>your</em> workflows. But the department’s output carries risks the cabinet cannot fix, because some of the slop arrives attached to things the agent <em>trusts</em>. Next: hallucinated packages, supply-chain slop, and the short list of what must never be pasted.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-vanclief2026icm" class="csl-entry" role="listitem">
+Van Clief, Jake, and David McDermott. 2026. <em>Interpretable Context Methodology: Folder Structure as Agent Architecture</em>. <a href="https://arxiv.org/html/2603.16021v2">https://arxiv.org/html/2603.16021v2</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -1324,6 +1324,8 @@ The alternative (the one Anthropic productised as Agent Skills, and the one this
 - A folder per skill, named for the workflow it serves
 - Inside each: a markdown instruction file (the skill's rules and steps, a `SKILL.md`) alongside any data and scripts the workflow needs
 
+The argument that a folder can do the work of a framework comes from Jake Van Clief and David McDermott [@vanclief2026icm]. Anthropic's Agent Skills documentation supplies the skill-folder pattern this chapter uses.
+
 When work arrives, the agent is pointed at the folder. It reads the instructions, runs the scripts, and, effectively, becomes the specialist the folder describes. One agent, many skills, zero infrastructure. Spin up as many conversations as you have hands: each one is a specialist, instantiated on the fly from a document you wrote once.
 
 ## Understanding Through the Filing Cabinet
@@ -2173,6 +2175,7 @@ Three follow-on labs pair with this book's harness chapters and ship a reference
 
 ## Agents and skills
 - Named path in the labs: pi; any CLI agent works
+- Jake Van Clief and David McDermott, Interpretable Context Methodology: Folder Structure as Agent Architecture (2026): the folders-over-agents framing and numbered stage workspaces: arxiv.org/html/2603.16021v2
 - Anthropic Agent Skills documentation: the skill-folder architecture of Chapter 12
 - Boris Cherny / Claude Code guidance on AI slop and the mini-CEO role (2026): see Chapter 2
 
@@ -2195,7 +2198,7 @@ This book grew out of the Speak Software programming labs: twelve core labs, eac
 
 Thanks are due to the students and testers who worked through the labs while they were still rough. A brief that looked clear on the page and fell apart in the room got rewritten. A check nobody ran got cut or automated. The slop gate, the evidence-trio linter, and the lab doctor in this book's `tools/` folder exist because lab work showed where unaided confidence failed.
 
-Two public arguments anchor the book and are credited where they are used. Boris Cherny, creator of Claude Code at Anthropic, supplied the answer to the slop question and the mini-CEO framing: prototypes can be black boxes, production code written by AI gets a higher bar, met with guardrails. Anthropic's Agent Skills documentation supplied the skill-folder architecture behind the filing cabinet chapter. Andrej Karpathy named vibe coding. The author's Conversation, Not Delegation (2025) supplied the Conversation Loop and the VET framework this book builds on.
+Several public arguments anchor the book and are credited where they are used. Boris Cherny, creator of Claude Code at Anthropic, supplied the answer to the slop question and the mini-CEO framing: prototypes can be black boxes, production code written by AI gets a higher bar, met with guardrails. Jake Van Clief and David McDermott's Interpretable Context Methodology supplied the folders-over-agents framing: one capable agent reading the right files at the right moment, instead of a framework of specialised agents. Anthropic's Agent Skills documentation supplied the concrete skill-folder pattern the book implements. Andrej Karpathy named vibe coding. The author's Conversation, Not Delegation (2025) supplied the Conversation Loop and the VET framework this book builds on.
 
 The open-source community behind Quarto, Pandoc, Python, and GitHub made it possible to write, check, and publish this book, its tools, and the companion labs from text files the reader can inspect. The manuscript checks, the slop gate, and the trio linter all run on that stack.
 
